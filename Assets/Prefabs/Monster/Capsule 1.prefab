@@ -153,3 +153,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   trapDuration: 0
+  descriptionAbility: {fileID: 11400000, guid: 634d744af4433564a8be653f592a22ae, type: 2}

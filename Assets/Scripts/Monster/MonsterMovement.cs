@@ -13,6 +13,8 @@ public class MonsterMovement : MonoBehaviour
     // 길을 찾아서 이동할 에이전트
     NavMeshAgent agent;
 
+    public MonsterScriptable descriptionAbility;
+
     private void Awake()
     {
         // 게임이 시작되면 게임 오브젝트에 부착된 NavMeshAgent 컴포넌트를 가져와서 저장
@@ -22,6 +24,7 @@ public class MonsterMovement : MonoBehaviour
     private void Start()
     {
         agent.SetDestination(target.position);
+        agent.speed = descriptionAbility.moveSpeed;
     }
 
     void Update()
