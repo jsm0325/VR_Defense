@@ -32,10 +32,10 @@ public class MonsterSpawner : MonoBehaviour
             GameObject spawnedMonster = Instantiate(currentWave.monsterPrefabs[monsterIndex], spawner.transform.GetChild(randomPosition).transform.position, spawner.transform.GetChild(randomPosition).transform.rotation);
             spawnMonsterCount++;
             // 스폰된 몬스터에게 목표 지점 정보를 전달할 수 있도록 설정
-            MonsterMovement monsterMovement = spawnedMonster.GetComponent<MonsterMovement>();
-            if (monsterMovement != null)
+            Monster monster = spawnedMonster.GetComponent<Monster>();
+            if (monster != null)
             {
-                monsterMovement.target = target;
+                monster.target = target;
             }
             yield return new WaitForSeconds(currentWave.spawnTime);
         }

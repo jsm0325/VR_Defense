@@ -1,35 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using UnityEngine.AI;
 using UnityEngine;
 
-public class MonsterMovement : MonoBehaviour
+public class Monster : MonoBehaviour
 {
     public Transform target;
     private bool isTrapped = false; // 트랩 걸렸는지 여부
-    public float trapDuration;
+    public float trapDuration; // 트랩 지속 시간
     private bool isMovingToDestination = false; // 이동 중인지 여부를 나타내는 변수
-    // 길을 찾아서 이동할 에이전트
-    NavMeshAgent agent;
+    NavMeshAgent agent; // 길을 찾아서 이동할 에이전트
 
-    public MonsterScriptable descriptionAbility;
-
+    public MonsterScriptable monsterData; // 몬스터 데이터 스크립터블 객체
+    private int currentHealth; // 현재 체력
     private void Awake()
     {
-        // 게임이 시작되면 게임 오브젝트에 부착된 NavMeshAgent 컴포넌트를 가져와서 저장
-        agent = GetComponent<NavMeshAgent>();
+       
+        agent = GetComponent<NavMeshAgent>(); // 게임이 시작되면 게임 오브젝트에 부착된 NavMeshAgent 컴포넌트를 가져와서 저장
     }
-
     private void Start()
     {
-        agent.SetDestination(target.position);
-        agent.speed = descriptionAbility.moveSpeed;
+        currentHealth = monsterData.maxHp; // 현재 체력 최대 체력으로 설정
+        agent.SetDestination(target.position); // 목적지 설정
+        agent.speed = monsterData.moveSpeed; // 몬스터 이동 속도 데이터에서 받아와서 설정
     }
 
     void Update()
     {
-        if (!isTrapped) 
+        if (!isTrapped)
         {
             if (!isMovingToDestination) // 트랩에 걸리지 않은 상태인데 목적지로 이동중이지 않으면 목적지 설정해줌
             {
@@ -56,5 +54,19 @@ public class MonsterMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(trapDuration); // 몬스터 정지
         isTrapped = false;
+    }
+    public void TakeDamage(int damage) // 데미지 받는 코드
+    {
+        currentHealth -= damage; // 현재 체력에서 데미지 만큼 빼는 코드
+        if (currentHealth <= 0) // 체력 0 이하시 작동
+        {
+            Die(); 
+        }
+    }
+
+    private void Die()// 몬스터가 죽었을 때 호출
+    {
+        GameManager.Instance.AddCurrency(monsterData.coin); // 몬스터 coin 값 만큼 재화 증가
+        Destroy(gameObject); // 몬스터 게임 오브젝트 삭제
     }
 }
