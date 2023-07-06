@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6306838232188167490}
   - component: {fileID: -756081389964985647}
   - component: {fileID: -2805304263341743046}
-  - component: {fileID: 7302318307247154282}
+  - component: {fileID: 1132588481563975412}
   m_Layer: 0
   m_Name: Capsule 1
   m_TagString: Monster
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 6306838232188167484}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7688351663770216104}
@@ -140,7 +140,7 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &7302318307247154282
+--- !u!114 &1132588481563975412
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,12 +149,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6306838232188167484}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe7f2b6941bc64e46acfd7c4a752b706, type: 3}
+  m_Script: {fileID: 11500000, guid: 3649c5831895d3e4c91a63920263afac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   trapDuration: 0
-  descriptionAbility: {fileID: 11400000, guid: 634d744af4433564a8be653f592a22ae, type: 2}
+  monsterData: {fileID: 11400000, guid: 7aa61c2a66f3da44080ad5700ae2fad7, type: 2}
 --- !u!1001 &1295126137159877466
 PrefabInstance:
   m_ObjectHideFlags: 0
