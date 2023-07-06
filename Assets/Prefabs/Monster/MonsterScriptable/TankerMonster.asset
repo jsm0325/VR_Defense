@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropItem: []
   coin: 20
-  HP: 250
-  moveSpeed: 0.25
+  maxHp: 200
+  moveSpeed: 1
+  damage: 2
   stun: 0
