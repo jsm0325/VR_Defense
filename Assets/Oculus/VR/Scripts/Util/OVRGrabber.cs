@@ -333,6 +333,9 @@ public class OVRGrabber : MonoBehaviour
 
             //m_keepHold = true;
         }
+        //else {
+        //    m_keepHold = false;
+        //}
     }
 
     protected virtual void MoveGrabbedObject(Vector3 pos, Quaternion rot, bool forceTeleport = false)
