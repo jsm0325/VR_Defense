@@ -118,11 +118,6 @@ public class OVRGrabbable : MonoBehaviour
     }
 
     ///New Add by Subin
-    //public Transform m_grabbedPosition;
-    //public Transform grabbedPos
-    //{
-    //    get { return m_grabbedPosition; }
-    //}
 
     /// <summary>
     /// Notifies the object that it has been grabbed.
@@ -132,14 +127,6 @@ public class OVRGrabbable : MonoBehaviour
         m_grabbedBy = hand;
         m_grabbedCollider = grabPoint;
         gameObject.GetComponent<Rigidbody>().isKinematic = true;
-
-        //if (m_grabbedPosition != null)
-        //{
-        //    Vector3 pos = m_grabbedPosition.position;
-        //    gameObject.transform.position = pos;
-        //    Quaternion rot = m_grabbedPosition.rotation;
-        //    gameObject.transform.rotation = rot;
-        //}
     }
 
     /// <summary>

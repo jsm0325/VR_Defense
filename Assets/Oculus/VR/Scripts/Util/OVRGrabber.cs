@@ -82,10 +82,6 @@ public class OVRGrabber : MonoBehaviour
     protected Dictionary<OVRGrabbable, int> m_grabCandidates = new Dictionary<OVRGrabbable, int>();
     protected bool m_operatingWithoutOVRCameraRig = true;
 
-    //New add by Subin
-    //protected bool m_keepHold = false;
-
-
     /// <summary>
     /// The currently grabbed object.
     /// </summary>
@@ -331,11 +327,7 @@ public class OVRGrabber : MonoBehaviour
                 m_grabbedObj.transform.parent = transform;
             }
 
-            //m_keepHold = true;
         }
-        //else {
-        //    m_keepHold = false;
-        //}
     }
 
     protected virtual void MoveGrabbedObject(Vector3 pos, Quaternion rot, bool forceTeleport = false)
@@ -363,8 +355,6 @@ public class OVRGrabber : MonoBehaviour
 
     protected void GrabEnd()
     {
-        //if (!m_keepHold)
-        //{
             if (m_grabbedObj != null)
             {
                 OVRPose localPose = new OVRPose
@@ -389,7 +379,6 @@ public class OVRGrabber : MonoBehaviour
 
             // Re-enable grab volumes to allow overlap events
             GrabVolumeEnable(true);
-        //}
     }
 
     protected void GrabbableRelease(Vector3 linearVelocity, Vector3 angularVelocity)
