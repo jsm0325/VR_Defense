@@ -82,6 +82,10 @@ public class OVRGrabber : MonoBehaviour
     protected Dictionary<OVRGrabbable, int> m_grabCandidates = new Dictionary<OVRGrabbable, int>();
     protected bool m_operatingWithoutOVRCameraRig = true;
 
+    //New add by Subin
+    //protected bool m_keepHold = false;
+
+
     /// <summary>
     /// The currently grabbed object.
     /// </summary>
@@ -326,6 +330,8 @@ public class OVRGrabber : MonoBehaviour
             {
                 m_grabbedObj.transform.parent = transform;
             }
+
+            //m_keepHold = true;
         }
     }
 
@@ -354,30 +360,33 @@ public class OVRGrabber : MonoBehaviour
 
     protected void GrabEnd()
     {
-        if (m_grabbedObj != null)
-        {
-            OVRPose localPose = new OVRPose
+        //if (!m_keepHold)
+        //{
+            if (m_grabbedObj != null)
             {
-                position = OVRInput.GetLocalControllerPosition(m_controller),
-                orientation = OVRInput.GetLocalControllerRotation(m_controller)
-            };
-            OVRPose offsetPose = new OVRPose
-            {
-                position = m_anchorOffsetPosition,
-                orientation = m_anchorOffsetRotation
-            };
-            localPose = localPose * offsetPose;
+                OVRPose localPose = new OVRPose
+                {
+                    position = OVRInput.GetLocalControllerPosition(m_controller),
+                    orientation = OVRInput.GetLocalControllerRotation(m_controller)
+                };
+                OVRPose offsetPose = new OVRPose
+                {
+                    position = m_anchorOffsetPosition,
+                    orientation = m_anchorOffsetRotation
+                };
+                localPose = localPose * offsetPose;
 
-            OVRPose trackingSpace = transform.ToOVRPose() * localPose.Inverse();
-            Vector3 linearVelocity = trackingSpace.orientation * OVRInput.GetLocalControllerVelocity(m_controller);
-            Vector3 angularVelocity =
-                trackingSpace.orientation * OVRInput.GetLocalControllerAngularVelocity(m_controller);
+                OVRPose trackingSpace = transform.ToOVRPose() * localPose.Inverse();
+                Vector3 linearVelocity = trackingSpace.orientation * OVRInput.GetLocalControllerVelocity(m_controller);
+                Vector3 angularVelocity =
+                    trackingSpace.orientation * OVRInput.GetLocalControllerAngularVelocity(m_controller);
 
-            GrabbableRelease(linearVelocity, angularVelocity);
-        }
+                GrabbableRelease(linearVelocity, angularVelocity);
+            }
 
-        // Re-enable grab volumes to allow overlap events
-        GrabVolumeEnable(true);
+            // Re-enable grab volumes to allow overlap events
+            GrabVolumeEnable(true);
+        //}
     }
 
     protected void GrabbableRelease(Vector3 linearVelocity, Vector3 angularVelocity)
