@@ -18,7 +18,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Head_Band_center_M
-    second: {fileID: 2100000, guid: f80ef2ab705f6e1408f5653e8f2a8842, type: 2}
+    second: {fileID: 2100000, guid: f222bf83047416f4dbff27b7ff05594f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -27,23 +27,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Leg_Injured_White_M
-    second: {fileID: 2100000, guid: f80ef2ab705f6e1408f5653e8f2a8842, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: 8a0bd227c0f2112498d52634eacf4857, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert2
-    second: {fileID: 2100000, guid: 8a0bd227c0f2112498d52634eacf4857, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert3
-    second: {fileID: 2100000, guid: 8a0bd227c0f2112498d52634eacf4857, type: 2}
+      name: Skin
+    second: {fileID: 2100000, guid: 2862339b623b6ef4483fc01724048cd4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
