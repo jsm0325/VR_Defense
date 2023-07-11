@@ -8,6 +8,13 @@ public class GrabWeapon : MonoBehaviour
     private bool isGrabbing = false;
     public Transform GrabPositon;
     private GameObject Weapon;
+    private LineRenderer lineRenderer;
+
+    private void Awake()
+    {
+        lineRenderer = GetComponent<LineRenderer>();
+    }
+
     void FixedUpdate()
     {
         if(OVRInput.GetUp(OVRInput.RawButton.RHandTrigger))       //버튼을 눌렀다 뗐을 때
@@ -17,6 +24,15 @@ public class GrabWeapon : MonoBehaviour
         else if(OVRInput.GetDown(OVRInput.RawButton.RHandTrigger))        //버튼을 눌렀을 때
         {
             isGrabbing = false;
+        }
+
+        if (OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.GetUp(OVRInput.RawButton.LHandTrigger))
+        {
+            ItemGrab();
+        }
+        if (OVRInput.GetUp(OVRInput.RawButton.LHandTrigger))
+        {
+            lineRenderer.enabled = false;
         }
     }
 
@@ -50,4 +66,31 @@ public class GrabWeapon : MonoBehaviour
         }
     }
 
+    private void ItemGrab()
+    {
+        Debug.DrawRay(transform.position, transform.forward * 10, Color.red);
+        //Debug.DrawRay(GrabPositon.position, GrabPositon.forward * 10, Color.blue);
+
+        // 라인 시작점
+        lineRenderer.SetPosition(0, transform.position);
+        // 라인 종료점
+        lineRenderer.SetPosition(1, transform.position + (transform.forward * 10));
+        lineRenderer.enabled = true;
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 10))
+        {
+            Debug.Log(hit.transform.name);
+            if (hit.collider.tag == "Item")
+            {
+                if (OVRInput.GetUp(OVRInput.RawButton.LHandTrigger))        // 버튼 뗐을때
+                {
+                    hit.transform.position = GrabPositon.transform.position;
+                    hit.transform.SetParent(GrabPositon);
+                    hit.transform.GetComponent<Rigidbody>().isKinematic = true;
+                    Destroy(hit.transform.gameObject, 1f);                  // 삭제
+                }
+            }
+        }
+    }
 }
