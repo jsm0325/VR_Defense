@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5e1ace39f4fc6244b90267407c5c5de5
+guid: a2d2bfd444ae58d4e93cdd55beb51519
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,13 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: lambert4
-    second: {fileID: 2100000, guid: b200873ab45439c45ae49636aece9e5e, type: 2}
+      name: BIG_pants_M
+    second: {fileID: 2100000, guid: 3adeb165d1220ce4d89ebd7063501ba7, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: pasted__lambert4
-    second: {fileID: 2100000, guid: b200873ab45439c45ae49636aece9e5e, type: 2}
+      name: BIG_shirts_M
+    second: {fileID: 2100000, guid: 8eec9467bdcd9e74fa99c8b7b701547f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert3
+    second: {fileID: 2100000, guid: 2e283a9de621b19489a95c3fa0ebbd51, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

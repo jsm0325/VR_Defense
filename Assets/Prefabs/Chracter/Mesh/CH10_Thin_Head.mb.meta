@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5e1ace39f4fc6244b90267407c5c5de5
+guid: b7416d27b68fca94c8e3a5a93381e7cf
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,13 +7,28 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: lambert4
-    second: {fileID: 2100000, guid: b200873ab45439c45ae49636aece9e5e, type: 2}
+      name: eye_M
+    second: {fileID: 2100000, guid: 2178b1d80277e564c9484a4e2511e9e1, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: pasted__lambert4
-    second: {fileID: 2100000, guid: b200873ab45439c45ae49636aece9e5e, type: 2}
+      name: eye_brow_M
+    second: {fileID: 2100000, guid: 88b42e9d7392e7a4e9102b0e6f342ff8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: head_M
+    second: {fileID: 2100000, guid: bab4f39a01b7d7449b6b1f68f989f64c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mouth_M
+    second: {fileID: 2100000, guid: 49e60f7ad76f3e34c9f809912f4b55a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: toilet_M
+    second: {fileID: 2100000, guid: da4e90ff99135ec43a1d95b295e0bac2, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
