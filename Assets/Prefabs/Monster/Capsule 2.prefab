@@ -172,6 +172,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3513149498401004213, guid: ff08fce980d83b148bc29de7670f9715,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7835770484604317866, guid: ff08fce980d83b148bc29de7670f9715,
         type: 3}
       propertyPath: m_Name
