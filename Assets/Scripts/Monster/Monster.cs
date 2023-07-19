@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    public Transform target;
+    public Transform target; // 목표 지점
     private bool isTrapped = false; // 트랩 걸렸는지 여부
     public float trapDuration; // 트랩 지속 시간
     private bool isMovingToDestination = false; // 이동 중인지 여부를 나타내는 변수
@@ -13,9 +13,18 @@ public class Monster : MonoBehaviour
 
     public MonsterScriptable monsterData; // 몬스터 데이터 스크립터블 객체
     private int currentHealth; // 현재 체력
+
+    // 외형 카테고리들을 저장할 배열의 배열
+    public GameObject[][] appearanceOptions;
+    // 외형 카테고리들
+    public GameObject[] hairOptions;
+    public GameObject[] topOptions;
+    public GameObject[] bottomOptions;
+    public GameObject[] shoeOptions;
+
+
     private void Awake()
     {
-       
         agent = GetComponent<NavMeshAgent>(); // 게임이 시작되면 게임 오브젝트에 부착된 NavMeshAgent 컴포넌트를 가져와서 저장
     }
     private void Start()
@@ -23,6 +32,8 @@ public class Monster : MonoBehaviour
         currentHealth = monsterData.maxHp; // 현재 체력 최대 체력으로 설정
         agent.SetDestination(target.position); // 목적지 설정
         agent.speed = monsterData.moveSpeed; // 몬스터 이동 속도 데이터에서 받아와서 설정
+        InitializeAppearanceOptions(); // 외형 카테고리 배열 초기화
+        SetRandomAppearance(); // 랜덤하게 바디, 의상, 헤어 등을 선택하여 적용
     }
 
     void Update()
@@ -69,4 +80,29 @@ public class Monster : MonoBehaviour
         GameManager.Instance.AddCurrency(monsterData.coin); // 몬스터 coin 값 만큼 재화 증가
         Destroy(gameObject); // 몬스터 게임 오브젝트 삭제
     }
+
+    private void InitializeAppearanceOptions()
+    {
+        // 외형 카테고리 배열 생성과 초기화
+        appearanceOptions = new GameObject[4][];
+        appearanceOptions[0] = hairOptions;
+        appearanceOptions[1] = topOptions;
+        appearanceOptions[2] = bottomOptions;
+        appearanceOptions[3] = shoeOptions;
+    }
+
+    private void SetRandomAppearance()
+    {
+        for (int i = 0; i < appearanceOptions.Length; i++)
+        {
+            // 해당 카테고리의 배열 길이가 0 이상인 경우에만 랜덤한 인덱스 선택
+            if (appearanceOptions[i].Length > 0)
+            {
+                int randomIndex = Random.Range(0, appearanceOptions[i].Length);
+                GameObject selectedAppearance = appearanceOptions[i][randomIndex];
+                Instantiate(selectedAppearance, transform);
+            }
+        }
+    }
+
 }
