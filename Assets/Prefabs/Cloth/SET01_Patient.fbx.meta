@@ -1,9 +1,34 @@
 fileFormatVersion: 2
-guid: f243815f8c99fbe47a291aa3cb0d1eab
+guid: 443c4df9a7d93eb4397abea34a018b2f
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Big_head_Cap_M
+    second: {fileID: 2100000, guid: 2d1f92afade7725478bced99665b7368, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Head_Band_alpha_M
+    second: {fileID: 2100000, guid: 9aa257776e09fd24fa21b0a1625bc605, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Head_Band_center_M
+    second: {fileID: 2100000, guid: de38876c092b49e42999c08262428f36, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: P_skin
+    second: {fileID: 2100000, guid: 9e63db0bce311cb449b41d7406aa12e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert5
+    second: {fileID: 2100000, guid: 9df2895a5d6137b468d197c81b09cfc3, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
