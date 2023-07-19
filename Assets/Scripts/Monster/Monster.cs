@@ -21,7 +21,7 @@ public class Monster : MonoBehaviour
     public GameObject[] topOptions;
     public GameObject[] bottomOptions;
     public GameObject[] shoeOptions;
-
+    public Vector3 clothsScale = new Vector3(11.0f, 11.0f, 9.0f);
 
     private void Awake()
     {
@@ -100,6 +100,7 @@ public class Monster : MonoBehaviour
             {
                 int randomIndex = Random.Range(0, appearanceOptions[i].Length);
                 GameObject selectedAppearance = appearanceOptions[i][randomIndex];
+                selectedAppearance.transform.localScale = clothsScale;
                 Instantiate(selectedAppearance, transform);
             }
         }
