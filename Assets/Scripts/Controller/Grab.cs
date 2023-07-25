@@ -18,11 +18,11 @@ public class Grab : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(OVRInput.GetUp(OVRInput.RawButton.RHandTrigger))       //버튼을 눌렀다 뗐을 때
+        if(OVRInput.GetDown(OVRInput.RawButton.RHandTrigger))       //버튼을 눌렀다 뗐을 때
         {
             isGrabbing = true;
         }
-        else if(OVRInput.GetDown(OVRInput.RawButton.RHandTrigger))        //버튼을 눌렀을 때
+        else if(OVRInput.GetUp(OVRInput.RawButton.A))        //버튼을 눌렀을 때
         {
             isGrabbing = false;
         }
@@ -37,13 +37,13 @@ public class Grab : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         weapon = other.gameObject;
 
-        if(other.CompareTag("Weapon"))
+        if (other.CompareTag("Weapon"))
         {
-            if(isGrabbing)      //만약 잡는다면
+            if (isGrabbing)      //만약 잡는다면
             {
                 //잡히는 Weapon의 위치 값을 손에 맞춤
                 weapon.transform.position = rightGrabPosition.transform.position;
@@ -55,8 +55,16 @@ public class Grab : MonoBehaviour
                 //손에 고정하기 위해 iskinematic 활성
                 weapon.GetComponent<Rigidbody>().isKinematic = true;
             }
+        }
+    }
 
-            else if(!isGrabbing)        //놓는다면
+    private void OnTriggerStay(Collider other)
+    {
+        weapon = other.gameObject;
+
+        if(other.CompareTag("Weapon"))
+        {
+            if(!isGrabbing)        //놓는다면
             {
                 //Weapon을 손의 하위 객체에서 해제
                 weapon.transform.SetParent(null);
