@@ -8,8 +8,10 @@ public class Grab : MonoBehaviour
     private bool isGrabbing = false;
     public Transform leftGrabPositon;
     public Transform rightGrabPosition;
+    public ItemSlot itemSlot;
     private GameObject weapon;
     private LineRenderer lineRenderer;
+    private RaycastHit hit;
 
     private void Awake()
     {
@@ -85,7 +87,6 @@ public class Grab : MonoBehaviour
         // 라인 종료점
         lineRenderer.SetPosition(1, leftGrabPositon.position + (leftGrabPositon.forward * 10));
         lineRenderer.enabled = true;
-        RaycastHit hit;
 
         if (Physics.Raycast(transform.position, transform.forward, out hit, 10))
         {
@@ -97,9 +98,19 @@ public class Grab : MonoBehaviour
                     hit.transform.position = leftGrabPositon.transform.position;
                     hit.transform.SetParent(leftGrabPositon);
                     hit.transform.GetComponent<Rigidbody>().isKinematic = true;
-                    Destroy(hit.transform.gameObject, 1f);                  // 삭제
+                    PickUp();
                 }
             }
+        }
+    }
+
+    private void PickUp()
+    {
+        if(hit.collider.tag == "Item")
+        {
+            Debug.Log(hit.transform.GetComponent<ItemPickUp>().item.itemName + "획득");
+            itemSlot.AcquireItem(hit.transform.GetComponent<ItemPickUp>().item);
+            Destroy(hit.transform.gameObject, 1f);                  // 삭제
         }
     }
 }
