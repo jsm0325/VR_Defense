@@ -9,7 +9,7 @@ public class Grab : MonoBehaviour
     public Transform leftGrabPositon;
     public Transform rightGrabPosition;
     public ItemSlot itemSlot;
-    private GameObject weapon;
+    private GameObject Grabbable;
     private LineRenderer lineRenderer;
     private RaycastHit hit;
 
@@ -20,13 +20,18 @@ public class Grab : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(OVRInput.GetDown(OVRInput.RawButton.RHandTrigger))       //버튼을 눌렀다 뗐을 때
+        if(OVRInput.GetDown(OVRInput.RawButton.RHandTrigger))       //버튼을 눌렀을 때
         {
             isGrabbing = true;
         }
-        else if(OVRInput.GetUp(OVRInput.RawButton.A))        //버튼을 눌렀을 때
+        else if(OVRInput.GetUp(OVRInput.RawButton.A))        //A 버튼을 누르면 놓는다
         {
             isGrabbing = false;
+        }
+
+        if (!isGrabbing)        //만약 놓는다면 모든 무기를 비활성 한다.
+        {
+            ChangeWeapon(false, false, false);
         }
 
         if (OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.GetUp(OVRInput.RawButton.LHandTrigger))
@@ -39,42 +44,71 @@ public class Grab : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)     //Enter이여서 버튼누른 상태로 오브젝트에 가져가야함
     {
-        weapon = other.gameObject;
+        Grabbable = other.gameObject;
 
-        if (other.CompareTag("Weapon"))
+        if (other.CompareTag("Grabbable"))
         {
             if (isGrabbing)      //만약 잡는다면
             {
-                //잡히는 Weapon의 위치 값을 손에 맞춤
-                weapon.transform.position = rightGrabPosition.transform.position;
-                weapon.transform.rotation = rightGrabPosition.transform.rotation;
+                //잡히는 Grabbable의 위치 값을 손에 맞춤
+                Grabbable.transform.position = rightGrabPosition.transform.position;
+                Grabbable.transform.rotation = rightGrabPosition.transform.rotation;
 
-                //Weapon을 손의 하위 객체로 지정
-                weapon.transform.SetParent(rightGrabPosition);
+                //Grabbable을 손의 하위 객체로 지정
+                Grabbable.transform.SetParent(rightGrabPosition);
 
                 //손에 고정하기 위해 iskinematic 활성
-                weapon.GetComponent<Rigidbody>().isKinematic = true;
+                Grabbable.GetComponent<Rigidbody>().isKinematic = true;
             }
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        weapon = other.gameObject;
+        Grabbable = other.gameObject;
 
-        if(other.CompareTag("Weapon"))
+        if(other.CompareTag("Grabbable"))
         {
             if(!isGrabbing)        //놓는다면
             {
-                //Weapon을 손의 하위 객체에서 해제
-                weapon.transform.SetParent(null);
+                //Grabbable 손의 하위 객체에서 해제
+                Grabbable.transform.SetParent(null);
 
                 //손에 놓기 위해 iskinematic 비활성
-                weapon.GetComponent<Rigidbody>().isKinematic = false;
+                Grabbable.GetComponent<Rigidbody>().isKinematic = false;
             }
         }
+        if(other.CompareTag("ShopBat"))
+        {
+            if(isGrabbing)
+            {
+                ChangeWeapon(true, false, false);
+            }
+           
+        }
+        if (other.CompareTag("ShopRacket"))
+        {
+            if (isGrabbing)
+            {
+                ChangeWeapon(false, true, false);
+            }
+        }
+        if (other.CompareTag("ShopWrench"))
+        {
+            if (isGrabbing)
+            {
+                ChangeWeapon(false, false, true);
+            }
+        }
+    }
+
+    private void ChangeWeapon(bool bat, bool racket, bool wrench)
+    {
+        rightGrabPosition.Find("WP_Bundle").transform.Find("WP_01_1_Bat").gameObject.SetActive(bat);
+        rightGrabPosition.Find("WP_Bundle").transform.Find("WP_02_1_Badminton_Racket").gameObject.SetActive(racket);
+        rightGrabPosition.Find("WP_Bundle").transform.Find("WP_04_1_Wrench").gameObject.SetActive(wrench);
     }
 
     private void ItemGrab()

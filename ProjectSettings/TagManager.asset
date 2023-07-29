@@ -7,8 +7,11 @@ TagManager:
   - SamplesInfoPanel
   - Monster
   - Button
-  - Weapon
   - Item
+  - ShopBat
+  - ShopRacket
+  - Grabbable
+  - ShopWrench
   layers:
   - Default
   - TransparentFX
