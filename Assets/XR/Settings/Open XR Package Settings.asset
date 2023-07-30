@@ -386,7 +386,7 @@ MonoBehaviour:
   nameUi: Mock Runtime
   version: 0.0.2
   featureIdInternal: com.unity.openxr.feature.mockruntime
-  openxrExtensionStrings: XR_UNITY_null_gfx XR_UNITY_android_present
+  openxrExtensionStrings: XR_UNITY_null_gfx
   company: Unity
   priority: 0
   required: 0
@@ -524,8 +524,6 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
-  targetQuest: 1
-  targetQuest2: 1
 --- !u!114 &9172295104125209428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,10 +540,8 @@ MonoBehaviour:
   - {fileID: -7094124938536202107}
   - {fileID: -1017362451245658434}
   - {fileID: 6741257051723692746}
-  - {fileID: -4354033898711762399}
   - {fileID: -4765687709607191051}
   - {fileID: -2663252225790473308}
-  - {fileID: -644583536875554286}
   - {fileID: 8927668540607201468}
   - {fileID: 2530734868960708377}
   - {fileID: -1586437711173179964}
