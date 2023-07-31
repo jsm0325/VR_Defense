@@ -12,6 +12,7 @@ TagManager:
   - ShopRacket
   - Grabbable
   - ShopWrench
+  - ShopWeapon
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Water
   - UI
   - Grabbable
-  - 
+  - Ground
   - 
   - 
   - 
