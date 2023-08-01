@@ -109,39 +109,53 @@ public class Grab : MonoBehaviour
     private void ChangeWeapon(bool bat, bool racket, bool wrench)
     {
         //1랩일 때 1랩 무기 활성
-        if(BatLevel==1)
+        if (BatLevel == 1)
         {
             rightGrabPosition.Find("WP_Bundle").transform.Find("Bat" + BatLevel).gameObject.SetActive(bat);
         }
         //1랩 초과일 때 전단계무기 비활성 및 현재 무기활성
-        else if(BatLevel>1)
+        else if (1 < BatLevel && BatLevel <= 3)
         {
             rightGrabPosition.Find("WP_Bundle").transform.Find("Bat" + BatLevel).gameObject.SetActive(bat);
             rightGrabPosition.Find("WP_Bundle").transform.Find("Bat" + (BatLevel - 1)).gameObject.SetActive(false);
         }
+        else if(BatLevel > 3)
+        {
+            Debug.Log("err");
+        }
+
         //1랩일 때 1랩 무기 활성
         if (RacketLevel == 1)
         {
             rightGrabPosition.Find("WP_Bundle").transform.Find("Racket" + RacketLevel).gameObject.SetActive(racket);
         }
         //1랩 초과일 때 전단계무기 비활성 및 현재 무기활성
-        else if (RacketLevel > 1)
+        else if (1 < RacketLevel && RacketLevel <= 3)
         {
             rightGrabPosition.Find("WP_Bundle").transform.Find("Racket" + RacketLevel).gameObject.SetActive(racket);
             rightGrabPosition.Find("WP_Bundle").transform.Find("Racket" + (RacketLevel - 1)).gameObject.SetActive(false);
         }
-        //1랩일 때 1랩 무기 활성
+        else if (RacketLevel > 3)
+        {
+            Debug.Log("err");
+        }
+        //1랩일 때 1랩 무기 활성hzl
+
         if (WrenchLevel == 1)
         {
             rightGrabPosition.Find("WP_Bundle").transform.Find("Wrench" + WrenchLevel).gameObject.SetActive(wrench);
         }
         //1랩 초과일 때 전단계무기 비활성 및 현재 무기활성
-        else if (WrenchLevel > 1)
+        else if (1 < WrenchLevel && WrenchLevel <= 3)
         {
             rightGrabPosition.Find("WP_Bundle").transform.Find("Wrench" + WrenchLevel).gameObject.SetActive(wrench);
             rightGrabPosition.Find("WP_Bundle").transform.Find("Wrench" + (WrenchLevel - 1)).gameObject.SetActive(false);
         }
-        
+        else if (WrenchLevel > 3)
+        {
+            Debug.Log("err");
+        }
+
     }
 
     private void ItemGrab()

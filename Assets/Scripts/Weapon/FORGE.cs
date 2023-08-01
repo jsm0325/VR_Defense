@@ -28,18 +28,39 @@ public class FORGE : MonoBehaviour
     }
     private void UpgradeBat()
     {
-        Destroy(gameObject);
-        Object.GetComponent<Grab>().BatLevel += 1;
+        if (Object.GetComponent<Grab>().BatLevel >= 3)
+        {
+            Debug.Log("풀강입니다");
+        }
+        else
+        {
+            Destroy(gameObject);
+            Object.GetComponent<Grab>().BatLevel += 1;
+        }
     }
     private void UpgradeRacket()
     {
-        Destroy(gameObject);
-        Object.GetComponent<Grab>().RacketLevel += 1;
+        if (Object.GetComponent<Grab>().RacketLevel >= 3)
+        {
+            Debug.Log("풀강입니다");
+        }
+        else
+        {
+            Destroy(gameObject);
+            Object.GetComponent<Grab>().RacketLevel += 1;
+        }
     }
     private void UpgradeWrench()
     {
-        Destroy(gameObject);
-        Object.GetComponent<Grab>().WrenchLevel += 1;
+        if (Object.GetComponent<Grab>().WrenchLevel >= 3)
+        {
+            Debug.Log("풀강입니다");
+        }
+        else
+        {
+            Destroy(gameObject);
+            Object.GetComponent<Grab>().WrenchLevel += 1;
+        }
     }
 
 }
