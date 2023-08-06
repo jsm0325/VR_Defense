@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     {
         currentHealth = maxHealth; // 시작 시 전체 체력으로 초기화
         currency = 0; // 시작 시 재화를 0으로 초기화
+        UiManager.instance.UpdateHealthText(currentHealth, maxHealth);
+        UiManager.instance.UpdateCurrencyText(currency);
     }
 
     public void DecreaseHealth(int amount) // 체력 감소 메서드

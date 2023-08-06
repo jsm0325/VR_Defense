@@ -101,6 +101,7 @@ public class Monster : MonoBehaviour
     private void Die()// 몬스터가 죽었을 때 호출
     {
         GameManager.Instance.AddCurrency(monsterData.coin); // 몬스터 coin 값 만큼 재화 증가
+        UiManager.instance.UpdateCurrencyText(GameManager.Instance.currency);
         Destroy(gameObject); // 몬스터 게임 오브젝트 삭제
     }
 

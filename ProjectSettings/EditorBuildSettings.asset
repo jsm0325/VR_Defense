@@ -4,7 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/GrabTest.unity
+    guid: 598156e4c7450de469984cae5f1d51e4
+  - enabled: 1
+    path: Assets/Scenes/Map_Wave_01_Test.unity
+    guid: f3637f500cf08f54c89fbbf45f99732e
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}
