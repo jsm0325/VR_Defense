@@ -13,6 +13,7 @@ TagManager:
   - Grabbable
   - ShopWrench
   - ShopWeapon
+  - MoveTarget
   layers:
   - Default
   - TransparentFX

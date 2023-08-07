@@ -11,7 +11,6 @@ public class WaveSystem : MonoBehaviour
     [SerializeField]
     private int currentWaveIndex; // 웨이브 단계
 
-
     public void StartWave()
     {
         monsterSpawner.StartWave(waves[currentWaveIndex]);

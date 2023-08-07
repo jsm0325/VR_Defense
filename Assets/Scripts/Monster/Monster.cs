@@ -6,11 +6,8 @@ using UnityEngine.UI;
 
 public class Monster : MonoBehaviour
 {
-    public Transform target; // 목표 지점
     private bool isTrapped = false; // 트랩 걸렸는지 여부
-    public float trapDuration; // 트랩 지속 시간
-    private bool isMovingToDestination = false; // 이동 중인지 여부를 나타내는 변수
-    NavMeshAgent agent; // 길을 찾아서 이동할 에이전트
+    public float trapDuration;      // 트랩 지속 시간
 
     // 체력 관련 변수
     public MonsterScriptable monsterData;               // 몬스터 데이터 스크립터블 객체
@@ -27,20 +24,25 @@ public class Monster : MonoBehaviour
     public GameObject[] shoeOptions;
     public Vector3 clothsScale = new Vector3(11.0f, 11.0f, 9.0f);
 
+    // 움직임 관련 변수
+    private MonsterMove moveComponent;
+
     private void Awake()
     {
-        agent = GetComponent<NavMeshAgent>();           // 게임이 시작되면 게임 오브젝트에 부착된 NavMeshAgent 컴포넌트를 가져와서 저장
         hpSlider = GetComponentInChildren<Slider>();    // 몬스터에서 hp 슬라이더를 찾음
+        moveComponent = GetComponent<MonsterMove>();
 
         // 몬스터에 몬스터 슬라이더가 존재하는지 확인
         if (hpSlider == null)
-            Debug.Log("Error (Monster Slider) : 몬스터에 체력 바가 존재하지 않습니다.");
+            Debug.Assert(false, "Error (Monster Slider) : 몬스터에 체력 바가 존재하지 않습니다.");
+
+        // 몬스터에 움직임관련 컴포넌트가 존재하는지 확인
+        if (moveComponent == null)
+            Debug.Assert(false, "Error (Monster Move) : 몬스터에 움직임에 관한 컴포넌트가 존재하지 않습니다.");
     }
     private void Start()
     {
         currentHealth = monsterData.maxHp; // 현재 체력 최대 체력으로 설정
-        agent.SetDestination(target.position); // 목적지 설정
-        agent.speed = monsterData.moveSpeed; // 몬스터 이동 속도 데이터에서 받아와서 설정
         InitializeAppearanceOptions(); // 외형 카테고리 배열 초기화
         SetRandomAppearance(); // 랜덤하게 바디, 의상, 헤어 등을 선택하여 적용
     }
@@ -48,30 +50,23 @@ public class Monster : MonoBehaviour
     void Update()
     {
         if (!isTrapped)
-        {
-            if (!isMovingToDestination) // 트랩에 걸리지 않은 상태인데 목적지로 이동중이지 않으면 목적지 설정해줌
-            {
-                agent.isStopped = false;
-                agent.SetDestination(target.position);
-                isMovingToDestination = true; // 목적지로 이동 중으로 바꿔 agent.SetDestination(target.position); 이 함수 한번만 동작하게 함
-            }
-        }
+            moveComponent.InspectDestination();
     }
 
     public void SetTrapped(float duration)
     {
         if (duration < 0)
         {
-            Debug.Log("Error (Unacceptable Value) : 스턴 길이는 음수가 될 수 없습니다.");
+            Debug.Assert(false, "Error (Unacceptable Value) : 스턴 길이는 음수가 될 수 없습니다.");
             return;
         }
 
         if (!isTrapped)
         {
             isTrapped = true;
-            isMovingToDestination = false;
-            agent.isStopped = true; // agent 이동 멈추기
+            moveComponent.Stop();
             trapDuration = duration;
+
             StartCoroutine(ReleaseFromTrap()); // 멈춤 상태를 표현하는 애니메이션 등을 추가하기 
         }
     }

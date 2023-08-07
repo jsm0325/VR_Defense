@@ -10,7 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 688381892666054391}
   - component: {fileID: 6945366932007244971}
+  - component: {fileID: 988157674754245896}
   - component: {fileID: 2426080728847595928}
+  - component: {fileID: 8503660718195752976}
+  - component: {fileID: -3109705898863930450}
   m_Layer: 0
   m_Name: NormalMonster
   m_TagString: Monster
@@ -48,7 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3649c5831895d3e4c91a63920263afac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   trapDuration: 0
   monsterData: {fileID: 11400000, guid: 634d744af4433564a8be653f592a22ae, type: 2}
   hairOptions: []
@@ -60,6 +62,21 @@ MonoBehaviour:
   shoeOptions:
   - {fileID: 919132149155446097, guid: f243815f8c99fbe47a291aa3cb0d1eab, type: 3}
   clothsScale: {x: 11, y: 11, z: 9}
+--- !u!114 &988157674754245896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7184331994205427889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25d4e617a1208e942989eff7b1f6f457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterData: {fileID: 11400000, guid: 634d744af4433564a8be653f592a22ae, type: 2}
+  targetSet: {fileID: 2777240037130929463, guid: 9292208cdd7270248bfcbf52d9081639,
+    type: 3}
 --- !u!195 &2426080728847595928
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -82,6 +99,36 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &8503660718195752976
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7184331994205427889}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.5
+  m_Height: 7
+  m_Direction: 1
+  m_Center: {x: 0, y: 2.5, z: 0}
+--- !u!54 &-3109705898863930450
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7184331994205427889}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &197196444926773501
 PrefabInstance:
   m_ObjectHideFlags: 0
