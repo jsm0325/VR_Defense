@@ -32,6 +32,6 @@ public class UiManager : MonoBehaviour
     // 재화 업데이트
     public void UpdateCurrencyText(int currency)
     {
-        currencyText.text = currency.ToString();
+        currencyText.text = currency+"원";
     }
 }
