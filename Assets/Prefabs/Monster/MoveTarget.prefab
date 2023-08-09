@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 8641393322963393504}
   m_Layer: 0
   m_Name: pos2
-  m_TagString: Untagged
+  m_TagString: MoveTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 3781246668607526041}
   m_Layer: 0
   m_Name: pos1
-  m_TagString: Untagged
+  m_TagString: MoveTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 780395478100051858}
   m_Layer: 0
   m_Name: pos3
-  m_TagString: Untagged
+  m_TagString: MoveTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -302,6 +302,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Goal
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734181093888905590, guid: a76b309ccafb2dd48bb8ef0dbee6e984,
+        type: 3}
+      propertyPath: m_TagString
+      value: MoveTarget
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a76b309ccafb2dd48bb8ef0dbee6e984, type: 3}

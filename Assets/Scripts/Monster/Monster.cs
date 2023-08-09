@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.AI;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -54,8 +52,10 @@ public class Monster : MonoBehaviour
 
     void Update()
     {
-        if (!isTrapped)
-            moveComponent.InspectDestination();
+        if (isTrapped)
+            return;
+
+        moveComponent.InspectDestination();
     }
 
     public void SetTrapped(float duration)
@@ -131,5 +131,4 @@ public class Monster : MonoBehaviour
             }
         }
     }
-
 }
