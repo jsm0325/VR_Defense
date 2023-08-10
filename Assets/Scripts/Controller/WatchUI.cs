@@ -25,7 +25,7 @@ public class WatchUI : MonoBehaviour
         // 왼손 위치 감지
         Vector3 cameraForward = cameraTransform.forward;
 
-        watchUi.transform.position = cameraTransform.position + cameraForward * 1f;
+        watchUi.transform.position = cameraTransform.position + cameraForward * 1.5f;
         watchUi.transform.rotation = Quaternion.LookRotation(cameraForward);
 
         // 손목을 돌렸을 때 UI 활성화
