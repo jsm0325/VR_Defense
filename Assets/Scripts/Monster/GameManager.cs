@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    public static GameManager gameManager;
 
     public int maxHealth = 45; // 최대 체력
     public int currentHealth; // 현재 체력
@@ -12,11 +12,11 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance =null)
+        if(gameManager == null)
         {
-            instance = this;
+            gameManager = this;
         }
-        else if (instance != this)
+        else
         {
             Destroy(gameObject);
         }
@@ -40,14 +40,14 @@ public class GameManager : MonoBehaviour
         currency = 0; // 시작 시 재화를 0으로 초기화
 
         // UiManager가 존재하는지 확인 함
-        if (UiManager.instance == null)
+        if (UiManager.uiManager == null)
         {
             Debug.Assert(false, "Error (UiManager is Null) : UiManager를 찾을 수 없습니다.");
             return;
         }
 
-        UiManager.instance.UpdateHealthText(currentHealth, maxHealth);
-        UiManager.instance.UpdateCurrencyText(currency);
+        UiManager.uiManager.UpdateHealthText(currentHealth, maxHealth);
+        UiManager.uiManager.UpdateCurrencyText(currency);
     }
 
     public void DecreaseHealth(int amount) // 체력 감소 메서드

@@ -18,7 +18,7 @@ public class EndPoint : MonoBehaviour
     private void ApplyDamageToGoal(Monster monster) // 골에 닿은 몬스터의 데미지 정보를 가져와서 골의 체력에 데미지를 적용
     {
         damageAmount = monster.monsterData.damage; // 몬스터의 데미지 정보 가져오기
-        GameManager.instance.DecreaseHealth(damageAmount); // 체력 감소
-        UiManager.instance.UpdateHealthText(GameManager.instance.currentHealth, GameManager.instance.maxHealth);
+        GameManager.gameManager.DecreaseHealth(damageAmount); // 체력 감소
+        //UiManager.instance.UpdateHealthText(GameManager.instance.currentHealth, GameManager.instance.maxHealth);
     }
 }

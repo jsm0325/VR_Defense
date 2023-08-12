@@ -5,19 +5,19 @@ using TMPro;
 
 public class UiManager : MonoBehaviour
 {
-    public static UiManager instance;
+    public static UiManager uiManager;
 
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI currencyText;
 
     private void Awake()
     {
-        if (instance == null)
+        if (uiManager == null)
         {
-            instance = this;
+            uiManager = this;
         }
 
-        else if (instance != this)
+        else if (uiManager != this)
         {
             Destroy(gameObject);
         }

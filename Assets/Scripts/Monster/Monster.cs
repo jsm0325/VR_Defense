@@ -12,7 +12,6 @@ public class Monster : MonoBehaviour
     public int currentHealth { get; private set; }      // 현재 체력 (외부에서 읽기 허용)
 
     private Slider hpSlider;                            // 체력 슬라이더
-    GameObject uiManager;
 
     // 외형 카테고리들을 저장할 배열의 배열
     public GameObject[][] appearanceOptions;
@@ -30,7 +29,6 @@ public class Monster : MonoBehaviour
     {
         hpSlider = GetComponentInChildren<Slider>();    // 몬스터에서 hp 슬라이더를 찾음
         moveComponent = GetComponent<MonsterMove>();
-        uiManager= GameObject.Find("UiManager");
 
         // 몬스터에 몬스터 슬라이더가 존재하는지 확인
         if (hpSlider == null)
@@ -97,10 +95,8 @@ public class Monster : MonoBehaviour
 
     private void Die()// 몬스터가 죽었을 때 호출
     {
-        //GameManager.Instance.AddCurrency(monsterData.coin); // 몬스터 coin 값 만큼 재화 증가
-        GameManager.instance.AddCurrency(monsterData.coin);
-        //UiManager.instance.UpdateCurrencyText(GameManager.Instance.currency);
-        uiManager.GetComponent<UiManager>().UpdateCurrencyText(GameManager.instance.GetComponent<GameManager>().currency);
+        GameManager.gameManager.AddCurrency(monsterData.coin); // 몬스터 coin 값 만큼 재화 증가
+        UiManager.uiManager.UpdateCurrencyText(GameManager.gameManager.currency);
         Destroy(gameObject); // 몬스터 게임 오브젝트 삭제
     }
 
