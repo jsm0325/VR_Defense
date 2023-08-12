@@ -4,10 +4,23 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance; 
+    public static GameManager instance;
+
     public int maxHealth = 45; // 최대 체력
     public int currentHealth; // 현재 체력
     public int currency; // 재화
+
+    private void Awake()
+    {
+        if(instance =null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void Update()
     {

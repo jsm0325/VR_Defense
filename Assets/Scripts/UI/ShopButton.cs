@@ -8,7 +8,7 @@ public class ShopButton : MonoBehaviour
 
     private void BuyItem()
     {
-        if (GameManager.Instance.SpendCurrency(price)) // 게임 매니저 코드 돈 있으면 true 및 돈 소모 없으면 false
+        if (GameManager.instance.SpendCurrency(price)) // 게임 매니저 코드 돈 있으면 true 및 돈 소모 없으면 false
         {
             // 상품 구매에 성공했을 때 기능 작성하기
             

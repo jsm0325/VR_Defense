@@ -12,7 +12,6 @@ public class Monster : MonoBehaviour
     public int currentHealth { get; private set; }      // 현재 체력 (외부에서 읽기 허용)
 
     private Slider hpSlider;                            // 체력 슬라이더
-    GameObject gameManager;
     GameObject uiManager;
 
     // 외형 카테고리들을 저장할 배열의 배열
@@ -31,7 +30,6 @@ public class Monster : MonoBehaviour
     {
         hpSlider = GetComponentInChildren<Slider>();    // 몬스터에서 hp 슬라이더를 찾음
         moveComponent = GetComponent<MonsterMove>();
-        gameManager = GameObject.Find("GameManager");
         uiManager= GameObject.Find("UiManager");
 
         // 몬스터에 몬스터 슬라이더가 존재하는지 확인
@@ -46,7 +44,6 @@ public class Monster : MonoBehaviour
     {
         currentHealth = monsterData.maxHp; // 현재 체력 최대 체력으로 설정
         InitializeAppearanceOptions(); // 외형 카테고리 배열 초기화
-        SetRandomAppearance(); // 랜덤하게 바디, 의상, 헤어 등을 선택하여 적용
         SetRandomAppearance(); // 랜덤하게 바디, 의상, 헤어 등을 선택하여 적용
     }
 
@@ -101,9 +98,9 @@ public class Monster : MonoBehaviour
     private void Die()// 몬스터가 죽었을 때 호출
     {
         //GameManager.Instance.AddCurrency(monsterData.coin); // 몬스터 coin 값 만큼 재화 증가
-        gameManager.GetComponent<GameManager>().AddCurrency(monsterData.coin);
+        GameManager.instance.AddCurrency(monsterData.coin);
         //UiManager.instance.UpdateCurrencyText(GameManager.Instance.currency);
-        uiManager.GetComponent<UiManager>().UpdateCurrencyText(gameManager.GetComponent<GameManager>().currency);
+        uiManager.GetComponent<UiManager>().UpdateCurrencyText(GameManager.instance.GetComponent<GameManager>().currency);
         Destroy(gameObject); // 몬스터 게임 오브젝트 삭제
     }
 
@@ -117,7 +114,7 @@ public class Monster : MonoBehaviour
         appearanceOptions[3] = shoeOptions;
     }
 
-    private void SetRandomAppearance()
+    private void SetRandomAppearance() // 랜덤 의상 생성 코드
     {
         for (int i = 0; i < appearanceOptions.Length; i++)
         {
@@ -125,9 +122,15 @@ public class Monster : MonoBehaviour
             if (appearanceOptions[i].Length > 0)
             {
                 int randomIndex = Random.Range(0, appearanceOptions[i].Length);
-                GameObject selectedAppearance = appearanceOptions[i][randomIndex];
+                GameObject selectedAppearancePrefab = appearanceOptions[i][randomIndex];
+                GameObject selectedAppearance = Instantiate(selectedAppearancePrefab, transform.position, transform.rotation, transform);
                 selectedAppearance.transform.localScale = clothsScale;
-                Instantiate(selectedAppearance, transform);
+                Animator appearanceAnim = selectedAppearance.GetComponent<Animator>();
+                if (appearanceAnim == null)
+                {
+                    appearanceAnim = selectedAppearance.AddComponent<Animator>();
+                }
+                appearanceAnim.runtimeAnimatorController = GetComponent<Animator>().runtimeAnimatorController;
             }
         }
     }
