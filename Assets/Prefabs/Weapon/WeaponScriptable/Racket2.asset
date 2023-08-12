@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Racket2
   m_EditorClassIdentifier: 
   AttackDamage: 15
-  KnockBack: 5
+  KnockBack: 40
   AttackSpeed: 0.5
