@@ -95,9 +95,13 @@ public class Monster : MonoBehaviour
 
     private void Die()// 몬스터가 죽었을 때 호출
     {
+        ItemDrop();
         GameManager.gameManager.AddCurrency(monsterData.coin); // 몬스터 coin 값 만큼 재화 증가
-        UiManager.uiManager.UpdateCurrencyText(GameManager.gameManager.currency);
+        
+        //UiManager.uiManager.UpdateCurrencyText(GameManager.gameManager.currency);
         Destroy(gameObject); // 몬스터 게임 오브젝트 삭제
+
+
     }
 
     private void InitializeAppearanceOptions()
@@ -129,5 +133,46 @@ public class Monster : MonoBehaviour
                 appearanceAnim.runtimeAnimatorController = GetComponent<Animator>().runtimeAnimatorController;
             }
         }
+    }
+
+    public void ItemDrop()
+    {
+        Choose(new float[2] { 10f, 90f });
+        
+        float Choose(float[] probs)
+        {
+            
+            float total = 0;
+
+            foreach (float elem in probs)
+            {
+                total += elem;
+            }
+
+            float randomPoint = Random.value * total;
+
+            for (int i = 0; i < probs.Length; i++)
+            {
+                if (randomPoint < probs[i])
+                {
+                    switch(i)
+                    {
+                        case 0:
+                            int rand = Random.Range(0, monsterData.dropItem.Length);
+                            Instantiate(monsterData.dropItem[rand], transform.position, Quaternion.identity);
+                            break;
+                        case 1:
+                            break;
+                    }
+                    return i;
+                }
+                else
+                {
+                    randomPoint -= probs[i];
+                }
+            }
+            return probs.Length - 1;
+        }
+
     }
 }

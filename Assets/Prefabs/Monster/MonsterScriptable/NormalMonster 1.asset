@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08d252d547d7e134d96c9acf7e6e6fe2, type: 3}
   m_Name: NormalMonster 1
   m_EditorClassIdentifier: 
-  dropItem: []
+  dropItem:
+  - {fileID: 5081551911096055751, guid: b2adc30b35996de40984c285388800a6, type: 3}
+  - {fileID: 5081551911096055751, guid: b2adc30b35996de40984c285388800a6, type: 3}
+  - {fileID: 2233400481135209845, guid: e61844896de3a4646840e0097fb8d3b9, type: 3}
   coin: 10
   maxHp: 100
   moveSpeed: 1.6
