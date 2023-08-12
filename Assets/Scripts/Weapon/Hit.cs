@@ -5,17 +5,13 @@ using UnityEngine;
 public class Hit : MonoBehaviour
 {
     public WeaponScriptable WeaponData;
-    Vector3 ReactVector;
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Monster")
         {
-            collision.gameObject.GetComponent<Monster>().TakeDamage(WeaponData.AttackDamage);
-            ReactVector = transform.position - collision.transform.position;
-            ReactVector = ReactVector.normalized;
-
-            collision.rigidbody.AddForce(ReactVector * WeaponData.KnockBack, ForceMode.Impulse);
+            collision.gameObject.GetComponent<Monster>().TakeDamage(WeaponData.AttackDamage, transform.position, WeaponData.KnockBack);
+            
         }
     }
 }

@@ -25,6 +25,10 @@ public class Monster : MonoBehaviour
     // 움직임 관련 변수
     private MonsterMove moveComponent;
 
+    // 넉백 변수
+    Vector3 KnockBackPosition;
+
+   
     private void Awake()
     {
         hpSlider = GetComponentInChildren<Slider>();    // 몬스터에서 hp 슬라이더를 찾음
@@ -43,6 +47,7 @@ public class Monster : MonoBehaviour
         currentHealth = monsterData.maxHp; // 현재 체력 최대 체력으로 설정
         InitializeAppearanceOptions(); // 외형 카테고리 배열 초기화
         SetRandomAppearance(); // 랜덤하게 바디, 의상, 헤어 등을 선택하여 적용
+        
     }
 
     void Update()
@@ -77,10 +82,27 @@ public class Monster : MonoBehaviour
         isTrapped = false;
     }
 
-    public void TakeDamage(int damage) // 데미지 받는 코드
+    private IEnumerator KnockBack(Vector3 weaponpos, float knockback)
+    {
+        //Lerp사용 밀려나는 느낌이 들게 만듬
+        float flytime = 0.0f;
+
+        while (flytime < 0.125) //0.2초 동안 넉백
+        {
+            flytime += (Time.deltaTime);
+            KnockBackPosition = transform.position + ((transform.position - weaponpos) * knockback);    //현재 위치 - 무기 위치에 밀려나는 정도를 곱하고 더해 밀려난 위치 얻음
+            transform.position = Vector3.Lerp(transform.position, KnockBackPosition, flytime/ 0.125f);     //0.125초를 기준으로 날라감
+
+            yield return null;
+        }
+        yield return null;
+    }
+
+    public void TakeDamage(int damage,Vector3 weaponpos,float knockback) // 데미지 받는 코드
     {
         currentHealth -= damage;    // 현재 체력에서 데미지 만큼 빼는 코드
-
+        StartCoroutine(KnockBack(weaponpos, knockback));    //넉백 코루틴
+      
         // 체력 0 이하시 작동
         if (currentHealth <= 0)
         {

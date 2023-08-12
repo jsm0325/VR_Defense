@@ -7,6 +7,6 @@ public class DieButton : MonoBehaviour
     public GameObject monster;
     public void dieButton()
     {
-        monster.GetComponent<Monster>().TakeDamage(101);
+        monster.GetComponent<Monster>().TakeDamage(101,Vector3.zero,0);
     }
 }

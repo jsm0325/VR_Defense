@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Bat3
   m_EditorClassIdentifier: 
   AttackDamage: 40
-  KnockBack: 150
+  KnockBack: 0.6
   AttackSpeed: 1
