@@ -17,13 +17,14 @@ public class MonsterMove : MonoBehaviour
     private int tarPosIndex = 0;                // 몬스터가 다음에 이동해야 할 목표 지점의 인덱스
 
     private Rigidbody rigid;
+    private Collider collid;
 
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();   // 게임이 시작되면 게임 오브젝트에 부착된 NavMeshAgent 컴포넌트를 가져와서 저장
         target = new List<Transform>();
         rigid = GetComponent<Rigidbody>();
-
+        collid = GetComponent<Collider>();
         if (agent == null)
         {
             Debug.Assert(false, "Error (NavMeshAgent is Null) : 해당 객체에 NavMeshAgent가 존재하지 않습니다.");
@@ -36,6 +37,11 @@ public class MonsterMove : MonoBehaviour
             return;
         }
 
+        if (collid == null)
+        {
+            Debug.Assert(false, "Error (NavMeshAgent is Null) : 해당 객체에 Collider가 존재하지 않습니다.");
+            return;
+        }
         // 목표지점의 개수
         int childNum = targetSet.transform.childCount;
 
@@ -77,6 +83,7 @@ public class MonsterMove : MonoBehaviour
         isStop = false;
         agent.isStopped = true;             // agent 이동 멈추기
         rigid.velocity = Vector3.zero;
+        collid.isTrigger = true;
     }
 
     public void OnTriggerEnter(Collider collider)
