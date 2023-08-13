@@ -115,7 +115,7 @@ public class Monster : MonoBehaviour
             hpSlider.value = ((float)currentHealth / monsterData.maxHp) * 100;  // 현재 체력을 슬라이더에 반영
     }
 
-    private void Die()// 몬스터가 죽었을 때 호출
+    public void Die()// 몬스터가 죽었을 때 호출
     {
         ItemDrop();
         GameManager.gameManager.AddCurrency(monsterData.coin); // 몬스터 coin 값 만큼 재화 증가

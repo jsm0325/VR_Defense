@@ -7,6 +7,8 @@ public class Slot : MonoBehaviour
 {
     public Item item;
     public int itemCount;
+    public Transform summonPosition;
+    //public bool holding = false;            // 아이템이 손에 있는지 체크
 
     [SerializeField]
     private TextMeshProUGUI textCount;
@@ -24,6 +26,18 @@ public class Slot : MonoBehaviour
     {
         itemCount += count;
         textCount.text = itemCount.ToString();
+    }
+
+   public void SummonItem()
+    {
+        //if(!holding)
+        //{
+        //    holding = true;
+        GameObject summonitemObject = item.itemPrefab;
+        summonitemObject.transform.GetComponent<HoverItem2>().itemRotation = false;
+        Instantiate(summonitemObject, summonPosition.transform.position, summonPosition.transform.rotation).transform.SetParent(summonPosition);
+        summonitemObject.transform.GetComponent<Rigidbody>().isKinematic = true;
+        //}
     }
 
 }

@@ -11,8 +11,8 @@ public class Item : ScriptableObject
 
     public enum ItemType
     {
-        Attack,
-        Used,
+        CatPunch,
+        Lullaby,
         Debuff,
         Trap
     }

@@ -8,6 +8,7 @@ public class Grab : MonoBehaviour
     private bool isGrabbing = false;
     public Transform leftGrabPositon;
     public Transform rightGrabPosition;
+    public GameObject itemData;
     public int BatLevel = 1;
     public int RacketLevel = 1;
     public int WrenchLevel = 1;
@@ -44,6 +45,12 @@ public class Grab : MonoBehaviour
         if (OVRInput.GetUp(OVRInput.RawButton.LHandTrigger))
         {
             lineRenderer.enabled = false;
+        }
+
+        if(OVRInput.Get(OVRInput.RawButton.B))
+        {
+            Debug.Log("B클릭");
+            itemData.GetComponent<ItemUse>().Use();         // 아이템 사용
         }
     }
 
@@ -176,7 +183,8 @@ public class Grab : MonoBehaviour
             {
                 if (OVRInput.GetUp(OVRInput.RawButton.LHandTrigger))        // 버튼 뗐을때
                 {
-                    hit.transform.position = leftGrabPositon.transform.position;
+                    hit.transform.GetComponent<HoverItem2>().itemRotation = false;                          // 아이템 회전 중지
+                    hit.transform.position = leftGrabPositon.transform.position + new Vector3(0,0,0.2f);    // 아이템 팔 위치로
                     hit.transform.SetParent(leftGrabPositon);
                     hit.transform.GetComponent<Rigidbody>().isKinematic = true;
                     PickUp();
