@@ -13,6 +13,7 @@ public class Item : ScriptableObject
     {
         CatPunch,
         Lullaby,
+        SportsDrink,
         Debuff,
         Trap
     }

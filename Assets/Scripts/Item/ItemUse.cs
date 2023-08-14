@@ -15,6 +15,11 @@ public class ItemUse : MonoBehaviour
                 Transform itemObject = leftGrabPositon.transform.GetChild(1);                                           // 손의 1번째 자식 오브젝트 할당(위치가 바뀌면 수정)
                 itemObject.GetComponent<ItemCatPunch>().StartCatPunchCoroutine();
             }
+            else if(item == Item.ItemType.SportsDrink)
+            {
+                Transform itemObject = leftGrabPositon.transform.GetChild(1);                                           // 손의 1번째 자식 오브젝트 할당(위치가 바뀌면 수정)
+                itemObject.GetComponent<ItemSportsDrink>().SpeedIncrease();
+            }
         }
     }
 }

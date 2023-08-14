@@ -5,13 +5,21 @@ using UnityEngine;
 public class ItemCatPunch : MonoBehaviour
 {
     private Coroutine catPunchCoroutine;
+    private HoverItem2 hoverItem;
+
+    private void Awake()
+    {
+        hoverItem = GetComponent<HoverItem2>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Monster"))
+        if(hoverItem.itemRotation == false)
         {
-            StartCoroutine(HitMonster(other));
-            //other.GetComponent<Monster>().Die();
+            if (other.CompareTag("Monster"))
+            {
+                StartCoroutine(HitMonster(other));
+            }
         }
     }
 
@@ -44,11 +52,9 @@ public class ItemCatPunch : MonoBehaviour
             yield return null;
         }
 
-        //yield return new WaitForSeconds(3.0f);
-        Destroy(gameObject);
-
         // 코루틴이 끝났을 때 catPunchCoroutine을 null로 설정
         catPunchCoroutine = null;
+        Destroy(gameObject);
     }
 
     private IEnumerator HitMonster(Collider monster)
