@@ -21,7 +21,6 @@ public class ItemSlot : MonoBehaviour
     public void CloseWatchUI()
     {
         watchUiActivated = false;
-        itemSlotPanel.SetActive(false);
     }
 
     public void AcquireItem(Item item, int count = 1)

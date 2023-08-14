@@ -12,6 +12,8 @@ public class Slot : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI textCount;
+    [SerializeField]
+    private GameObject watchUi;
 
     // æ∆¿Ã≈€ »πµÊ
     public void AddItem(Item item, int count = 1)
@@ -28,16 +30,23 @@ public class Slot : MonoBehaviour
         textCount.text = itemCount.ToString();
     }
 
-   public void SummonItem()
+    public void UseItem()
     {
-        //if(!holding)
-        //{
-        //    holding = true;
-        GameObject summonitemObject = item.itemPrefab;
-        summonitemObject.transform.GetComponent<HoverItem2>().itemRotation = false;
-        Instantiate(summonitemObject, summonPosition.transform.position, summonPosition.transform.rotation).transform.SetParent(summonPosition);
-        summonitemObject.transform.GetComponent<Rigidbody>().isKinematic = true;
-        //}
+        if(itemCount > 0)
+        {
+            itemCount--;
+            textCount.text = itemCount.ToString();
+            SummonItem();
+
+            watchUi.SetActive(false);
+        }
     }
 
+   public void SummonItem()
+    {
+            GameObject summonitemObject = item.itemPrefab;
+            summonitemObject.transform.GetComponent<HoverItem2>().itemRotation = false;
+            Instantiate(summonitemObject, summonPosition.transform.position, summonPosition.transform.rotation).transform.SetParent(summonPosition);
+            summonitemObject.transform.GetComponent<Rigidbody>().isKinematic = true;
+    }
 }

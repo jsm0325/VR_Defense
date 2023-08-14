@@ -10,7 +10,8 @@ public class ItemCatPunch : MonoBehaviour
     {
         if(other.CompareTag("Monster"))
         {
-            other.GetComponent<Monster>().Die();
+            StartCoroutine(HitMonster(other));
+            //other.GetComponent<Monster>().Die();
         }
     }
 
@@ -48,5 +49,21 @@ public class ItemCatPunch : MonoBehaviour
 
         // 코루틴이 끝났을 때 catPunchCoroutine을 null로 설정
         catPunchCoroutine = null;
+    }
+
+    private IEnumerator HitMonster(Collider monster)
+    {
+        float moveTime = 0.0f;
+
+        while (moveTime < 2.0f)
+        {
+            monster.enabled = false;
+            monster.transform.Translate(gameObject.transform.forward * 0.1f);
+            moveTime += Time.deltaTime;
+            yield return null;
+        }
+
+        monster.GetComponent<Monster>().Die();
+        StopCoroutine(HitMonster(monster));
     }
 }
