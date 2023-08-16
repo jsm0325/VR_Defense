@@ -183,7 +183,7 @@ public class Grab : MonoBehaviour
                 if (OVRInput.GetUp(OVRInput.RawButton.LHandTrigger))        // 버튼 뗐을때
                 {
                     hit.transform.GetComponent<HoverItem2>().itemRotation = false;                          // 아이템 회전 중지
-                    hit.transform.position = leftGrabPositon.transform.position + new Vector3(0,0,0.2f);    // 아이템 팔 위치로
+                    hit.transform.position = leftGrabPositon.transform.position;    // 아이템 팔 위치로
                     hit.transform.SetParent(leftGrabPositon);
                     hit.transform.GetComponent<Rigidbody>().isKinematic = true;
                     if (this.name == "RightControllerGrabposition")                                         // this가 오른쪽 컨트롤러가 되면 PickUp함수가 오른쪽, 왼쪽 두 번실행되므로 this 체크
