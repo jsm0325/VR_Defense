@@ -120,7 +120,7 @@ public class Monster : MonoBehaviour
         ItemDrop();
         GameManager.gameManager.AddCurrency(monsterData.coin); // 몬스터 coin 값 만큼 재화 증가
         
-        //UiManager.uiManager.UpdateCurrencyText(GameManager.gameManager.currency);
+        UiManager.uiManager.UpdateCurrencyText(GameManager.gameManager.currency);
         Destroy(gameObject); // 몬스터 게임 오브젝트 삭제
 
 
