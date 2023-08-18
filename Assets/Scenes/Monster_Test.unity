@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -499,6 +499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftGrabPositon: {fileID: 1079330347}
+  installObject: {fileID: 1096227556}
 --- !u!4 &50010214
 Transform:
   m_ObjectHideFlags: 0
@@ -3685,6 +3686,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 562885184}
   m_CullTransparentMesh: 1
+--- !u!1001 &586933162
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1979312017}
+    m_Modifications:
+    - target: {fileID: 5888553567705465786, guid: 87d06890b990d0b40a6098574148f7c3,
+        type: 3}
+      propertyPath: m_Name
+      value: Kitten
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024042981236507391, guid: 87d06890b990d0b40a6098574148f7c3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024042981236507391, guid: 87d06890b990d0b40a6098574148f7c3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024042981236507391, guid: 87d06890b990d0b40a6098574148f7c3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024042981236507391, guid: 87d06890b990d0b40a6098574148f7c3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024042981236507391, guid: 87d06890b990d0b40a6098574148f7c3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024042981236507391, guid: 87d06890b990d0b40a6098574148f7c3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024042981236507391, guid: 87d06890b990d0b40a6098574148f7c3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024042981236507391, guid: 87d06890b990d0b40a6098574148f7c3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024042981236507391, guid: 87d06890b990d0b40a6098574148f7c3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024042981236507391, guid: 87d06890b990d0b40a6098574148f7c3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024042981236507391, guid: 87d06890b990d0b40a6098574148f7c3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 87d06890b990d0b40a6098574148f7c3, type: 3}
+--- !u!4 &586933163 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6024042981236507391, guid: 87d06890b990d0b40a6098574148f7c3,
+    type: 3}
+  m_PrefabInstance: {fileID: 586933162}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &622360470
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4782,7 +4858,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 898031286}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2124501938}
+        m_TargetAssemblyTypeName: ItemSlot, Assembly-CSharp
+        m_MethodName: CloseWatchUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 898031287}
+        m_TargetAssemblyTypeName: Slot, Assembly-CSharp
+        m_MethodName: UseItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &898031286 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9098775713776408294, guid: 6c274154b09376444982cea7729dae0c,
@@ -4793,6 +4893,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &898031287 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4917726291613088135, guid: 6c274154b09376444982cea7729dae0c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1556360472}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898031282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a0629816152214b96610b3fd25725f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &902255797 stripped
@@ -5844,6 +5956,7 @@ GameObject:
   - component: {fileID: 1096227554}
   - component: {fileID: 1096227553}
   - component: {fileID: 1096227552}
+  - component: {fileID: 1096227556}
   m_Layer: 0
   m_Name: LeftControllerGrabposition
   m_TagString: Untagged
@@ -6011,6 +6124,30 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.06974756
   m_Center: {x: -0.030418538, y: 0, z: 0}
+--- !u!114 &1096227556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096227550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ca4a40b0697d834aae8b0a7e7e2de44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  craftItem:
+  - craftName: Kitten
+    gameObjectPrefab: {fileID: 5888553567705465786, guid: 87d06890b990d0b40a6098574148f7c3,
+      type: 3}
+    gameObjectPreviewPrefab: {fileID: 4109382433718038997, guid: bfba9b9dc610ac84fa5a42b86bc9956d,
+      type: 3}
+  clickNum: 0
+  isPreviewActivated: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  range: 5
 --- !u!1 &1103431493
 GameObject:
   m_ObjectHideFlags: 0
@@ -7524,6 +7661,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 679487998}
     m_Modifications:
+    - target: {fileID: 4917726291613088135, guid: 6c274154b09376444982cea7729dae0c,
+        type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: 840cde23947b19443abd47622a3ffe62,
+        type: 2}
     - target: {fileID: 4917726291613088135, guid: 6c274154b09376444982cea7729dae0c,
         type: 3}
       propertyPath: watchUi
@@ -10201,6 +10344,7 @@ Transform:
   - {fileID: 1295639595}
   - {fileID: 2013533183}
   - {fileID: 1529366088594813719}
+  - {fileID: 586933163}
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

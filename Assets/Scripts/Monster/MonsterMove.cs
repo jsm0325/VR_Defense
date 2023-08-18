@@ -13,8 +13,8 @@ public class MonsterMove : MonoBehaviour
     private NavMeshAgent agent;                 // 길을 찾아서 이동할 에이전트
 
     public GameObject targetSet;                // 몬스터가 다음으로 이동해야 할 위치를 담는 변수
-    private List<Transform> target;             // 몬스터가 다음으로 이동해야 할 위치 정보
-    private int tarPosIndex = 0;                // 몬스터가 다음에 이동해야 할 목표 지점의 인덱스
+    public List<Transform> target;             // 몬스터가 다음으로 이동해야 할 위치 정보
+    public int tarPosIndex = 0;                // 몬스터가 다음에 이동해야 할 목표 지점의 인덱스
 
     private Rigidbody rigid;
     private Collider collid;

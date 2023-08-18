@@ -47,8 +47,9 @@ public class Grab : MonoBehaviour
             lineRenderer.enabled = false;
         }
 
-        if(OVRInput.Get(OVRInput.RawButton.B))
+        if(OVRInput.GetUp(OVRInput.RawButton.B))
         {
+            Debug.Log("B");
             itemData.GetComponent<ItemUse>().Use();         // 아이템 사용
         }
     }

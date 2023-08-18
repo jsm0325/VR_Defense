@@ -14,7 +14,7 @@ public class Item : ScriptableObject
         CatPunch,
         Lullaby,
         SportsDrink,
-        Debuff,
+        Kitten,
         Trap
     }
 }
