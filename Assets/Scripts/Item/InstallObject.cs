@@ -39,22 +39,16 @@ public class InstallObject : MonoBehaviour
         {
             PreviewPositionUpdate();
         }
-
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            Build();
-        }
     }
 
-    public void Installation(int itemNumber)
+    public void Installation(int itemNumber)                // 미리보기 생성
     {
-        clickNum++;
         preview = Instantiate(craftItem[itemNumber].gameObjectPreviewPrefab, playerTransform.position + playerTransform.forward, Quaternion.identity);
         prefab = craftItem[itemNumber].gameObjectPrefab;
         isPreviewActivated = true;
     }
 
-    private void PreviewPositionUpdate()
+    private void PreviewPositionUpdate()            // 미리보기 위치 지정
     {
         if(Physics.Raycast(gameObject.transform.position, gameObject.transform.forward, out hitInfo, range, layerMask))
         {
@@ -66,7 +60,7 @@ public class InstallObject : MonoBehaviour
         }
     }
 
-    public void Build()
+    public void Build()                         // 실제 프리팹 생성
     {
         if(isPreviewActivated)
         {

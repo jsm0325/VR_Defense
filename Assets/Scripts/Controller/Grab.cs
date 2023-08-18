@@ -49,8 +49,15 @@ public class Grab : MonoBehaviour
 
         if(OVRInput.GetUp(OVRInput.RawButton.B))
         {
-            Debug.Log("B");
-            itemData.GetComponent<ItemUse>().Use();         // 아이템 사용
+            if (this.name == "RightControllerGrabposition")                                         // this가 오른쪽 컨트롤러가 되면 PickUp함수가 오른쪽, 왼쪽 두 번실행되므로 this 체크
+            {
+                return;
+            }
+            else
+            {
+                Debug.Log("B");       // 아이템 사용
+                itemData.GetComponent<ItemUse>().Use();
+            }
         }
     }
 

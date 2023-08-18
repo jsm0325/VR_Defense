@@ -26,17 +26,17 @@ public class ItemUse : MonoBehaviour
             {
                 if(installObject.isPreviewActivated == false)
                 {
-                    //Transform itemObject = leftGrabPositon.transform.GetChild(1);
                     installObject.Installation(0);
-                    Debug.Log(installObject.clickNum);
                 }
-                //else if (installObject.clickNum > 1)
-                //{
-                //    Transform itemObject = leftGrabPositon.transform.GetChild(1);
-                //    installObject.Build();
-                //    Debug.Log(installObject.clickNum);
-                //    Destroy(itemObject.gameObject);
-                //}
+                if (installObject.clickNum > 0)
+                {
+                    Debug.Log(installObject.clickNum);
+                    Transform itemObject = leftGrabPositon.transform.GetChild(1);
+                    installObject.Build();
+                    Debug.Log(installObject.clickNum);
+                    Destroy(itemObject.gameObject);
+                }
+                installObject.clickNum++;
             }
         }
     }
