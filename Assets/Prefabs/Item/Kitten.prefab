@@ -159,4 +159,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 10
-  range: 0
+  range: 10
+  kittenFunction: {fileID: 0}

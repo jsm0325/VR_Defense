@@ -10,19 +10,25 @@ public class ItemKitten : MonoBehaviour
     [SerializeField]
     private float range = 0f;
     private SphereCollider kittenCollider;
+    private HoverItem2 hoverItem;
 
     private void Awake()
     {
         kittenCollider = GetComponent<SphereCollider>();
+        kittenCollider.radius = range;
+        hoverItem = GetComponent<HoverItem2>();
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Monster"))
+        if (hoverItem.itemRotation == false)
         {
-            if (transform.root.name.Equals("OVRPlayerController") == false)
+            if (other.CompareTag("Monster"))
             {
-                Debug.Log("½ÇÇà");
-                StartCoroutine(SeeKitten(other));
+                if (transform.root.name.Equals("OVRPlayerController") == false)
+                {
+                    //itemFunction.StartCoroutine(itemFunction.SeeKitten(other, this.gameObject, duration));
+                    StartCoroutine(SeeKitten(other));
+                }
             }
         }
     }
@@ -49,15 +55,4 @@ public class ItemKitten : MonoBehaviour
         agent.SetDestination(monsterMove.target[monsterMove.tarPosIndex].position);
         Destroy(gameObject);
     }
-
-    //private IEnumerator DestroyObject()
-    //{
-    //    float time = 0.0f;
-    //    while (time < duration)
-    //    {
-    //        time += Time.deltaTime;
-    //        yield return null;
-    //    }
-    //    Destroy(gameObject);
-    //}
 }
