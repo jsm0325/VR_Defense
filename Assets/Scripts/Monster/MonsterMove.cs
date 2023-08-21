@@ -15,7 +15,6 @@ public class MonsterMove : MonoBehaviour
     public GameObject targetSet;                // 몬스터가 다음으로 이동해야 할 위치를 담는 변수
     public List<Transform> target;             // 몬스터가 다음으로 이동해야 할 위치 정보
     public int tarPosIndex = 0;                // 몬스터가 다음에 이동해야 할 목표 지점의 인덱스
-
     private Rigidbody rigid;
     private Collider collid;
 
@@ -58,7 +57,7 @@ public class MonsterMove : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
     // 현재 몬스터가 목적지 향해 이동하는지 검사하는 메소드
@@ -84,6 +83,14 @@ public class MonsterMove : MonoBehaviour
         agent.isStopped = true;             // agent 이동 멈추기
         rigid.velocity = Vector3.zero;
         collid.isTrigger = true;
+    }
+
+    public void Move()
+    {
+        isStop = true;
+        agent.isStopped = false;
+        collid.isTrigger = false;
+        agent.SetDestination(target[tarPosIndex].position);
     }
 
     public void OnTriggerEnter(Collider collider)

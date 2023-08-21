@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class Monster : MonoBehaviour
 {
-    private bool isTrapped = false; // 트랩 걸렸는지 여부
+    public bool isTrapped = false; // 트랩 걸렸는지 여부
     public float trapDuration;      // 트랩 지속 시간
 
     // 체력 관련 변수
@@ -80,6 +80,7 @@ public class Monster : MonoBehaviour
     {
         yield return new WaitForSeconds(trapDuration); // 몬스터 정지
         isTrapped = false;
+        moveComponent.Move();
     }
 
     private IEnumerator KnockBack(Vector3 weaponpos, float knockback)

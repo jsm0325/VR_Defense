@@ -15,13 +15,14 @@ public class ItemKitten : MonoBehaviour
     private void Awake()
     {
         kittenCollider = GetComponent<SphereCollider>();
-        kittenCollider.radius = range;
         hoverItem = GetComponent<HoverItem2>();
     }
     private void OnTriggerEnter(Collider other)
     {
         if (hoverItem.itemRotation == false)
         {
+            StartCoroutine(DestroyKitten());
+            kittenCollider.radius = range;
             if (other.CompareTag("Monster"))
             {
                 if (transform.root.name.Equals("OVRPlayerController") == false)
@@ -33,13 +34,31 @@ public class ItemKitten : MonoBehaviour
         }
     }
 
+    private IEnumerator DestroyKitten()
+    {
+        float time = 0.0f;
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            yield return null;
+        }
+        gameObject.transform.position = new Vector3(1000, 100, 1000);
+
+        time = 0.0f;
+        while (time < 20.0f)
+        {
+            time += Time.deltaTime;
+            yield return null;
+        }
+        Destroy(gameObject);
+    }
+
     private IEnumerator SeeKitten(Collider monster)
     {
         float moveTime = 0.0f;
         MonsterMove monsterMove = monster.GetComponent<MonsterMove>();
         int posTempIndex;
         posTempIndex = monster.GetComponent<MonsterMove>().tarPosIndex;
-
         monsterMove.target.Add(gameObject.transform);
         monsterMove.tarPosIndex = monsterMove.target.Count - 1;
 
@@ -53,6 +72,14 @@ public class ItemKitten : MonoBehaviour
 
         monsterMove.tarPosIndex = posTempIndex;
         agent.SetDestination(monsterMove.target[monsterMove.tarPosIndex].position);
+        gameObject.transform.position = new Vector3(1000, 100, 1000);
+
+        moveTime = 0.0f;
+        while(moveTime < 20.0f)
+        {
+            moveTime += Time.deltaTime;
+            yield return null;
+        }
         Destroy(gameObject);
     }
 }
