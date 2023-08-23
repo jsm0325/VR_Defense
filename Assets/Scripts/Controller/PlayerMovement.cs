@@ -13,10 +13,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if(OVRInput.Get(OVRInput.RawButton.X))
-        {
-            playerController.Jump();
-        }
+        // 점프 임시로 제거
+        //if(OVRInput.Get(OVRInput.RawButton.X))
+        //{
+        //    playerController.Jump();
+        //}
     }
 
     public IEnumerator SpeedIncreaseCoroutine(float duration, float defaultSpeed, float increaseSpeed)
