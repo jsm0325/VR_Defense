@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
     public int maxHealth = 45; // 최대 체력
     public int currentHealth; // 현재 체력
     public int currency; // 재화
-
+    public int weaponLevel = 1;
+    public string weaponName;
     private void Awake()
     {
         if(gameManager == null)
@@ -38,6 +39,7 @@ public class GameManager : MonoBehaviour
     {
         currentHealth = maxHealth; // 시작 시 전체 체력으로 초기화
         currency = 0; // 시작 시 재화를 0으로 초기화
+        
 
         // UiManager가 존재하는지 확인 함
         if (UiManager.uiManager == null)
@@ -58,6 +60,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Game Over");
         }
     }
+
 
     public void AddCurrency(int amount)   // 재화 추가
     {

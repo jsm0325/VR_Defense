@@ -17,6 +17,7 @@ TagManager:
   - RoomLight
   - Floor
   - ItemLullaby
+  - Weapon
   layers:
   - Default
   - TransparentFX

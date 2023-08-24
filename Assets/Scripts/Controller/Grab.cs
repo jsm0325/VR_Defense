@@ -9,10 +9,9 @@ public class Grab : MonoBehaviour
     public Transform leftGrabPositon;
     public Transform rightGrabPosition;
     public GameObject itemData;
-    public int BatLevel = 1;
-    public int RacketLevel = 1;
-    public int WrenchLevel = 1;
     public ItemSlot itemSlot;
+    private int weaponLevel;
+    private string weaponName;
     private GameObject Grabbable;
     private LineRenderer lineRenderer;
     private RaycastHit hit;
@@ -35,7 +34,10 @@ public class Grab : MonoBehaviour
 
         if (!isGrabbing)        //만약 놓는다면 모든 무기를 비활성 한다.
         {
-            ChangeWeapon(false, false, false);
+            if (rightGrabPosition.transform.Find("WP_Bundle").gameObject.activeSelf == true)
+            {
+                rightGrabPosition.transform.Find("WP_Bundle").gameObject.SetActive(false);
+            }
         }
 
         if (OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.GetUp(OVRInput.RawButton.LHandTrigger))
@@ -85,8 +87,8 @@ public class Grab : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         Grabbable = other.gameObject;
-
-        if(other.CompareTag("Grabbable"))
+        
+        if (other.CompareTag("Grabbable"))
         {
             if(!isGrabbing)        //놓는다면
             {
@@ -97,79 +99,40 @@ public class Grab : MonoBehaviour
                 Grabbable.GetComponent<Rigidbody>().isKinematic = false;
             }
         }
-        if(other.CompareTag("ShopBat"))
+        if(other.CompareTag("Weapon"))
         {
             if(isGrabbing)
             {
-                ChangeWeapon(true, false, false);       //bat만 활성화
-            }
-        }
-        if (other.CompareTag("ShopRacket"))
-        {
-            if (isGrabbing)
-            {
-                ChangeWeapon(false, true, false);       //Racket만 활성화
-            }
-        }
-        if (other.CompareTag("ShopWrench"))
-        {
-            if (isGrabbing)
-            {
-                ChangeWeapon(false, false, true);       //wrench만 활성화
+                weaponName = other.name;
+                GameManager.gameManager.weaponName = weaponName;
+                ChangeWeapon(weaponName);       //무기 활성화
             }
         }
     }
 
-    private void ChangeWeapon(bool bat, bool racket, bool wrench)
+    private void ChangeWeapon(string weaponName)
     {
+        weaponLevel = GameManager.gameManager.weaponLevel;
+        // 무기 비활성화시 활성
+        if (rightGrabPosition.transform.Find("WP_Bundle").gameObject.activeSelf == false)
+        {
+            rightGrabPosition.transform.Find("WP_Bundle").gameObject.SetActive(true);
+        }
         //1랩일 때 1랩 무기 활성
-        if (BatLevel == 1)
+        if (weaponLevel == 1)
         {
-            rightGrabPosition.Find("WP_Bundle").transform.Find("Bat" + BatLevel).gameObject.SetActive(bat);
+            rightGrabPosition.transform.Find("WP_Bundle").transform.Find(weaponName + weaponLevel).gameObject.SetActive(true);
         }
         //1랩 초과일 때 전단계무기 비활성 및 현재 무기활성
-        else if (1 < BatLevel && BatLevel <= 3)
+        else if (1 < weaponLevel && weaponLevel <= 3)
         {
-            rightGrabPosition.Find("WP_Bundle").transform.Find("Bat" + BatLevel).gameObject.SetActive(bat);
-            rightGrabPosition.Find("WP_Bundle").transform.Find("Bat" + (BatLevel - 1)).gameObject.SetActive(false);
+            rightGrabPosition.transform.Find("WP_Bundle").transform.Find(weaponName + weaponLevel).gameObject.SetActive(true);
+            rightGrabPosition.transform.Find("WP_Bundle").transform.Find(weaponName + (weaponLevel - 1)).gameObject.SetActive(false);
         }
-        else if(BatLevel > 3)
+        else if(weaponLevel > 3)
         {
             Debug.Log("err");
         }
-
-        //1랩일 때 1랩 무기 활성
-        if (RacketLevel == 1)
-        {
-            rightGrabPosition.Find("WP_Bundle").transform.Find("Racket" + RacketLevel).gameObject.SetActive(racket);
-        }
-        //1랩 초과일 때 전단계무기 비활성 및 현재 무기활성
-        else if (1 < RacketLevel && RacketLevel <= 3)
-        {
-            rightGrabPosition.Find("WP_Bundle").transform.Find("Racket" + RacketLevel).gameObject.SetActive(racket);
-            rightGrabPosition.Find("WP_Bundle").transform.Find("Racket" + (RacketLevel - 1)).gameObject.SetActive(false);
-        }
-        else if (RacketLevel > 3)
-        {
-            Debug.Log("err");
-        }
-        //1랩일 때 1랩 무기 활성hzl
-
-        if (WrenchLevel == 1)
-        {
-            rightGrabPosition.Find("WP_Bundle").transform.Find("Wrench" + WrenchLevel).gameObject.SetActive(wrench);
-        }
-        //1랩 초과일 때 전단계무기 비활성 및 현재 무기활성
-        else if (1 < WrenchLevel && WrenchLevel <= 3)
-        {
-            rightGrabPosition.Find("WP_Bundle").transform.Find("Wrench" + WrenchLevel).gameObject.SetActive(wrench);
-            rightGrabPosition.Find("WP_Bundle").transform.Find("Wrench" + (WrenchLevel - 1)).gameObject.SetActive(false);
-        }
-        else if (WrenchLevel > 3)
-        {
-            Debug.Log("err");
-        }
-
     }
 
     private void ItemGrab()
