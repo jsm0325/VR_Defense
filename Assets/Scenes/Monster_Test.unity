@@ -7940,6 +7940,7 @@ GameObject:
   - component: {fileID: 1096227556}
   - component: {fileID: 1096227558}
   - component: {fileID: 1096227557}
+  - component: {fileID: 1096227559}
   m_Layer: 0
   m_Name: LeftControllerGrabposition
   m_TagString: Untagged
@@ -8148,7 +8149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 570b4edcbdee0164abbfc065f5f1687b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
   cooldown: 7
   force: 12
   paperToewlPrefab: {fileID: 5698726078380889809, guid: bf9b4f66d87e5d346b6ffa8ec043f3a6,
@@ -8167,6 +8167,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillCooldown: {fileID: 2124071982}
+--- !u!114 &1096227559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096227550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 067470b2be2eaa249894c5cb2734c356, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  cooldown: 10
+  force: 5
+  logPrefab: {fileID: 5854458863519004641, guid: 651f640ae550e9441aea7019c2ffd497,
+    type: 3}
+  isCooldown: 0
 --- !u!1 &1102903259
 GameObject:
   m_ObjectHideFlags: 0

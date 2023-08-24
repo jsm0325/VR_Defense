@@ -2,19 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkillPaperTowel : MonoBehaviour
+public class SkillLog : MonoBehaviour
 {
-    //[SerializeField]
-    //private int damage = 1;
     [SerializeField]
-    private float cooldown = 7;             // 쿨타임
+    private float cooldown = 10;             // 쿨타임
     [SerializeField]
-    private float force = 15f;              // 던지는 힘
+    private float force = 5f;              // 던지는 힘
 
     [SerializeField]
-    private GameObject paperToewlPrefab;
+    private GameObject logPrefab;
     public bool isCooldown = false;         // 쿨타임 활성화 / 비활성화 체크
-    private GameObject paperTowel;
+    private GameObject log;
 
     private Transform playerTransform;      // 플레이어 위치
 
@@ -23,13 +21,14 @@ public class SkillPaperTowel : MonoBehaviour
         playerTransform = gameObject.transform.root;            // 플레이어 위치 지정
     }
 
-    public IEnumerator PaperTowel()
+    public IEnumerator Log()
     {
         isCooldown = true;
         Vector3 playerPosition = playerTransform.transform.position;        // 플레이어 위치
         Vector3 playerForward = playerTransform.transform.forward;          // 플레이어 앞
-        paperTowel = Instantiate(paperToewlPrefab, playerPosition + playerForward + Vector3.up, playerTransform.rotation);
-        Rigidbody rigidBody = paperTowel.GetComponent<Rigidbody>();
+        Quaternion rotation = Quaternion.Euler(0f, playerTransform.rotation.eulerAngles.y, 90f);
+        log = Instantiate(logPrefab, playerPosition + playerForward, rotation);
+        Rigidbody rigidBody = log.GetComponent<Rigidbody>();
 
         if (rigidBody != null)
         {
@@ -47,6 +46,6 @@ public class SkillPaperTowel : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
 
-        Destroy(paperTowel);                        // 삭제
+        Destroy(log);                        // 삭제
     }
 }
