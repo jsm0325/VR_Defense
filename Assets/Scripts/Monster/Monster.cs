@@ -7,6 +7,8 @@ public class Monster : MonoBehaviour
     public bool isTrapped = false; // 트랩 걸렸는지 여부
     public float trapDuration;      // 트랩 지속 시간
 
+    public bool isLullaby = false;  // 자장가 아이템의 영향을 받는지 여부
+
     // 체력 관련 변수
     public MonsterScriptable monsterData;               // 몬스터 데이터 스크립터블 객체
     public int currentHealth { get; private set; }      // 현재 체력 (외부에서 읽기 허용)
@@ -28,7 +30,7 @@ public class Monster : MonoBehaviour
     // 넉백 변수
     Vector3 KnockBackPosition;
 
-   
+
     private void Awake()
     {
         hpSlider = GetComponentInChildren<Slider>();    // 몬스터에서 hp 슬라이더를 찾음
@@ -47,7 +49,6 @@ public class Monster : MonoBehaviour
         currentHealth = monsterData.maxHp; // 현재 체력 최대 체력으로 설정
         InitializeAppearanceOptions(); // 외형 카테고리 배열 초기화
         SetRandomAppearance(); // 랜덤하게 바디, 의상, 헤어 등을 선택하여 적용
-        
     }
 
     void Update()
@@ -76,11 +77,36 @@ public class Monster : MonoBehaviour
         }
     }
 
+    public void SetLullaby(float duration) 
+    {
+        if (duration < 0.0f)
+        {
+            Debug.Assert(false, "Error (Unacceptable Value) : 스턴 길이는 음수가 될 수 없습니다.");
+            return;
+        }
+
+        if (!isLullaby) 
+        {
+            isLullaby = true;
+            moveComponent.SetIsSlowingDown(duration);   //Monster의 속도가 느려짐
+            float d = duration * 2.0f;                  //느려지는 시간 + 멈춰있는 시간
+            StartCoroutine(ReleaseFromLullaby(d));      //다시 Monster가 움직임
+        }
+    }
+
     private IEnumerator ReleaseFromTrap()
     {
-        yield return new WaitForSeconds(trapDuration); // 몬스터 정지
+        yield return new WaitForSeconds(trapDuration); //몬스터 정지
         isTrapped = false;
         moveComponent.Move();
+    }
+
+    private IEnumerator ReleaseFromLullaby(float duration)
+    {
+        Debug.Log("Start Timer Release Lullaby");
+        yield return new WaitForSeconds(duration);
+        isLullaby = false;
+        moveComponent.Move();                           //Monster 다시 이동
     }
 
     private IEnumerator KnockBack(Vector3 weaponpos, float knockback)

@@ -11,12 +11,18 @@ public class MonsterMove : MonoBehaviour
 
     private bool isStop = false; // 이동 중인지 여부를 나타내는 변수
     private NavMeshAgent agent;                 // 길을 찾아서 이동할 에이전트
-
+   
     public GameObject targetSet;                // 몬스터가 다음으로 이동해야 할 위치를 담는 변수
     public List<Transform> target;             // 몬스터가 다음으로 이동해야 할 위치 정보
     public int tarPosIndex = 0;                // 몬스터가 다음에 이동해야 할 목표 지점의 인덱스
     private Rigidbody rigid;
     private Collider collid;
+
+    private float originalSpeed;
+    private float currentSpeed;
+    private bool isSlowingDown = false;
+    private bool isStopByLullaby = false;
+    private float lullabyDuration;
 
     private void Awake()
     {
@@ -53,11 +59,16 @@ public class MonsterMove : MonoBehaviour
     {
         agent.SetDestination(target[0].position);   // 목적지 설정
         agent.speed = monsterData.moveSpeed;        // 몬스터 이동 속도 데이터에서 받아와서 설정
+        originalSpeed = monsterData.moveSpeed;      //초기 이동속도 저장
+        currentSpeed = monsterData.moveSpeed;
     }
 
     void Update()
     {
-
+        if (isSlowingDown) 
+        {
+            SlowingDown();
+        }
     }
 
     // 현재 몬스터가 목적지 향해 이동하는지 검사하는 메소드
@@ -93,6 +104,28 @@ public class MonsterMove : MonoBehaviour
         agent.SetDestination(target[tarPosIndex].position);
     }
 
+    public void SetIsSlowingDown(float duration)
+    {
+        isSlowingDown = true;           
+        lullabyDuration = duration;
+    }
+
+    public void SlowingDown()
+    {
+        if (currentSpeed >= 0.001f)
+        {
+            currentSpeed -= originalSpeed / lullabyDuration * Time.deltaTime;   //duration동안 속도가 점점 0으로 줄어듦
+            agent.speed = currentSpeed;
+            Debug.Log("SlowingDown" + agent.speed);
+        }
+        else                                                                    //속도가 0에 가까워지면 
+        {
+            Stop();                                                             //멈춤
+            agent.speed = originalSpeed;                                        //속도 원상복구
+            isSlowingDown = false;
+        }
+    }
+
     public void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.tag == "MoveTarget")
@@ -108,5 +141,14 @@ public class MonsterMove : MonoBehaviour
             tarPosIndex = Convert.ToInt32(name.Substring(name.Length - 1, 1));
             agent.SetDestination(target[tarPosIndex].position);
         }
+    }
+    public bool GetIsStop() 
+    {
+        return isStop;
+    }
+
+    public void SetMoveTimer(float timer) 
+    {
+        Invoke("Move", timer);
     }
 }

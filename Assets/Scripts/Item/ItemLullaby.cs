@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class ItemLullaby : MonoBehaviour
 {
+    [SerializeField]
+    private float objectDuration = 20.0f;                           //아이템 유효시간
+    [SerializeField]
+    private float lullabyDuration = 10.0f;                          //몬스터 이동제약시간(느려짐, 멈춤)
     
-    public float validTime = 10.0f;                               //아이템 유효시간
- 
-    private bool isObtained = true;                               //아이템이 사용자에게 획득된 적이 있는지 여부
-                                                                   //아이템 획득을 관리하는 코드에서 true로 변경해줘야 함
-    private bool isInstall = false;                                //아이템 설치 여부
+    private bool isObtained = false;                                //slot에 들어갔었는지 여부
+    private bool isInstall = false;                                //아이템이 바닥에 설치됐는지의 여부
     private bool isWaitingToDestroy = false;                        //아이템이 삭제 대기 중인지의 여부
     
     private Rigidbody rigid;
@@ -26,13 +27,13 @@ public class ItemLullaby : MonoBehaviour
             return;
         }
 
-        Transform child = transform.GetChild(0);                    //첫번째 자식 개체를 불러옴
+        Transform child = transform.GetChild(0);                   
         if (child == null) {
             Debug.Assert(false, "Error (There is no child) : 해당 객체에 child가 존재하지 않습니다.");
             return;
         }
-
         itemDetect = child.GetComponent<ItemDetectMonster>();
+
         if (itemDetect == null)
         {
             Debug.Assert(false, "Error (There is no Script) : 해당 객체에 해당 스크립트가 존재하지 않습니다.");
@@ -46,34 +47,36 @@ public class ItemLullaby : MonoBehaviour
 
     private void Update() 
     {
-        if (isInstall) 
+        if (isInstall)                                      //아이템이 설치된 상태일 때
         {
-            transform.position = pos;
-            if (!isWaitingToDestroy)
+            transform.position = pos;                       
+            if (!isWaitingToDestroy)                        //삭제 대기 중이 아니면
             {
-                itemDetect.SetIsActive(true);
-                Invoke("DestroyObject", validTime); //삭제 대기 중으로 상태 변화
-                isWaitingToDestroy = true;
+                itemDetect.SetLullabyDuration(lullabyDuration);     //Monster이동제약시간 넘김
+                itemDetect.SetIsActive(true);                       //Monster감지 활성화
+                StartCoroutine(DestroyLullaby());           //아이템 삭제 타이머 시작
+                isWaitingToDestroy = true;                  //삭제 대기 중으로 변경
                 rigid.isKinematic = true;
             }
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {   
-        if (collision.gameObject.CompareTag("Floor"))
-        {   
-            if (isObtained && !isInstall)
-            {   
+    private void OnCollisionEnter(Collision collision)      //아이템을 던져서 설치한다고 가정했을 때
+    {      
+        if (collision.gameObject.CompareTag("Floor"))       //바닥과 충돌하고
+        {      
+            if (!isInstall)                                 //아이템이 설치된 상태가 아닐 때
+            {       
                 pos = transform.position;
-                isInstall = true;
+                isInstall = true;                           //설치됨으로 상태 변경
             }
         }
     }
 
-    private void DestroyObject() 
+    private IEnumerator DestroyLullaby()
     {
-        Destroy(gameObject);
+        yield return new WaitForSeconds(objectDuration);
+        Destroy(gameObject);                                //일정시간 이후 아이템 삭제
     }
 
     public void SetIsObtain(bool value)
