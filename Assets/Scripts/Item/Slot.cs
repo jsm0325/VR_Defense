@@ -44,9 +44,15 @@ public class Slot : MonoBehaviour
 
    public void SummonItem()
     {
-            GameObject summonitemObject = item.itemPrefab;
-            summonitemObject.transform.GetComponent<HoverItem2>().itemRotation = false;
-            Instantiate(summonitemObject, summonPosition.transform.position, summonPosition.transform.rotation).transform.SetParent(summonPosition);
-            summonitemObject.transform.GetComponent<Rigidbody>().isKinematic = true;
+        GameObject summonitemObject = Instantiate(item.itemPrefab, summonPosition.transform.position, summonPosition.transform.rotation);
+        HoverItem2 hoverItem = summonitemObject.GetComponent<HoverItem2>();
+        if (hoverItem != null)
+        {
+            hoverItem.itemRotation = false;
+        }
+        summonitemObject.transform.SetParent(summonPosition);
+        //summonitemObject.transform.GetComponent<HoverItem2>().itemRotation = false;
+        //Instantiate(summonitemObject, summonPosition.transform.position, summonPosition.transform.rotation).transform.SetParent(summonPosition);
+        summonitemObject.transform.GetComponent<Rigidbody>().isKinematic = true;
     }
 }

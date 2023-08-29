@@ -153,6 +153,7 @@ public class Grab : MonoBehaviour
             {
                 if (OVRInput.GetUp(OVRInput.RawButton.LHandTrigger))        // 버튼 뗐을때
                 {
+                    HoverItem2 hoverItem = hit.transform.GetComponent<HoverItem2>();
                     hit.transform.GetComponent<HoverItem2>().itemRotation = false;                          // 아이템 회전 중지
                     hit.transform.position = leftGrabPositon.transform.position;    // 아이템 팔 위치로
                     hit.transform.SetParent(leftGrabPositon);
@@ -174,9 +175,18 @@ public class Grab : MonoBehaviour
     {
         if(hit.collider.tag == "Item")
         {
-            Debug.Log(hit.transform.GetComponent<ItemPickUp>().item.itemName + "획득");
-            itemSlot.AcquireItem(hit.transform.GetComponent<ItemPickUp>().item);
-            Destroy(hit.transform.gameObject, 1f);                  // 삭제
+            Item.ItemType item = hit.transform.GetComponent<ItemPickUp>().item.itemType;        //  itemType을 할당
+            if (item == Item.ItemType.SportsDrink)
+            {
+                hit.transform.GetComponent<ItemSportsDrink>().SpeedIncrease();
+                Destroy(hit.transform.gameObject);                  // 삭제
+            }
+            else
+            {
+                Debug.Log(hit.transform.GetComponent<ItemPickUp>().item.itemName + "획득");
+                itemSlot.AcquireItem(hit.transform.GetComponent<ItemPickUp>().item);
+                Destroy(hit.transform.gameObject, 1f);                  // 삭제
+            }
         }
     }
 }

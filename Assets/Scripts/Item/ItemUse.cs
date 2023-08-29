@@ -22,10 +22,24 @@ public class ItemUse : MonoBehaviour
                     Transform itemObject = leftGrabPositon.transform.GetChild(1);                                           // 손의 1번째 자식 오브젝트 할당(위치가 바뀌면 수정)
                     itemObject.GetComponent<ItemCatPunch>().StartCatPunchCoroutine();
                 }
-                else if (item == Item.ItemType.SportsDrink)
+                //else if (item == Item.ItemType.SportsDrink)
+                //{
+                //    Transform itemObject = leftGrabPositon.transform.GetChild(1);                                     // 손의 1번째 자식 오브젝트 할당(위치가 바뀌면 수정)
+                //    itemObject.GetComponent<ItemSportsDrink>().SpeedIncrease();
+                //}
+                else if(item == Item.ItemType.Lullaby)
                 {
-                    Transform itemObject = leftGrabPositon.transform.GetChild(1);                                     // 손의 1번째 자식 오브젝트 할당(위치가 바뀌면 수정)
-                    itemObject.GetComponent<ItemSportsDrink>().SpeedIncrease();
+                    if (installObject.isPreviewActivated == false)
+                    {
+                        installObject.Installation(2);
+                    }
+                    else if (installObject.clickNum > 0)
+                    {
+                        Transform itemObject = leftGrabPositon.transform.GetChild(1);
+                        installObject.Build();
+                        Destroy(itemObject.gameObject);
+                    }
+                    installObject.clickNum++;
                 }
                 else if (item == Item.ItemType.Kitten)
                 {

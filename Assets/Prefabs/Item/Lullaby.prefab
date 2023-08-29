@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 1710523552500194764}
   - component: {fileID: 1710523552500194767}
   - component: {fileID: 1710523552500194766}
+  - component: {fileID: 747577563459634851}
+  - component: {fileID: 6768976088483213609}
   m_Layer: 0
   m_Name: Lullaby
   m_TagString: Item
@@ -28,7 +30,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1710523552500194753}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -26.2, y: 3.16, z: 6.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -112,7 +114,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f06abffce54a194c9263e0a9a99f6d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectDuration: 10
+  objectDuration: 20
+  lullabyDuration: 15
+  isInstall: 0
 --- !u!54 &1710523552500194766
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129,6 +133,35 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &747577563459634851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710523552500194753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb59d6886e878ed46af45e1ff2410d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 4ee0ddd04ac5ff148959c654e9abea27, type: 2}
+--- !u!114 &6768976088483213609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710523552500194753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb330a1fc7ec2c24fa6e8b1e30208565, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floatSpeed: 1.5
+  floatAmplitude: 0.2
+  rotationSpeed: {x: 0, y: 45, z: 0}
+  itemRotation: 1
 --- !u!1 &1710523552996871553
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,7 +207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6e9d69a7f289a24f82e3c455fdc786b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lullabyDuration: 5
 --- !u!135 &1710523552996871567
 SphereCollider:
   m_ObjectHideFlags: 0

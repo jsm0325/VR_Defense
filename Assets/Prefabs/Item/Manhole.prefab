@@ -146,7 +146,7 @@ MonoBehaviour:
   floatSpeed: 1.5
   floatAmplitude: 0.2
   rotationSpeed: {x: 0, y: 45, z: 0}
-  itemRotation: 0
+  itemRotation: 1
 --- !u!114 &7734628022415654101
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,17 +10,20 @@ public class ItemLullaby : MonoBehaviour
     private float lullabyDuration = 10.0f;                          //몬스터 이동제약시간(느려짐, 멈춤)
     
     private bool isObtained = false;                                //slot에 들어갔었는지 여부
-    private bool isInstall = false;                                //아이템이 바닥에 설치됐는지의 여부
+    public bool isInstall = false;                                //아이템이 바닥에 설치됐는지의 여부
     private bool isWaitingToDestroy = false;                        //아이템이 삭제 대기 중인지의 여부
     
     private Rigidbody rigid;
 
-    ItemDetectMonster itemDetect = null;
-    Vector3 pos;
+    private ItemDetectMonster itemDetect = null;
+    private Vector3 pos;
+
+    private HoverItem2 hoverItem;
 
     private void Awake() 
     {
         rigid = GetComponent<Rigidbody>();
+        hoverItem = GetComponent<HoverItem2>();
         if (rigid == null)
         {
             Debug.Assert(false, "Error (RigidBody is Null) : 해당 객체에 RigidBody가 존재하지 않습니다.");
@@ -47,11 +50,16 @@ public class ItemLullaby : MonoBehaviour
 
     private void Update() 
     {
+        if(hoverItem.itemRotation == false && transform.root.name.Equals("OVRPlayerController") == false)
+        {
+            isInstall = true;
+        }
         if (isInstall)                                      //아이템이 설치된 상태일 때
         {
             transform.position = pos;                       
             if (!isWaitingToDestroy)                        //삭제 대기 중이 아니면
             {
+                Debug.Log("자장가");
                 itemDetect.SetLullabyDuration(lullabyDuration);     //Monster이동제약시간 넘김
                 itemDetect.SetIsActive(true);                       //Monster감지 활성화
                 StartCoroutine(DestroyLullaby());           //아이템 삭제 타이머 시작

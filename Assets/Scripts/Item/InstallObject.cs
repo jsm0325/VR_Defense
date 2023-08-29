@@ -64,7 +64,8 @@ public class InstallObject : MonoBehaviour
     {
         if(isPreviewActivated)
         {
-            Instantiate(prefab, hitInfo.point, Quaternion.identity);
+            GameObject buildObject = Instantiate(prefab, hitInfo.point, Quaternion.identity);
+            buildObject.GetComponent<HoverItem2>().itemRotation = false;
             Destroy(preview);
             isPreviewActivated = false;
             preview = null;
