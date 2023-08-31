@@ -52,17 +52,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3649c5831895d3e4c91a63920263afac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTrapped: 0
   trapDuration: 0
+  isLullaby: 0
   monsterData: {fileID: 11400000, guid: 634d744af4433564a8be653f592a22ae, type: 2}
-  hairOptions: []
+  hairOptions:
+  - {fileID: 919132149155446097, guid: ac0b7f30f6c047840885c04536bcc200, type: 3}
+  - {fileID: 919132149155446097, guid: 3e1e7257cd0860b459d1790b5aa8aab2, type: 3}
   topOptions:
   - {fileID: 919132149155446097, guid: 449cc869715230a44abd41efcba6ac6c, type: 3}
   bottomOptions:
   - {fileID: 919132149155446097, guid: 3b085b8bfe890a544a4d001dbd260a4f, type: 3}
   - {fileID: 919132149155446097, guid: ed0e6c8142ae83e48ad353bc589b606c, type: 3}
+  - {fileID: 919132149155446097, guid: da9d39e7de80fdb429b51a1773161cdd, type: 3}
+  - {fileID: 919132149155446097, guid: 28247836cef171e4699aa0989ddc831e, type: 3}
+  - {fileID: 919132149155446097, guid: 8025ed894d3ed32479c0c83af78d8010, type: 3}
   shoeOptions:
   - {fileID: 919132149155446097, guid: f243815f8c99fbe47a291aa3cb0d1eab, type: 3}
-  clothsScale: {x: 11, y: 11, z: 9}
+  - {fileID: 919132149155446097, guid: 9783a28d09ac48f47849a03a700d5a01, type: 3}
+  clothsScale: {x: 5, y: 5, z: 5}
 --- !u!114 &988157674754245896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,6 +86,8 @@ MonoBehaviour:
   monsterData: {fileID: 11400000, guid: 634d744af4433564a8be653f592a22ae, type: 2}
   targetSet: {fileID: 2777240037130929463, guid: 9292208cdd7270248bfcbf52d9081639,
     type: 3}
+  target: []
+  tarPosIndex: 0
 --- !u!195 &2426080728847595928
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -166,17 +176,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 906fc15875e545944a1c2bcf98dee90b,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 11
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 906fc15875e545944a1c2bcf98dee90b,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 11
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 906fc15875e545944a1c2bcf98dee90b,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 9
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 906fc15875e545944a1c2bcf98dee90b,
         type: 3}
@@ -408,17 +418,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: bc1c20754c1c2814aba2fe65650245aa,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 11
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bc1c20754c1c2814aba2fe65650245aa,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 11
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bc1c20754c1c2814aba2fe65650245aa,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bc1c20754c1c2814aba2fe65650245aa,
         type: 3}
