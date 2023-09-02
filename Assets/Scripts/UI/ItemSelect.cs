@@ -1,13 +1,18 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ItemSelect : MonoBehaviour
 {
     public GameObject itemDisplay;                          // 아이템을 전시할 목록
-    public string content;                                  // 이 스크립트를 넣은 객체의 설명
 
     private List<KeyValuePair<string, GameObject>> items;   // 전시할 목록을 리스트로 저장
     private static string nowOn = "";                       // 현재 세부 사항에 표시되는 아이템 이름
+
+    public string content;                                  // 이 스크립트를 넣은 객체의 설명
+    public int cost;                                        // 구매 비용
+    public Text displayContent;                             // 설명을 표시할 Text
+    public Text displayCost;                                // 구매 비용을 표시할 Text
 
     public void Awake()
     {
@@ -25,6 +30,12 @@ public class ItemSelect : MonoBehaviour
 
         // 첫번째 아이템을 세부사항에 표시
         nowOn = items[0].Key;
+
+        if (displayContent.text.Equals("기적의 발바닥이다."))
+        {
+            displayContent.text = content;
+            displayCost.text = cost.ToString() + "$";
+        }
     }
 
     public void Update()
@@ -54,9 +65,34 @@ public class ItemSelect : MonoBehaviour
             if (items[i].Key == gameObject.name)
             {
                 items[i].Value.gameObject.SetActive(true);
-                nowOn = items[i].Key;                       // 선택한 아이템를 현재 세부사항에 표시
+                nowOn = items[i].Key;                       // 선택한 아이템 변경
+
+                // 선택한 아이템를 현재 세부사항에 표시
+                displayContent.text = content;
+                displayCost.text = cost.ToString() + "$";
                 break;
             }
         }
+    }
+
+    public void BuyItem()
+    {
+        int getCurrency = GameManager.gameManager.currency;
+
+        if (getCurrency < cost)
+        {
+            // 구매 실패 UI 출력
+            return;
+        }
+
+        // 구입한 가격을 설정
+        getCurrency -= cost;
+
+        /*
+         * 추후 구매 이펙트 반영
+         */
+
+        // 재화 반영
+        GameManager.gameManager.currency = getCurrency;
     }
 }

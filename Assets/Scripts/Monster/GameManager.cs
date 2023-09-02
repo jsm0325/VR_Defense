@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public int currency; // ¿Á»≠
     public int weaponLevel = 1;
     public string weaponName;
+
     private void Awake()
     {
         if(gameManager == null)
