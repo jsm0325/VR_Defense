@@ -37,6 +37,7 @@ public class Grab : MonoBehaviour
             if (rightGrabPosition.transform.Find("WP_Bundle").gameObject.activeSelf == true)
             {
                 rightGrabPosition.transform.Find("WP_Bundle").gameObject.SetActive(false);
+                rightGrabPosition.transform.Find("WP_Bundle").transform.Find(weaponName).transform.Find(weaponName + weaponLevel).gameObject.SetActive(false);
             }
         }
 
