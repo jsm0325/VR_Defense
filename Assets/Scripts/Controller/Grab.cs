@@ -104,13 +104,14 @@ public class Grab : MonoBehaviour
             if(isGrabbing)
             {
                 weaponName = other.name;
+                Debug.Log(weaponName);
                 GameManager.gameManager.weaponName = weaponName;
                 ChangeWeapon(weaponName);       //무기 활성화
             }
         }
     }
 
-    private void ChangeWeapon(string weaponName)
+    public void ChangeWeapon(string weaponName)
     {
         weaponLevel = GameManager.gameManager.weaponLevel;
         // 무기 비활성화시 활성
@@ -121,13 +122,13 @@ public class Grab : MonoBehaviour
         //1랩일 때 1랩 무기 활성
         if (weaponLevel == 1)
         {
-            rightGrabPosition.transform.Find("WP_Bundle").transform.Find(weaponName + weaponLevel).gameObject.SetActive(true);
+            rightGrabPosition.transform.Find("WP_Bundle").transform.Find(weaponName).transform.Find(weaponName + weaponLevel).gameObject.SetActive(true);
         }
         //1랩 초과일 때 전단계무기 비활성 및 현재 무기활성
         else if (1 < weaponLevel && weaponLevel <= 3)
         {
-            rightGrabPosition.transform.Find("WP_Bundle").transform.Find(weaponName + weaponLevel).gameObject.SetActive(true);
-            rightGrabPosition.transform.Find("WP_Bundle").transform.Find(weaponName + (weaponLevel - 1)).gameObject.SetActive(false);
+            rightGrabPosition.transform.Find("WP_Bundle").transform.Find(weaponName).transform.Find(weaponName + weaponLevel).gameObject.SetActive(true);
+            rightGrabPosition.transform.Find("WP_Bundle").transform.Find(weaponName).transform.Find(weaponName + (weaponLevel - 1)).gameObject.SetActive(false);
         }
         else if(weaponLevel > 3)
         {

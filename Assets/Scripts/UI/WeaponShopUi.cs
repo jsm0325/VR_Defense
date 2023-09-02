@@ -9,13 +9,15 @@ public class WeaponShopUi : MonoBehaviour
     public GameObject price;
     public GameObject weaponInformation;
     private GameObject weapon;
+    public GameObject grab;
     public Transform itemSelect;
     private int weaponLevel;
+    public Grab rightGrab;
     [SerializeField] private int[] upgradeCosts = new int[] { 0, 100, 200 }; // 각 무기 레벨별 업그레이드 비용 배열
 
     public void Start()
     {
-        
+        rightGrab = grab.GetComponent<Grab>();
         weaponLevel = GameManager.gameManager.weaponLevel + 1;
         price.GetComponent<Text>().text = upgradeCosts[weaponLevel - 1].ToString() + " 원";
     }
@@ -40,7 +42,7 @@ public class WeaponShopUi : MonoBehaviour
 
     public void UpgradeWeapon()
     {
-        if (GameManager.gameManager.SpendCurrency(upgradeCosts[weaponLevel])) // 게임 매니저 코드 돈 있으면 true 및 돈 소모 없으면 false
+        if (GameManager.gameManager.SpendCurrency(upgradeCosts[weaponLevel - 1])) // 게임 매니저 코드 돈 있으면 true 및 돈 소모 없으면 false
         {
             if (GameManager.gameManager.weaponLevel >= 3)
             {
@@ -49,11 +51,23 @@ public class WeaponShopUi : MonoBehaviour
             else
             {
                 GameManager.gameManager.weaponLevel += 1;
-                weaponLevel = GameManager.gameManager.weaponLevel+1;
-                weapon = itemSelect.transform.Find("WP_Bundle").transform.Find(GameManager.gameManager.weaponName).transform.Find(GameManager.gameManager.weaponName + weaponLevel).gameObject;
-                price.GetComponent<Text>().text = upgradeCosts[weaponLevel - 1].ToString() + " 원";
-                ChangeWeapon(GameManager.gameManager.weaponName);
-                weaponInformation.GetComponent<Text>().text = "무기 공격력 = " + weapon.GetComponent<Hit>().WeaponData.AttackDamage + '\n' + "무기 공격속도 = " + weapon.GetComponent<Hit>().WeaponData.AttackSpeed + '\n' + "넉백 = " + weapon.GetComponent<Hit>().WeaponData.KnockBack;
+                weaponLevel = GameManager.gameManager.weaponLevel + 1;
+                if (GameManager.gameManager.weaponLevel < 3)
+                {
+                    weapon = itemSelect.transform.Find("WP_Bundle").transform.Find(GameManager.gameManager.weaponName).transform.Find(GameManager.gameManager.weaponName + weaponLevel).gameObject;
+                    price.GetComponent<Text>().text = upgradeCosts[weaponLevel - 1].ToString() + " 원";
+                    ChangeWeapon(GameManager.gameManager.weaponName);
+                    rightGrab.ChangeWeapon(GameManager.gameManager.weaponName);
+                    weaponInformation.GetComponent<Text>().text = "무기 공격력 = " + weapon.GetComponent<Hit>().WeaponData.AttackDamage + '\n' + "무기 공격속도 = " + weapon.GetComponent<Hit>().WeaponData.AttackSpeed + '\n' + "넉백 = " + weapon.GetComponent<Hit>().WeaponData.KnockBack;
+                }
+                else
+                {
+                    price.GetComponent<Text>().text = "만렙입니다.";
+                    weaponInformation.GetComponent<Text>().text = "만렙입니다.";
+                    rightGrab.ChangeWeapon(GameManager.gameManager.weaponName);
+                    weapon.SetActive(false);
+                }
+                
             }
             Debug.Log("구매성공");
         }

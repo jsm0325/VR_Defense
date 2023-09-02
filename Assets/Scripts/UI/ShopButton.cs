@@ -6,6 +6,7 @@ public class ShopButton : MonoBehaviour
 {
     public int price; // 상품 가격
     public GameObject ShopUi;
+    public GameObject grab;
     [SerializeField] private int[] upgradeCosts = new int[] { 0, 100, 200 }; // 각 무기 레벨별 업그레이드 비용 배열
 
 
