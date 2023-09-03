@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: CatPunch
   itemType: 0
-  itemPrefab: {fileID: 6611199674221603527, guid: d3c5218c35bf3744fb66ce3ceea3f90e,
+  itemPrefab: {fileID: 7057920684266965420, guid: 4c20c2cd3fb43534a99092af0be3a8f3,
     type: 3}

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Manhole
   itemType: 4
-  itemPrefab: {fileID: 2823259405913905336, guid: 83df210270f11a949a4ce08c6f73b4c6,
+  itemPrefab: {fileID: 8278547901096604558, guid: 0a8407bdab44a4d47a90cc6c10cc366a,
     type: 3}

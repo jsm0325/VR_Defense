@@ -13,10 +13,11 @@ public class ItemManhole : MonoBehaviour
     private void Awake()
     {
         hoverItem = GetComponent<HoverItem2>();
+
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (hoverItem.itemRotation == false)
+        if (hoverItem.itemRotation == false && transform.root.name.Equals("OVRPlayerController") == false)
         {
             StartCoroutine(DestroyManhole());
             if (other.CompareTag("Monster"))
