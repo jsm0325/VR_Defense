@@ -74,25 +74,4 @@ public class ItemSelect : MonoBehaviour
             }
         }
     }
-
-    public void BuyItem()
-    {
-        int getCurrency = GameManager.gameManager.currency;
-
-        if (getCurrency < cost)
-        {
-            // 구매 실패 UI 출력
-            return;
-        }
-
-        // 구입한 가격을 설정
-        getCurrency -= cost;
-
-        /*
-         * 추후 구매 이펙트 반영
-         */
-
-        // 재화 반영
-        GameManager.gameManager.currency = getCurrency;
-    }
 }
