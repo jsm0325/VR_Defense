@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;  // 시작 시 전체 체력으로 초기화
-        currency = 0;               // 시작 시 재화를 0으로 초기화
+        currency = 1000;               // 시작 시 재화를 0으로 초기화
 
         // UiManager가 존재하는지 확인 함
         if (UiManager.uiManager == null)

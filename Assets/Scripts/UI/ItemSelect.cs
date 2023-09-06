@@ -13,6 +13,7 @@ public class ItemSelect : MonoBehaviour
     public int cost;                                        // 구매 비용
     public Text displayContent;                             // 설명을 표시할 Text
     public Text displayCost;                                // 구매 비용을 표시할 Text
+    public Text displayMoney;                               // 남은 비용을 표시할 Text
 
     public void Awake()
     {
@@ -30,12 +31,24 @@ public class ItemSelect : MonoBehaviour
 
         // 첫번째 아이템을 세부사항에 표시
         nowOn = items[0].Key;
+    }
 
-        if (displayContent.text.Equals("기적의 발바닥이다."))
-        {
-            displayContent.text = content;
-            displayCost.text = cost.ToString() + "$";
-        }
+    public void Start()
+    {
+        // 현재 금액을 가져옴
+        int currency = GameManager.gameManager.currency;
+
+        // 전시할 가격과 현재 가격을 출력함
+        displayContent.text = content;
+        displayCost.text = cost.ToString() + "$";
+        displayMoney.text = currency.ToString() + "$";
+
+        // 비용이 적절한지 판단하여 색깔을 바꿈
+        if (cost > currency)
+            displayCost.color = Color.red;
+
+        else
+            displayCost.color = Color.green;
     }
 
     public void Update()
@@ -48,6 +61,13 @@ public class ItemSelect : MonoBehaviour
         // 같은 것을 클릭할 경우 중지
         if (nowOn == gameObject.name)
             return;
+
+        // 비용이 적절한지 판단하여 색깔을 바꿈
+        if (cost > GameManager.gameManager.currency)
+            displayCost.color = Color.red;
+
+        else
+            displayCost.color = Color.green;
 
         // 아이템 목록에서 현재 켜져있는 아이템을 끔
         for (int i = 0; i < items.Count; i++)
