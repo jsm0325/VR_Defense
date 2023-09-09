@@ -227,4 +227,14 @@ public class OVRSceneSampleController : MonoBehaviour
             OVRManager.display.RecenterPose();
 #endif
     }
+    private int attackPower = 100;
+
+    public void IncreaseAttack(int amount)
+    {
+        attackPower += amount;
+        Debug.Log("공격력이 증가했습니다! 현재 공격력: " + attackPower);
+    }
+
+
 }
+

@@ -73,4 +73,26 @@ public class SkillCooldown : MonoBehaviour
             skillImage[num].fillAmount = time;
         }
     }
+    public void ReduceCooldown(float reductionAmount)
+    {
+        for (int i = 0; i < skillUse.Length; i++)
+        {
+            if (skillUse[i])
+            {
+                getSkillTime[i] -= reductionAmount;
+
+                if (getSkillTime[i] < 0)
+                {
+                    getSkillTime[i] = 0;
+                    skillUse[i] = false;
+                    hideSkillButton[i].SetActive(false);
+                }
+
+                skillCooldownText[i].text = getSkillTime[i].ToString("00");
+
+                float time = getSkillTime[i] / cooldown[i];
+                skillImage[i].fillAmount = time;
+            }
+        }
+    }
 }
