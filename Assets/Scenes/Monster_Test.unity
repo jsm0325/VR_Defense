@@ -3023,6 +3023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bfbd6edf9420ca43baeca4fc102ef2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 1940663771}
 --- !u!114 &290827882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3840,6 +3841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bfbd6edf9420ca43baeca4fc102ef2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 1940663771}
 --- !u!114 &437111055
 MonoBehaviour:
   m_ObjectHideFlags: 0

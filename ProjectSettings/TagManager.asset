@@ -18,6 +18,8 @@ TagManager:
   - Floor
   - ItemLullaby
   - Weapon
+  - QuitBed
+  - StartGame
   layers:
   - Default
   - TransparentFX

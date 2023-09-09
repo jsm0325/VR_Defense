@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Player_Room.unity
+    guid: fbab00bde55ce1844a731a140702b66d
+  - enabled: 1
     path: Assets/Scenes/GrabTest.unity
     guid: 598156e4c7450de469984cae5f1d51e4
   - enabled: 1
