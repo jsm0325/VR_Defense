@@ -6,10 +6,7 @@ public class Monster : MonoBehaviour
 {
     public bool isTrapped = false; // 트랩 걸렸는지 여부
     public float trapDuration;      // 트랩 지속 시간
-
     public bool isLullaby = false;  // 자장가 아이템의 영향을 받는지 여부
-
-    // 체력 관련 변수
     public MonsterScriptable monsterData;               // 몬스터 데이터 스크립터블 객체
     public int currentHealth { get; private set; }      // 현재 체력 (외부에서 읽기 허용)
 

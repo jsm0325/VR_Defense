@@ -15,6 +15,7 @@ public class MonsterMove : MonoBehaviour
     public GameObject targetSet;                // 몬스터가 다음으로 이동해야 할 위치를 담는 변수
     public List<Transform> target;             // 몬스터가 다음으로 이동해야 할 위치 정보
     public int tarPosIndex = 0;                // 몬스터가 다음에 이동해야 할 목표 지점의 인덱스
+    public Transform finalTarget;              // 몬스터의 최종 목표 지점
     private Rigidbody rigid;
     private Collider collid;
 
