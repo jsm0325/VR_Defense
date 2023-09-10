@@ -1,19 +1,9 @@
 fileFormatVersion: 2
-guid: ffd0b0cb701335b40a4e41563c1499c2
+guid: 6cdfca4ca20c2d04cbc703a599b0ecf8
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: dish
-    second: {fileID: 2100000, guid: c976038266725e74986f3cbe6ff6f410, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: rice
-    second: {fileID: 2100000, guid: f8d6fe0cb3304c343aede4540c4b65e7, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
