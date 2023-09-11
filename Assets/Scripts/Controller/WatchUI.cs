@@ -32,6 +32,8 @@ public class WatchUI : MonoBehaviour
         if (leftHandRotation.eulerAngles.z > 200f && leftHandRotation.eulerAngles.z < 300f && !uiActive)
         {
             watchUi.SetActive(true);
+            UiManager.uiManager.UpdateHealthText(GameManager.gameManager.currentHealth, GameManager.gameManager.maxHealth);
+            UiManager.uiManager.UpdateCurrencyText(GameManager.gameManager.currency);
             uiActive = true;
         }
 

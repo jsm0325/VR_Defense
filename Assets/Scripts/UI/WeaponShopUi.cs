@@ -27,6 +27,7 @@ public class WeaponShopUi : MonoBehaviour
         {
             objectToActivate.SetActive(true);
             weapon = itemSelect.transform.Find("WP_Bundle").transform.Find(GameManager.gameManager.weaponName).transform.Find(GameManager.gameManager.weaponName + weaponLevel).gameObject;
+            
             ChangeWeapon(GameManager.gameManager.weaponName);
             weaponInformation.GetComponent<Text>().text = "무기 공격력 = " + weapon.GetComponent<Hit>().WeaponData.AttackDamage + '\n' + "무기 공격속도 = " + weapon.GetComponent<Hit>().WeaponData.AttackSpeed + '\n' + "넉백 = " + weapon.GetComponent<Hit>().WeaponData.KnockBack;
         }
@@ -36,6 +37,7 @@ public class WeaponShopUi : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            itemSelect.transform.Find("WP_Bundle").transform.Find(GameManager.gameManager.weaponName).transform.Find(GameManager.gameManager.weaponName + weaponLevel).gameObject.SetActive(false);
             objectToActivate.SetActive(false);
         }
     }
@@ -83,6 +85,7 @@ public class WeaponShopUi : MonoBehaviour
         //1랩일 때 1랩 무기 활성
         if (weaponLevel == 1)
         {
+            
             itemSelect.transform.Find("WP_Bundle").transform.Find(weaponName).transform.Find(weaponName + weaponLevel).gameObject.SetActive(true);
         }
         //1랩 초과일 때 전단계무기 비활성 및 현재 무기활성

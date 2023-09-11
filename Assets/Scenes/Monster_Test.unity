@@ -606,7 +606,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21033615}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 4, y: 4, z: 4}
@@ -669,7 +669,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21033615}
   m_LocalRotation: {x: -0, y: 0.999923, z: -0, w: -0.012410957}
-  m_LocalPosition: {x: 1.1, y: 0.5, z: 2.93}
+  m_LocalPosition: {x: 1.74, y: 0.5, z: 4.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9542,8 +9542,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -12070,12 +12070,12 @@ PrefabInstance:
     - target: {fileID: 6117698965919728018, guid: a31c63d83212e944b886a741fcf9073b,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6117698965919728018, guid: a31c63d83212e944b886a741fcf9073b,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6945366932007244971, guid: a31c63d83212e944b886a741fcf9073b,
         type: 3}
@@ -12100,7 +12100,7 @@ PrefabInstance:
     - target: {fileID: 7184331994205427889, guid: a31c63d83212e944b886a741fcf9073b,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a31c63d83212e944b886a741fcf9073b, type: 3}
@@ -15311,7 +15311,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2129730402}
   m_LocalRotation: {x: -0, y: 0.999923, z: -0, w: -0.012410957}
-  m_LocalPosition: {x: 5.97, y: 0.5, z: 2.81}
+  m_LocalPosition: {x: 6.53, y: 0.5, z: 4.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15750,17 +15750,17 @@ PrefabInstance:
     - target: {fileID: 1710523552500194763, guid: 6454e951a5cf9fc4caf197e9a83dde96,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 6.01
       objectReference: {fileID: 0}
     - target: {fileID: 1710523552500194763, guid: 6454e951a5cf9fc4caf197e9a83dde96,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -8.58
       objectReference: {fileID: 0}
     - target: {fileID: 1710523552500194763, guid: 6454e951a5cf9fc4caf197e9a83dde96,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -4.29
       objectReference: {fileID: 0}
     - target: {fileID: 1710523552500194763, guid: 6454e951a5cf9fc4caf197e9a83dde96,
         type: 3}
@@ -16019,7 +16019,12 @@ PrefabInstance:
     - target: {fileID: 6320601643825264432, guid: 1000d9a8e64bbd34f9f35947bc254fc3,
         type: 3}
       propertyPath: waves.Array.data[0].spawnTime
-      value: 1
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6320601643825264432, guid: 1000d9a8e64bbd34f9f35947bc254fc3,
+        type: 3}
+      propertyPath: waves.Array.data[0].maxMonsterCount
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6320601643825264432, guid: 1000d9a8e64bbd34f9f35947bc254fc3,
         type: 3}
@@ -16036,7 +16041,7 @@ PrefabInstance:
         type: 3}
       propertyPath: waves.Array.data[0].monsterPrefabs.Array.data[1]
       value: 
-      objectReference: {fileID: 7184331994205427889, guid: fb4c454bdd5085449a343faa3142af2e,
+      objectReference: {fileID: 7184331994205427889, guid: e6fc878cb07110147b16d0de032ff391,
         type: 3}
     - target: {fileID: 6320601643825264432, guid: 1000d9a8e64bbd34f9f35947bc254fc3,
         type: 3}

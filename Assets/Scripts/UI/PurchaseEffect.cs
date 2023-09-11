@@ -30,6 +30,10 @@ public class PurchaseEffect : MonoBehaviour
 
     public void Update()
     {
+        if(displayMoney.text!= GameManager.gameManager.currency.ToString() + "$")
+        {
+            displayMoney.text = GameManager.gameManager.currency.ToString() + "$";
+        }
         // 코인을 구매중인 경우
         if (isPlayCoin)
             CoinRise();
@@ -51,8 +55,8 @@ public class PurchaseEffect : MonoBehaviour
 
         // 구입한 가격을 설정
         ShopButton.BuyItem(getCost);
-        displayMoney.text = GameManager.gameManager.currency.ToString() + "$";
-
+        
+        UiManager.uiManager.UpdateCurrencyText(GameManager.gameManager.currency);
         // 비용이 적절한지 판단하여 색깔을 바꿈
         if (getCost > GameManager.gameManager.currency)
             displayCost.color = Color.red;

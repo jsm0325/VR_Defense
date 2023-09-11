@@ -36,8 +36,9 @@ public class Grab : MonoBehaviour
         {
             if (rightGrabPosition.transform.Find("WP_Bundle").gameObject.activeSelf == true)
             {
-                rightGrabPosition.transform.Find("WP_Bundle").gameObject.SetActive(false);
                 rightGrabPosition.transform.Find("WP_Bundle").transform.Find(weaponName).transform.Find(weaponName + weaponLevel).gameObject.SetActive(false);
+                rightGrabPosition.transform.Find("WP_Bundle").gameObject.SetActive(false);
+                
             }
         }
 
@@ -106,8 +107,12 @@ public class Grab : MonoBehaviour
             {
                 weaponName = other.name;
                 Debug.Log(weaponName);
-                GameManager.gameManager.weaponName = weaponName;
-                ChangeWeapon(weaponName);       //무기 활성화
+                if (rightGrabPosition.transform.Find("WP_Bundle").gameObject.activeSelf == false)
+                {
+                    GameManager.gameManager.weaponName = weaponName;
+                    ChangeWeapon(weaponName);       //무기 활성화
+                }
+                
             }
         }
     }
@@ -123,6 +128,7 @@ public class Grab : MonoBehaviour
         //1랩일 때 1랩 무기 활성
         if (weaponLevel == 1)
         {
+
             rightGrabPosition.transform.Find("WP_Bundle").transform.Find(weaponName).transform.Find(weaponName + weaponLevel).gameObject.SetActive(true);
         }
         //1랩 초과일 때 전단계무기 비활성 및 현재 무기활성

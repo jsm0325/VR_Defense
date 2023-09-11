@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: NormalMonster 1
   m_EditorClassIdentifier: 
   dropItem:
-  - {fileID: 5081551911096055751, guid: b2adc30b35996de40984c285388800a6, type: 3}
-  - {fileID: 5081551911096055751, guid: b2adc30b35996de40984c285388800a6, type: 3}
-  - {fileID: 2233400481135209845, guid: e61844896de3a4646840e0097fb8d3b9, type: 3}
+  - {fileID: 4733498476798299403, guid: cdc8bdf960cd84841b5d8488a637c67a, type: 3}
+  - {fileID: 1710523552500194753, guid: 6454e951a5cf9fc4caf197e9a83dde96, type: 3}
+  - {fileID: 8278547901096604558, guid: 0a8407bdab44a4d47a90cc6c10cc366a, type: 3}
+  - {fileID: 5888553567705465786, guid: 87d06890b990d0b40a6098574148f7c3, type: 3}
+  - {fileID: 6611199674221603527, guid: d3c5218c35bf3744fb66ce3ceea3f90e, type: 3}
   coin: 10
   maxHp: 100
   moveSpeed: 1.6
