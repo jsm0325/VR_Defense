@@ -50,6 +50,13 @@ public class Grab : MonoBehaviour
         {
             lineRenderer.enabled = false;
         }
+        else if(!OVRInput.Get(OVRInput.RawButton.LHandTrigger))
+        {
+            if(lineRenderer.enabled == true)
+            {
+                lineRenderer.enabled = false;
+            }
+        }
 
         if(OVRInput.GetUp(OVRInput.RawButton.B))
         {

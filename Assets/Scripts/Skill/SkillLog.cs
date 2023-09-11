@@ -26,7 +26,7 @@ public class SkillLog : MonoBehaviour
         isCooldown = true;
         Vector3 playerPosition = playerTransform.transform.position;        // 플레이어 위치
         Vector3 playerForward = playerTransform.transform.forward;          // 플레이어 앞
-        Quaternion rotation = Quaternion.Euler(0f, playerTransform.rotation.eulerAngles.y, 90f);
+        Quaternion rotation = Quaternion.Euler(0f, playerTransform.rotation.eulerAngles.y + 90f, 0f);
         log = Instantiate(logPrefab, playerPosition + playerForward, rotation);
         Rigidbody rigidBody = log.GetComponent<Rigidbody>();
 
