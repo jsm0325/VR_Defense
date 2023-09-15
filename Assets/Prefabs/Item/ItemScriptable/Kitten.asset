@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: KItten
   itemType: 3
-  itemPrefab: {fileID: 5888553567705465786, guid: 87d06890b990d0b40a6098574148f7c3,
+  itemPrefab: {fileID: 7508852850677368866, guid: 4a64d697466766949909b4794daf3ecd,
     type: 3}

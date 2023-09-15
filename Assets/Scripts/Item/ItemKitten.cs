@@ -19,7 +19,7 @@ public class ItemKitten : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (hoverItem.itemRotation == false)
+        if (hoverItem.itemRotation == false && transform.root.name.Equals("OVRPlayerController") == false)
         {
             StartCoroutine(DestroyKitten());
             kittenCollider.radius = range;
