@@ -76,7 +76,7 @@ public class MonsterMove : MonoBehaviour
             agent.SetDestination(finalTarget.transform.position);
         }
         // 목적지와의 거리 
-        if (agent.remainingDistance < 1f) // 목적지에 도착하면 동작함
+        if (agent.remainingDistance < 1f && agent.destination == randomTarget) // 목적지에 도착하면 동작함
         {
             agent.SetDestination(finalTarget.transform.position);
             enteredZone = false;
