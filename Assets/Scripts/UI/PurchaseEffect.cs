@@ -1,40 +1,58 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PurchaseEffect : MonoBehaviour
 {
-    public GameObject coin;                     // 코인 이펙트를 실행할 오브젝트
-    public Text displayCost;                    // 구매 비용을 표시할 Text
-    public Text displayMoney;                   // 남은 금액을 표시할 Text
+    public GameObject coin;                         // 코인 이펙트를 실행할 오브젝트
+    public Text displayCost;                        // 구매 비용을 표시할 Text
+    public Text displayMoney;                       // 남은 금액을 표시할 Text
 
-    public float moveSpeed;                     // 코인의 이동 속도
-    public float fadeSpeed;                     // 사라질 때 투명해지는 속도
-    public static bool isPlayCoin = false;      // 코인 이펙트 재생 여부
+    public float moveSpeed;                         // 코인의 이동 속도
+    public float fadeSpeed;                         // 사라질 때 투명해지는 속도
+    public static bool isPlayCoin = false;          // 코인 이펙트 재생 여부
     
-    private Renderer renderer;                  // 코인의 랜더러
-    private AudioSource audio;                  // 재생할 플레이어
+    private Renderer renderer;                      // 코인의 랜더러
+    private AudioSource audio;                      // 재생할 플레이어
 
-    private float currentAlpha = 1.0f;          // 현재 코인의 투명도
+    private float currentAlpha = 1.0f;              // 현재 코인의 투명도
+
+    private GameObject itemSlotPanel;
+    private Dictionary<string, GameObject> itemSlot;// 아이템 이름에 해당하는 슬롯을 저장할 배열
+
 
     public void Start()
     {
         audio = GetComponent<AudioSource>();
+        itemSlotPanel = GameObject.Find("ItemSlotPanel");
 
         Debug.Assert(coin != null, "Error (GameObject is Null) : 코인 오브젝트가 존재하지 않습니다.");
         Debug.Assert(audio != null, "Error (AudioSource is Null) : 오디오가 존재하지 않습니다.");
+        Debug.Assert(itemSlotPanel != null, "Error (GameObject is Null) : 아이템 슬롯 패널이 존재하지 않습니다.");
 
         renderer = coin.GetComponent<Renderer>();
         coin.SetActive(false);
+
+        itemSlot = new Dictionary<string, GameObject>();
+        for (int i = 0; i < itemSlotPanel.transform.childCount; i++)
+        {
+            GameObject slot = itemSlotPanel.transform.GetChild(i).gameObject;
+            string name = slot.GetComponent<Slot>().item.itemName;
+
+            if (name == "CatPunch")
+                name = "CatPaw";
+
+            itemSlot.Add(name, slot);
+        }
     }
 
     public void Update()
     {
-        if(displayMoney.text!= GameManager.gameManager.currency.ToString() + "$")
-        {
+        if (displayMoney.text != GameManager.gameManager.currency.ToString() + "$")
             displayMoney.text = GameManager.gameManager.currency.ToString() + "$";
-        }
-        // 코인을 구매중인 경우
+
+        // 코인으로 구매중인 경우
         if (isPlayCoin)
             CoinRise();
     }
@@ -57,6 +75,7 @@ public class PurchaseEffect : MonoBehaviour
         ShopButton.BuyItem(getCost);
         
         UiManager.uiManager.UpdateCurrencyText(GameManager.gameManager.currency);
+
         // 비용이 적절한지 판단하여 색깔을 바꿈
         if (getCost > GameManager.gameManager.currency)
             displayCost.color = Color.red;
@@ -64,6 +83,7 @@ public class PurchaseEffect : MonoBehaviour
         else
             displayCost.color = Color.green;
 
+        itemSlot[ItemSelect.nowOn].GetComponent<Slot>().AddItem();
         isPlayCoin = true;
     }
 
@@ -93,7 +113,7 @@ public class PurchaseEffect : MonoBehaviour
         currentColor.a = Mathf.Max(currentAlpha, 0);
         renderer.material.color = currentColor;
 
-        // 투명도가 최소값 이하로 떨어지면 오브젝트 파괴
+        // 투명도가 최소값 이하로 떨어지면 오브젝트 비활성화
         if (currentAlpha <= 0)
         {
             coin.SetActive(false);

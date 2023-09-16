@@ -4,16 +4,16 @@ using UnityEngine.UI;
 
 public class ItemSelect : MonoBehaviour
 {
-    public GameObject itemDisplay;                          // 아이템을 전시할 목록
+    public GameObject itemDisplay;                                  // 아이템을 전시할 목록
+    public static string nowOn = "";                                // 현재 세부 사항에 표시되는 아이템 이름
+    
+    public static List<KeyValuePair<string, GameObject>> items;     // 전시할 목록을 리스트로 저장
 
-    private List<KeyValuePair<string, GameObject>> items;   // 전시할 목록을 리스트로 저장
-    private static string nowOn = "";                       // 현재 세부 사항에 표시되는 아이템 이름
-
-    public string content;                                  // 이 스크립트를 넣은 객체의 설명
-    public int cost;                                        // 구매 비용
-    public Text displayContent;                             // 설명을 표시할 Text
-    public Text displayCost;                                // 구매 비용을 표시할 Text
-    public Text displayMoney;                               // 남은 비용을 표시할 Text
+    public string content;                                          // 이 스크립트를 넣은 객체의 설명
+    public int cost;                                                // 구매 비용
+    public Text displayContent;                                     // 설명을 표시할 Text
+    public Text displayCost;                                        // 구매 비용을 표시할 Text
+    public Text displayMoney;                                       // 남은 비용을 표시할 Text
 
     public void Awake()
     {

@@ -16,10 +16,9 @@ public class Slot : MonoBehaviour
     private GameObject watchUi;
 
     // æ∆¿Ã≈€ »πµÊ
-    public void AddItem(Item item, int count = 1)
+    public void AddItem(int count = 1)
     {
-        this.item = item;
-        itemCount = count;
+        itemCount += count;
         textCount.text = itemCount.ToString();
     }
 
