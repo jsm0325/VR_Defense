@@ -87,7 +87,7 @@ MonoBehaviour:
   monsterData: {fileID: 11400000, guid: 634d744af4433564a8be653f592a22ae, type: 2}
   finalTarget: {fileID: 1734181093888905590, guid: a76b309ccafb2dd48bb8ef0dbee6e984,
     type: 3}
-  wanderRadius: 10
+  distanceAhead: 20
 --- !u!195 &2426080728847595928
 NavMeshAgent:
   m_ObjectHideFlags: 0

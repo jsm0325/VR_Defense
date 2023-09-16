@@ -13,7 +13,7 @@ public class MonsterMove : MonoBehaviour
     private NavMeshAgent agent;                 // 길을 찾아서 이동할 에이전트
 
     public GameObject finalTarget;   // 몬스터의 최종 목표 지점
-    public float distanceAhead = 1f; // 몬스터 위치에서 목적지 방향으로 생성할 거리
+    public float distanceAhead = 20f; // 몬스터 위치에서 목적지 방향으로 생성할 거리
     private Rigidbody rigid;
     private Collider collid;
 
