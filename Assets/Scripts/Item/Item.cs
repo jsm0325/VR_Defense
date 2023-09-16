@@ -15,6 +15,7 @@ public class Item : ScriptableObject
         Lullaby,
         SportsDrink,
         Kitten,
-        Trap
+        Trap,
+        CoolDownDrink
     }
 }
