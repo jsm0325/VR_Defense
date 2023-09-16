@@ -11,11 +11,9 @@ public class MonsterMove : MonoBehaviour
 
     private bool isStop = false; // 이동 중인지 여부를 나타내는 변수
     private NavMeshAgent agent;                 // 길을 찾아서 이동할 에이전트
-   
-    public GameObject targetSet;                // 몬스터가 다음으로 이동해야 할 위치를 담는 변수
-    public List<Transform> target;             // 몬스터가 다음으로 이동해야 할 위치 정보
-    public int tarPosIndex = 0;                // 몬스터가 다음에 이동해야 할 목표 지점의 인덱스
-    public Transform finalTarget;              // 몬스터의 최종 목표 지점
+
+    public GameObject finalTarget;   // 몬스터의 최종 목표 지점
+    public float distanceAhead = 1f; // 몬스터 위치에서 목적지 방향으로 생성할 거리
     private Rigidbody rigid;
     private Collider collid;
 
@@ -24,11 +22,14 @@ public class MonsterMove : MonoBehaviour
     private bool isSlowingDown = false;
     private bool isStopByLullaby = false;
     private float lullabyDuration;
-
+    private float distance;
+    private float thresholdDistance = 80;
+    private bool enteredZone = false;
+    private Vector3 randomTarget; // 랜덤 이동 목적지
     private void Awake()
     {
+        finalTarget = GameObject.FindWithTag("Finish");
         agent = GetComponent<NavMeshAgent>();   // 게임이 시작되면 게임 오브젝트에 부착된 NavMeshAgent 컴포넌트를 가져와서 저장
-        target = new List<Transform>();
         rigid = GetComponent<Rigidbody>();
         collid = GetComponent<Collider>();
         if (agent == null)
@@ -48,17 +49,12 @@ public class MonsterMove : MonoBehaviour
             Debug.Assert(false, "Error (NavMeshAgent is Null) : 해당 객체에 Collider가 존재하지 않습니다.");
             return;
         }
-        // 목표지점의 개수
-        int childNum = targetSet.transform.childCount;
 
-        // 목표지점을 기져옴
-        for (int i = 0; i < childNum; i++)
-            target.Add(targetSet.transform.GetChild(i).transform);
     }
 
     void Start()
     {
-        agent.SetDestination(target[0].position);   // 목적지 설정
+        agent.SetDestination(finalTarget.transform.position);   // 목적지 설정
         agent.speed = monsterData.moveSpeed;        // 몬스터 이동 속도 데이터에서 받아와서 설정
         originalSpeed = monsterData.moveSpeed;      //초기 이동속도 저장
         currentSpeed = monsterData.moveSpeed;
@@ -66,6 +62,26 @@ public class MonsterMove : MonoBehaviour
 
     void Update()
     {
+        distance = Vector3.Distance(gameObject.transform.position, finalTarget.transform.position);
+
+        if(distance <= thresholdDistance && enteredZone == false)
+        {
+            // 일정 거리값이 되면 랜덤한 목적지를 설정 및 거리값 줄이기
+            SetRandomDestination();
+            thresholdDistance -= 10;
+            enteredZone = true;
+
+        }  else if (distance <=20)
+        {
+            agent.SetDestination(finalTarget.transform.position);
+        }
+        // 목적지와의 거리 
+        if (agent.remainingDistance < 1f) // 목적지에 도착하면 동작함
+        {
+            agent.SetDestination(finalTarget.transform.position);
+            enteredZone = false;
+        }
+
         if (isSlowingDown) 
         {
             SlowingDown();
@@ -84,7 +100,7 @@ public class MonsterMove : MonoBehaviour
 
         // 몬스터가 이동중이지 않을 때 다음 위치로 이동하게 설정
         agent.isStopped = false;
-        agent.SetDestination(target[tarPosIndex].position);
+        agent.SetDestination(finalTarget.transform.position);
         isStop = true; // 목적지로 이동 중으로 바꿔 agent.SetDestination(target.position); 이 함수 한번만 동작하게 함
     }
 
@@ -102,7 +118,7 @@ public class MonsterMove : MonoBehaviour
         isStop = true;
         agent.isStopped = false;
         collid.isTrigger = false;
-        agent.SetDestination(target[tarPosIndex].position);
+        agent.SetDestination(finalTarget.transform.position);
     }
 
     public void SetIsSlowingDown(float duration)
@@ -127,22 +143,6 @@ public class MonsterMove : MonoBehaviour
         }
     }
 
-    public void OnTriggerEnter(Collider collider)
-    {
-        if (collider.gameObject.tag == "MoveTarget")
-        {
-            string name = collider.gameObject.name;
-
-            if (name == "Goal")
-            {
-                gameObject.SetActive(false);
-                return;
-            }
-
-            tarPosIndex = Convert.ToInt32(name.Substring(name.Length - 1, 1));
-            agent.SetDestination(target[tarPosIndex].position);
-        }
-    }
     public bool GetIsStop() 
     {
         return isStop;
@@ -151,5 +151,34 @@ public class MonsterMove : MonoBehaviour
     public void SetMoveTimer(float timer) 
     {
         Invoke("Move", timer);
+    }
+
+    public void SetRandomDestination()
+    {
+        // 오브젝트의 현재 위치와 방향 벡터 얻기
+        Vector3 objectPosition = transform.position;
+        Vector3 direction = (finalTarget.transform.position - gameObject.transform.position).normalized; // 방향 벡터 계산
+
+        // 무작위 방향 벡터 생성
+        Vector3 randomDirection = UnityEngine.Random.onUnitSphere;
+
+        // 방향 벡터를 일정 범위로 스케일링
+        Vector3 randomOffset = randomDirection * UnityEngine.Random.Range(0f, distanceAhead);
+
+        // 몬스터에서 최종 목표지점 방향으로 distanceAhead 만큼 이동한 지점에서 랜덤 위치 생성하는 코드
+        Vector3 randomPosition = objectPosition + direction * distanceAhead + randomOffset;
+
+
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(randomPosition, out hit, distanceAhead, 1)) // 위치가 이동할 수 있는 위치인지 확인하는 코드 유호하진 않은 위치면 30f 범위내에서 다시 찾음
+        {
+            randomTarget = hit.position;
+            agent.SetDestination(randomTarget); 
+            
+        }
+        else
+        {
+            Debug.LogWarning("샘플링 실패 - 유효하지 않은 위치");
+        }
     }
 }

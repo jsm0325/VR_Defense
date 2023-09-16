@@ -85,11 +85,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterData: {fileID: 11400000, guid: 634d744af4433564a8be653f592a22ae, type: 2}
-  targetSet: {fileID: 2777240037130929463, guid: 9292208cdd7270248bfcbf52d9081639,
+  finalTarget: {fileID: 1734181093888905590, guid: a76b309ccafb2dd48bb8ef0dbee6e984,
     type: 3}
-  target: []
-  tarPosIndex: 0
-  finalTarget: {fileID: 0}
+  wanderRadius: 10
 --- !u!195 &2426080728847595928
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -122,10 +120,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1.5
-  m_Height: 7
+  m_Radius: 1
+  m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 2.5, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!54 &-3109705898863930450
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -20,6 +20,6 @@ MonoBehaviour:
   - {fileID: 6611199674221603527, guid: d3c5218c35bf3744fb66ce3ceea3f90e, type: 3}
   coin: 10
   maxHp: 100
-  moveSpeed: 1.6
+  moveSpeed: 6
   damage: 1
   stun: 0
