@@ -16,6 +16,7 @@ public class ItemSlot : MonoBehaviour
     private void Start()
     {
         slots = itemSlotParent.GetComponentsInChildren<Slot>();
+        itemSlotPanel.SetActive(false);
     }
 
     public void CloseWatchUI()
