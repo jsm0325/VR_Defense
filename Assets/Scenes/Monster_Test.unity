@@ -2953,7 +2953,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &290827879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16060,7 +16060,7 @@ PrefabInstance:
     - target: {fileID: 6320601643825264432, guid: 1000d9a8e64bbd34f9f35947bc254fc3,
         type: 3}
       propertyPath: waves.Array.data[0].monsterPrefabs.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6320601643825264432, guid: 1000d9a8e64bbd34f9f35947bc254fc3,
         type: 3}
@@ -16072,7 +16072,7 @@ PrefabInstance:
         type: 3}
       propertyPath: waves.Array.data[0].monsterPrefabs.Array.data[1]
       value: 
-      objectReference: {fileID: 7184331994205427889, guid: e6fc878cb07110147b16d0de032ff391,
+      objectReference: {fileID: 7184331994205427889, guid: fb4c454bdd5085449a343faa3142af2e,
         type: 3}
     - target: {fileID: 6320601643825264432, guid: 1000d9a8e64bbd34f9f35947bc254fc3,
         type: 3}

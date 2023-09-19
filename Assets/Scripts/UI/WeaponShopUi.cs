@@ -25,11 +25,12 @@ public class WeaponShopUi : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+
             objectToActivate.SetActive(true);
             weapon = itemSelect.transform.Find("WP_Bundle").transform.Find(GameManager.gameManager.weaponName).transform.Find(GameManager.gameManager.weaponName + weaponLevel).gameObject;
-            
+            GameObject currentWeapon = itemSelect.transform.Find("WP_Bundle").transform.Find(GameManager.gameManager.weaponName).transform.Find(GameManager.gameManager.weaponName + (weaponLevel - 1)).gameObject;
             ChangeWeapon(GameManager.gameManager.weaponName);
-            weaponInformation.GetComponent<Text>().text = "무기 공격력 = " + weapon.GetComponent<Hit>().WeaponData.AttackDamage + '\n' + "무기 공격속도 = " + weapon.GetComponent<Hit>().WeaponData.AttackSpeed + '\n' + "넉백 = " + weapon.GetComponent<Hit>().WeaponData.KnockBack;
+            weaponInformation.GetComponent<Text>().text = "무기 공격력 = " + weapon.GetComponent<Hit>().WeaponData.AttackDamage + "(+" + (weapon.GetComponent<Hit>().WeaponData.AttackDamage - currentWeapon.GetComponent<Hit>().WeaponData.AttackDamage) + ")" + '\n' + "무기 공격속도 = " + weapon.GetComponent<Hit>().WeaponData.AttackSpeed + "(+" + (weapon.GetComponent<Hit>().WeaponData.AttackSpeed - currentWeapon.GetComponent<Hit>().WeaponData.AttackSpeed) + ")" + '\n' + "넉백 = " + weapon.GetComponent<Hit>().WeaponData.KnockBack + "(+" + (weapon.GetComponent<Hit>().WeaponData.KnockBack - currentWeapon.GetComponent<Hit>().WeaponData.KnockBack) + ")";
         }
     }
 
@@ -56,11 +57,12 @@ public class WeaponShopUi : MonoBehaviour
                 weaponLevel = GameManager.gameManager.weaponLevel + 1;
                 if (GameManager.gameManager.weaponLevel < 3)
                 {
+                    GameObject currentWeapon = itemSelect.transform.Find("WP_Bundle").transform.Find(GameManager.gameManager.weaponName).transform.Find(GameManager.gameManager.weaponName + (weaponLevel - 1)).gameObject;
                     weapon = itemSelect.transform.Find("WP_Bundle").transform.Find(GameManager.gameManager.weaponName).transform.Find(GameManager.gameManager.weaponName + weaponLevel).gameObject;
                     price.GetComponent<Text>().text = upgradeCosts[weaponLevel - 1].ToString() + " 원";
                     ChangeWeapon(GameManager.gameManager.weaponName);
                     rightGrab.ChangeWeapon(GameManager.gameManager.weaponName);
-                    weaponInformation.GetComponent<Text>().text = "무기 공격력 = " + weapon.GetComponent<Hit>().WeaponData.AttackDamage + '\n' + "무기 공격속도 = " + weapon.GetComponent<Hit>().WeaponData.AttackSpeed + '\n' + "넉백 = " + weapon.GetComponent<Hit>().WeaponData.KnockBack;
+                    weaponInformation.GetComponent<Text>().text = "무기 공격력 = " + weapon.GetComponent<Hit>().WeaponData.AttackDamage +"(+"+ (weapon.GetComponent<Hit>().WeaponData.AttackDamage - currentWeapon.GetComponent<Hit>().WeaponData.AttackDamage) + ")"+ '\n' + "무기 공격속도 = " + weapon.GetComponent<Hit>().WeaponData.AttackSpeed + "(+" + (weapon.GetComponent<Hit>().WeaponData.AttackSpeed - currentWeapon.GetComponent<Hit>().WeaponData.AttackSpeed) + ")" + '\n' + "넉백 = " + weapon.GetComponent<Hit>().WeaponData.KnockBack + "(+" + (weapon.GetComponent<Hit>().WeaponData.KnockBack - currentWeapon.GetComponent<Hit>().WeaponData.KnockBack) + ")";
                 }
                 else
                 {

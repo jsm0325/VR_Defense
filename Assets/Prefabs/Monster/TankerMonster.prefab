@@ -14,10 +14,9 @@ GameObject:
   - component: {fileID: 2426080728847595928}
   - component: {fileID: 3302806238844718090}
   - component: {fileID: 8695176167389792694}
-  - component: {fileID: 5241413198567684167}
   m_Layer: 0
   m_Name: TankerMonster
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56,7 +55,11 @@ MonoBehaviour:
   trapDuration: 0
   isLullaby: 0
   monsterData: {fileID: 11400000, guid: 7aa61c2a66f3da44080ad5700ae2fad7, type: 2}
-  hairOptions: []
+  hairOptions:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   topOptions: []
   bottomOptions: []
   shoeOptions: []
@@ -112,11 +115,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterData: {fileID: 11400000, guid: 7aa61c2a66f3da44080ad5700ae2fad7, type: 2}
-  targetSet: {fileID: 2777240037130929463, guid: 9292208cdd7270248bfcbf52d9081639,
+  finalTarget: {fileID: 1734181093888905590, guid: a76b309ccafb2dd48bb8ef0dbee6e984,
     type: 3}
-  target: []
-  tarPosIndex: 0
-  finalTarget: {fileID: 0}
+  distanceAhead: 20
 --- !u!136 &8695176167389792694
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -131,21 +132,6 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!111 &5241413198567684167
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7184331994205427889}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 2619c98c50db57749b075db5386a0072, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1001 &600215471960673975
 PrefabInstance:
   m_ObjectHideFlags: 0
