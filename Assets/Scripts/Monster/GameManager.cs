@@ -11,7 +11,10 @@ public class GameManager : MonoBehaviour
     public int currency; // 재화
     public int weaponLevel = 1;
     public string weaponName;
+    public int score;
+    public string studentId;
 
+    public Score rankingObject;
     private void Awake()
     {
         if(gameManager == null)
@@ -33,6 +36,12 @@ public class GameManager : MonoBehaviour
             {
                 print("It's working");
             }
+        }
+
+        // 임시 게임 종료
+        if(currentHealth <= 0)
+        {
+            rankingObject.AddHighScoreEntry(score, studentId);
         }
     }
 

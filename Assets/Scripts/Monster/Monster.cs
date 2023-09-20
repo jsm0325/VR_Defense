@@ -9,6 +9,7 @@ public class Monster : MonoBehaviour
     public bool isLullaby = false;  // 자장가 아이템의 영향을 받는지 여부
     public MonsterScriptable monsterData;               // 몬스터 데이터 스크립터블 객체
     public int currentHealth { get; private set; }      // 현재 체력 (외부에서 읽기 허용)
+    public int score = 100;                             // 점수
 
     private Slider hpSlider;                            // 체력 슬라이더
 
@@ -143,7 +144,8 @@ public class Monster : MonoBehaviour
     {
         ItemDrop();
         GameManager.gameManager.AddCurrency(monsterData.coin); // 몬스터 coin 값 만큼 재화 증가
-        
+        GameManager.gameManager.score += score;
+
         UiManager.uiManager.UpdateCurrencyText(GameManager.gameManager.currency);
         Destroy(gameObject); // 몬스터 게임 오브젝트 삭제
 
