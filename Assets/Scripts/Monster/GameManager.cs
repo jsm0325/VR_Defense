@@ -37,12 +37,6 @@ public class GameManager : MonoBehaviour
                 print("It's working");
             }
         }
-
-        // 임시 게임 종료
-        if(currentHealth <= 0)
-        {
-            rankingObject.AddHighScoreEntry(score, studentId);
-        }
     }
 
     private void Start()
@@ -67,6 +61,7 @@ public class GameManager : MonoBehaviour
         if (currentHealth <= 0) // 체력 0 되면 게임 오버
         {
             Debug.Log("Game Over");
+            rankingObject.AddHighScoreEntry(score, studentId);
         }
     }
 

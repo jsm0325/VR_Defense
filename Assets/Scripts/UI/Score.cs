@@ -26,7 +26,8 @@ public class Score : MonoBehaviour
     {
         rank.gameObject.SetActive(false);
 
-        //AddHighScoreEntry(1000, "AAK");
+        //DeleteScore();
+        //AddHighScoreEntry(1000, "AAA");
 
         string jsonString = PlayerPrefs.GetString("highScoreTable");
         HighScores highScores = JsonUtility.FromJson<HighScores>(jsonString);
