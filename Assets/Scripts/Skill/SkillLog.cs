@@ -7,7 +7,7 @@ public class SkillLog : MonoBehaviour
     [SerializeField]
     private float cooldown = 10;             // 쿨타임
     [SerializeField]
-    private float force = 5f;              // 던지는 힘
+    private float force = 5f;               // 던지는 힘
 
     [SerializeField]
     private GameObject logPrefab;
@@ -15,6 +15,8 @@ public class SkillLog : MonoBehaviour
     private GameObject log;
 
     private Transform playerTransform;      // 플레이어 위치
+
+    public SkillState[] state;              // 스킬의 스테이지 당 정보
 
     private void Awake()
     {
