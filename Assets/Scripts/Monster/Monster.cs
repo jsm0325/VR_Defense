@@ -1,9 +1,11 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-
+using System;
 public class Monster : MonoBehaviour
 {
+
+    public event Action<GameObject> OnMonsterDeath;
     public bool isTrapped = false; // 트랩 걸렸는지 여부
     public float trapDuration;      // 트랩 지속 시간
     public bool isLullaby = false;  // 자장가 아이템의 영향을 받는지 여부
@@ -12,7 +14,7 @@ public class Monster : MonoBehaviour
     public int score = 100;                             // 점수
 
     private Slider hpSlider;                            // 체력 슬라이더
-
+    public Animator monsterAnim;
     // 외형 카테고리들을 저장할 배열의 배열
     public GameObject[][] appearanceOptions;
     // 외형 카테고리들
@@ -68,6 +70,7 @@ public class Monster : MonoBehaviour
         if (!isTrapped)
         {
             isTrapped = true;
+            
             moveComponent.Stop();
             trapDuration = duration;
 
@@ -94,8 +97,10 @@ public class Monster : MonoBehaviour
 
     private IEnumerator ReleaseFromTrap()
     {
+        monsterAnim.SetBool("isTrapped", true);
         yield return new WaitForSeconds(trapDuration); //몬스터 정지
         isTrapped = false;
+        monsterAnim.SetBool("isTrapped", false);
         moveComponent.Move();
     }
 
@@ -111,7 +116,7 @@ public class Monster : MonoBehaviour
     {
         //Lerp사용 밀려나는 느낌이 들게 만듬
         float flytime = 0.0f;
-
+        //monsterAnim.SetTrigger("knockBack");
         while (flytime < 0.125) //0.2초 동안 넉백
         {
             flytime += (Time.deltaTime);
@@ -142,6 +147,10 @@ public class Monster : MonoBehaviour
 
     public void Die()// 몬스터가 죽었을 때 호출
     {
+        if (OnMonsterDeath != null)
+        {
+            OnMonsterDeath(gameObject);
+        }
         ItemDrop();
         GameManager.gameManager.AddCurrency(monsterData.coin); // 몬스터 coin 값 만큼 재화 증가
         GameManager.gameManager.score += score;
@@ -169,7 +178,7 @@ public class Monster : MonoBehaviour
             // 해당 카테고리의 배열 길이가 0 이상인 경우에만 랜덤한 인덱스 선택
             if (appearanceOptions[i].Length > 0)
             {
-                int randomIndex = Random.Range(0, appearanceOptions[i].Length);
+                int randomIndex = UnityEngine.Random.Range(0, appearanceOptions[i].Length);
                 GameObject selectedAppearancePrefab = appearanceOptions[i][randomIndex];
                 GameObject selectedAppearance = Instantiate(selectedAppearancePrefab, transform.position, transform.rotation, transform);
                 selectedAppearance.transform.localScale = clothsScale;
@@ -197,7 +206,7 @@ public class Monster : MonoBehaviour
                 total += elem;
             }
 
-            float randomPoint = Random.value * total;
+            float randomPoint = UnityEngine.Random.value * total;
 
             for (int i = 0; i < probs.Length; i++)
             {
@@ -206,7 +215,7 @@ public class Monster : MonoBehaviour
                     switch(i)
                     {
                         case 0:
-                            int rand = Random.Range(0, monsterData.dropItem.Length);
+                            int rand = UnityEngine.Random.Range(0, monsterData.dropItem.Length);
                             Instantiate(monsterData.dropItem[rand], transform.position, Quaternion.identity);
                             break;
                         case 1:

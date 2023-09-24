@@ -11,7 +11,7 @@ public class EndPoint : MonoBehaviour
         if (other.CompareTag("Monster"))
         {
             ApplyDamageToGoal(monster);
-            Destroy(other.gameObject); // 몬스터인 경우 해당 객체를 파괴
+            monster.Die();
         }
     }
 
@@ -19,7 +19,6 @@ public class EndPoint : MonoBehaviour
     {
         damageAmount = monster.monsterData.damage; // 몬스터의 데미지 정보 가져오기
         GameManager.gameManager.DecreaseHealth(damageAmount); // 체력 감소
-        //UiManager.instance.UpdateHealthText(GameManager.instance.currentHealth, GameManager.instance.maxHealth);
         UiManager.uiManager.UpdateHealthText(GameManager.gameManager.currentHealth, GameManager.gameManager.maxHealth);
     }
 }

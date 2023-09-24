@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2426080728847595928}
   - component: {fileID: 3302806238844718090}
   - component: {fileID: 8695176167389792694}
+  - component: {fileID: -247305584786813827}
   m_Layer: 0
   m_Name: TankerMonster
   m_TagString: Monster
@@ -55,14 +56,20 @@ MonoBehaviour:
   trapDuration: 0
   isLullaby: 0
   monsterData: {fileID: 11400000, guid: 7aa61c2a66f3da44080ad5700ae2fad7, type: 2}
+  score: 100
   hairOptions:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  topOptions: []
-  bottomOptions: []
-  shoeOptions: []
+  - {fileID: 919132149155446097, guid: e7ab99fd2c5af4045a2288e0c2e1fccf, type: 3}
+  - {fileID: 919132149155446097, guid: 1d1cf4b199647204a972da51f59d76a0, type: 3}
+  topOptions:
+  - {fileID: 919132149155446097, guid: 449cc869715230a44abd41efcba6ac6c, type: 3}
+  - {fileID: 919132149155446097, guid: 8c7b541b0bc22614d9469e218b5b15e4, type: 3}
+  - {fileID: 919132149155446097, guid: 2572778b190955a469527df8db93014c, type: 3}
+  bottomOptions:
+  - {fileID: 919132149155446097, guid: 9d2709a55b48c804894efc3ce2bf4342, type: 3}
+  - {fileID: 919132149155446097, guid: da9d39e7de80fdb429b51a1773161cdd, type: 3}
+  - {fileID: 919132149155446097, guid: 3b085b8bfe890a544a4d001dbd260a4f, type: 3}
+  shoeOptions:
+  - {fileID: 919132149155446097, guid: f243815f8c99fbe47a291aa3cb0d1eab, type: 3}
   clothsScale: {x: 4, y: 4, z: 4}
 --- !u!54 &2426080728847595931
 Rigidbody:
@@ -132,6 +139,27 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &-247305584786813827
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7184331994205427889}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6026a139513f95640936b5d27e5d5573, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &600215471960673975
 PrefabInstance:
   m_ObjectHideFlags: 0

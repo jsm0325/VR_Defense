@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     public string weaponName;
     public int score;
     public string studentId;
+    private int currentMonsterCount = 0;
+    private bool spawnFinished = false;
+    private int currentWave = 0;
 
     public Score rankingObject;
     private void Awake()
@@ -25,6 +28,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        DontDestroyOnLoad(gameObject);
     }
 
     void Update()
@@ -37,6 +42,7 @@ public class GameManager : MonoBehaviour
                 print("It's working");
             }
         }
+
     }
 
     private void Start()
@@ -63,6 +69,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Game Over");
             rankingObject.AddHighScoreEntry(score, studentId);
         }
+        
     }
 
 
@@ -83,5 +90,35 @@ public class GameManager : MonoBehaviour
         {
             return false;
         }
+    }
+
+    public void AddMonster()
+    {
+        currentMonsterCount++;
+    }
+    public void DieMonster()
+    {
+        currentMonsterCount--;
+        if (spawnFinished == true && currentMonsterCount == 0)
+        {
+            StageClear();
+        }
+    }
+    public void FinishSpawn()
+    {
+        spawnFinished = true;
+    }
+
+    public void StageClear()
+    {
+        // 스테이지 클리어 했을 때 작동할 것들 넣기 스킬 강화, 이동 포탈 생성, 그 외 이펙트 등
+        Debug.Log("StageClear");
+        currentWave++;
+        spawnFinished = false;
+    }
+
+    public int GetCurrentWave()
+    {
+        return currentWave;
     }
 }

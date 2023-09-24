@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10542,6 +10542,7 @@ MonoBehaviour:
   paperToewlPrefab: {fileID: 5592770542231575705, guid: f7ca14770c312c242bfaf55ac4dfb001,
     type: 3}
   isCooldown: 0
+  state: []
 --- !u!114 &1096227558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10572,6 +10573,7 @@ MonoBehaviour:
   logPrefab: {fileID: 3718703353342044851, guid: ad77410901543694eb3bd61b2bca9c7c,
     type: 3}
   isCooldown: 0
+  state: []
 --- !u!1 &1102903259
 GameObject:
   m_ObjectHideFlags: 0
@@ -20318,18 +20320,53 @@ PrefabInstance:
       objectReference: {fileID: 1380791478}
     - target: {fileID: 6320601643825264432, guid: 1000d9a8e64bbd34f9f35947bc254fc3,
         type: 3}
+      propertyPath: waves.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6320601643825264432, guid: 1000d9a8e64bbd34f9f35947bc254fc3,
+        type: 3}
       propertyPath: waves.Array.data[0].spawnTime
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6320601643825264432, guid: 1000d9a8e64bbd34f9f35947bc254fc3,
         type: 3}
+      propertyPath: waves.Array.data[1].spawnTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6320601643825264432, guid: 1000d9a8e64bbd34f9f35947bc254fc3,
+        type: 3}
+      propertyPath: waves.Array.data[2].spawnTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6320601643825264432, guid: 1000d9a8e64bbd34f9f35947bc254fc3,
+        type: 3}
       propertyPath: waves.Array.data[0].maxMonsterCount
-      value: 20
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6320601643825264432, guid: 1000d9a8e64bbd34f9f35947bc254fc3,
+        type: 3}
+      propertyPath: waves.Array.data[1].maxMonsterCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6320601643825264432, guid: 1000d9a8e64bbd34f9f35947bc254fc3,
+        type: 3}
+      propertyPath: waves.Array.data[2].maxMonsterCount
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6320601643825264432, guid: 1000d9a8e64bbd34f9f35947bc254fc3,
         type: 3}
       propertyPath: waves.Array.data[0].monsterPrefabs.Array.size
-      value: 4
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6320601643825264432, guid: 1000d9a8e64bbd34f9f35947bc254fc3,
+        type: 3}
+      propertyPath: waves.Array.data[1].monsterPrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6320601643825264432, guid: 1000d9a8e64bbd34f9f35947bc254fc3,
+        type: 3}
+      propertyPath: waves.Array.data[2].monsterPrefabs.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6320601643825264432, guid: 1000d9a8e64bbd34f9f35947bc254fc3,
         type: 3}
@@ -20341,7 +20378,7 @@ PrefabInstance:
         type: 3}
       propertyPath: waves.Array.data[0].monsterPrefabs.Array.data[1]
       value: 
-      objectReference: {fileID: 7184331994205427889, guid: fb4c454bdd5085449a343faa3142af2e,
+      objectReference: {fileID: 7184331994205427889, guid: a31c63d83212e944b886a741fcf9073b,
         type: 3}
     - target: {fileID: 6320601643825264432, guid: 1000d9a8e64bbd34f9f35947bc254fc3,
         type: 3}
@@ -20354,6 +20391,18 @@ PrefabInstance:
       propertyPath: waves.Array.data[0].monsterPrefabs.Array.data[3]
       value: 
       objectReference: {fileID: 7184331994205427889, guid: 546bc5901a316a54f8a2a5d1f60ef70b,
+        type: 3}
+    - target: {fileID: 6320601643825264432, guid: 1000d9a8e64bbd34f9f35947bc254fc3,
+        type: 3}
+      propertyPath: waves.Array.data[1].monsterPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 7184331994205427889, guid: a31c63d83212e944b886a741fcf9073b,
+        type: 3}
+    - target: {fileID: 6320601643825264432, guid: 1000d9a8e64bbd34f9f35947bc254fc3,
+        type: 3}
+      propertyPath: waves.Array.data[2].monsterPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 7184331994205427889, guid: a31c63d83212e944b886a741fcf9073b,
         type: 3}
     - target: {fileID: 6320601643825264433, guid: 1000d9a8e64bbd34f9f35947bc254fc3,
         type: 3}
