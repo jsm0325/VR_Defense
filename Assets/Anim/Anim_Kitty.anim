@@ -36,7 +36,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root
+    path: Root
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -61,7 +61,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis
+    path: Root/Pelvis
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -86,7 +86,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:R_hip
+    path: Root/Pelvis/R_hip
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -111,7 +111,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:R_hip/Anim_Toilet_tissue:R_knee
+    path: Root/Pelvis/R_hip/R_knee
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -136,32 +136,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:R_hip/Anim_Toilet_tissue:R_knee/Anim_Toilet_tissue:R_Ankle
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: 0, y: -0, z: -0, w: 1}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 0.20833334
-        value: {x: 0, y: -0, z: -0, w: 1}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:R_hip/Anim_Toilet_tissue:R_knee/Anim_Toilet_tissue:R_Ankle/Anim_Toilet_tissue:R_foot
+    path: Root/Pelvis/R_hip/R_knee/R_Ankle
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -186,82 +161,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:R_hip/Anim_Toilet_tissue:R_knee/Anim_Toilet_tissue:R_Ankle/Anim_Toilet_tissue:R_foot2
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: 0, y: 0, z: -0, w: 1}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 0.20833334
-        value: {x: 0, y: 0, z: -0, w: 1}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:L_hip
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: 0, y: 0, z: -0, w: 1}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 0.20833334
-        value: {x: 0, y: 0, z: -0, w: 1}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:L_hip/Anim_Toilet_tissue:L_knee
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: 0, y: 0, z: -0, w: 1}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 0.20833334
-        value: {x: 0, y: 0, z: -0, w: 1}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:L_hip/Anim_Toilet_tissue:L_knee/Anim_Toilet_tissue:L_Ankle
+    path: Root/Pelvis/R_hip/R_knee/R_Ankle/R_foot
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -286,32 +186,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:L_hip/Anim_Toilet_tissue:L_knee/Anim_Toilet_tissue:L_Ankle/Anim_Toilet_tissue:L_foot
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: 0, y: -0, z: -0, w: 1}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 0.20833334
-        value: {x: 0, y: -0, z: -0, w: 1}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:L_hip/Anim_Toilet_tissue:L_knee/Anim_Toilet_tissue:L_Ankle/Anim_Toilet_tissue:L_foot1
+    path: Root/Pelvis/R_hip/R_knee/R_Ankle/R_foot2
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -336,7 +211,132 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:waist
+    path: Root/Pelvis/L_hip
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0, y: 0, z: -0, w: 1}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.20833334
+        value: {x: 0, y: 0, z: -0, w: 1}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Root/Pelvis/L_hip/L_knee
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0, y: 0, z: -0, w: 1}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.20833334
+        value: {x: 0, y: 0, z: -0, w: 1}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Root/Pelvis/L_hip/L_knee/L_Ankle
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0, y: -0, z: -0, w: 1}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.20833334
+        value: {x: 0, y: -0, z: -0, w: 1}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Root/Pelvis/L_hip/L_knee/L_Ankle/L_foot
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0, y: -0, z: -0, w: 1}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.20833334
+        value: {x: 0, y: -0, z: -0, w: 1}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Root/Pelvis/L_hip/L_knee/L_Ankle/L_foot1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0, y: 0, z: -0, w: 1}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.20833334
+        value: {x: 0, y: 0, z: -0, w: 1}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Root/Pelvis/waist
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -361,7 +361,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:waist/Anim_Toilet_tissue:chest
+    path: Root/Pelvis/waist/chest
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -395,7 +395,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:waist/Anim_Toilet_tissue:chest/Anim_Toilet_tissue:collarbone
+    path: Root/Pelvis/waist/chest/collarbone
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -438,7 +438,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:waist/Anim_Toilet_tissue:chest/Anim_Toilet_tissue:collarbone/Anim_Toilet_tissue:neck
+    path: Root/Pelvis/waist/chest/collarbone/neck
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -463,7 +463,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:waist/Anim_Toilet_tissue:chest/Anim_Toilet_tissue:collarbone/Anim_Toilet_tissue:neck/Anim_Toilet_tissue:head
+    path: Root/Pelvis/waist/chest/collarbone/neck/head
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -488,7 +488,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:waist/Anim_Toilet_tissue:chest/Anim_Toilet_tissue:collarbone/Anim_Toilet_tissue:R_shoulder
+    path: Root/Pelvis/waist/chest/collarbone/R_shoulder
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -531,7 +531,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:waist/Anim_Toilet_tissue:chest/Anim_Toilet_tissue:collarbone/Anim_Toilet_tissue:R_shoulder/Anim_Toilet_tissue:R_elbow
+    path: Root/Pelvis/waist/chest/collarbone/R_shoulder/R_elbow
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -556,7 +556,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:waist/Anim_Toilet_tissue:chest/Anim_Toilet_tissue:collarbone/Anim_Toilet_tissue:R_shoulder/Anim_Toilet_tissue:R_elbow/Anim_Toilet_tissue:R_hand
+    path: Root/Pelvis/waist/chest/collarbone/R_shoulder/R_elbow/R_hand
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -581,7 +581,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:waist/Anim_Toilet_tissue:chest/Anim_Toilet_tissue:collarbone/Anim_Toilet_tissue:L_shoulder
+    path: Root/Pelvis/waist/chest/collarbone/L_shoulder
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -633,7 +633,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:waist/Anim_Toilet_tissue:chest/Anim_Toilet_tissue:collarbone/Anim_Toilet_tissue:L_shoulder/Anim_Toilet_tissue:L_elbow
+    path: Root/Pelvis/waist/chest/collarbone/L_shoulder/L_elbow
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -658,7 +658,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:waist/Anim_Toilet_tissue:chest/Anim_Toilet_tissue:collarbone/Anim_Toilet_tissue:L_shoulder/Anim_Toilet_tissue:L_elbow/Anim_Toilet_tissue:L_hand
+    path: Root/Pelvis/waist/chest/collarbone/L_shoulder/L_elbow/L_hand
   m_CompressedRotationCurves: []
   m_EulerCurves: []
   m_PositionCurves:
@@ -686,7 +686,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root
+    path: Root
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -711,7 +711,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis
+    path: Root/Pelvis
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -736,7 +736,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:R_hip
+    path: Root/Pelvis/R_hip
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -761,7 +761,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:R_hip/Anim_Toilet_tissue:R_knee
+    path: Root/Pelvis/R_hip/R_knee
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -786,7 +786,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:R_hip/Anim_Toilet_tissue:R_knee/Anim_Toilet_tissue:R_Ankle
+    path: Root/Pelvis/R_hip/R_knee/R_Ankle
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -811,7 +811,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:R_hip/Anim_Toilet_tissue:R_knee/Anim_Toilet_tissue:R_Ankle/Anim_Toilet_tissue:R_foot
+    path: Root/Pelvis/R_hip/R_knee/R_Ankle/R_foot
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -836,7 +836,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:R_hip/Anim_Toilet_tissue:R_knee/Anim_Toilet_tissue:R_Ankle/Anim_Toilet_tissue:R_foot2
+    path: Root/Pelvis/R_hip/R_knee/R_Ankle/R_foot2
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -861,7 +861,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:L_hip
+    path: Root/Pelvis/L_hip
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -886,7 +886,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:L_hip/Anim_Toilet_tissue:L_knee
+    path: Root/Pelvis/L_hip/L_knee
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -911,7 +911,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:L_hip/Anim_Toilet_tissue:L_knee/Anim_Toilet_tissue:L_Ankle
+    path: Root/Pelvis/L_hip/L_knee/L_Ankle
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -936,7 +936,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:L_hip/Anim_Toilet_tissue:L_knee/Anim_Toilet_tissue:L_Ankle/Anim_Toilet_tissue:L_foot
+    path: Root/Pelvis/L_hip/L_knee/L_Ankle/L_foot
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -961,7 +961,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:L_hip/Anim_Toilet_tissue:L_knee/Anim_Toilet_tissue:L_Ankle/Anim_Toilet_tissue:L_foot1
+    path: Root/Pelvis/L_hip/L_knee/L_Ankle/L_foot1
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -986,7 +986,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:waist
+    path: Root/Pelvis/waist
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1011,7 +1011,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:waist/Anim_Toilet_tissue:chest
+    path: Root/Pelvis/waist/chest
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1072,7 +1072,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:waist/Anim_Toilet_tissue:chest/Anim_Toilet_tissue:collarbone
+    path: Root/Pelvis/waist/chest/collarbone
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1097,7 +1097,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:waist/Anim_Toilet_tissue:chest/Anim_Toilet_tissue:collarbone/Anim_Toilet_tissue:neck
+    path: Root/Pelvis/waist/chest/collarbone/neck
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1122,7 +1122,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:waist/Anim_Toilet_tissue:chest/Anim_Toilet_tissue:collarbone/Anim_Toilet_tissue:neck/Anim_Toilet_tissue:head
+    path: Root/Pelvis/waist/chest/collarbone/neck/head
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1147,7 +1147,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:waist/Anim_Toilet_tissue:chest/Anim_Toilet_tissue:collarbone/Anim_Toilet_tissue:R_shoulder
+    path: Root/Pelvis/waist/chest/collarbone/R_shoulder
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1172,7 +1172,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:waist/Anim_Toilet_tissue:chest/Anim_Toilet_tissue:collarbone/Anim_Toilet_tissue:R_shoulder/Anim_Toilet_tissue:R_elbow
+    path: Root/Pelvis/waist/chest/collarbone/R_shoulder/R_elbow
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1197,7 +1197,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:waist/Anim_Toilet_tissue:chest/Anim_Toilet_tissue:collarbone/Anim_Toilet_tissue:R_shoulder/Anim_Toilet_tissue:R_elbow/Anim_Toilet_tissue:R_hand
+    path: Root/Pelvis/waist/chest/collarbone/R_shoulder/R_elbow/R_hand
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1222,7 +1222,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:waist/Anim_Toilet_tissue:chest/Anim_Toilet_tissue:collarbone/Anim_Toilet_tissue:L_shoulder
+    path: Root/Pelvis/waist/chest/collarbone/L_shoulder
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1247,7 +1247,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:waist/Anim_Toilet_tissue:chest/Anim_Toilet_tissue:collarbone/Anim_Toilet_tissue:L_shoulder/Anim_Toilet_tissue:L_elbow
+    path: Root/Pelvis/waist/chest/collarbone/L_shoulder/L_elbow
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1272,7 +1272,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Anim_Toilet_tissue:Root/Anim_Toilet_tissue:Pelvis/Anim_Toilet_tissue:waist/Anim_Toilet_tissue:chest/Anim_Toilet_tissue:collarbone/Anim_Toilet_tissue:L_shoulder/Anim_Toilet_tissue:L_elbow/Anim_Toilet_tissue:L_hand
+    path: Root/Pelvis/waist/chest/collarbone/L_shoulder/L_elbow/L_hand
   m_ScaleCurves: []
   m_FloatCurves: []
   m_PPtrCurves: []
