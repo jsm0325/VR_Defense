@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class LogCollision : MonoBehaviour
 {
-    [SerializeField]
-    private int damage = 50;
-    [SerializeField]
-    private float knockback = 0.5f;
+    public int damage = 50;
+    public float knockback = 0.5f;
 
     private void OnCollisionEnter(Collision collision)
     {

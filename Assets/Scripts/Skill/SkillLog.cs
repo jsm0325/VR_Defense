@@ -16,8 +16,6 @@ public class SkillLog : MonoBehaviour
 
     private Transform playerTransform;      // 플레이어 위치
 
-    public SkillState[] state;              // 스킬의 스테이지 당 정보
-
     private void Awake()
     {
         playerTransform = gameObject.transform.root;            // 플레이어 위치 지정
@@ -29,8 +27,14 @@ public class SkillLog : MonoBehaviour
         Vector3 playerPosition = playerTransform.transform.position;        // 플레이어 위치
         Vector3 playerForward = playerTransform.transform.forward;          // 플레이어 앞
         Quaternion rotation = Quaternion.Euler(0f, playerTransform.rotation.eulerAngles.y + 90f, 0f);
+
         log = Instantiate(logPrefab, playerPosition + playerForward, rotation);
         Rigidbody rigidBody = log.GetComponent<Rigidbody>();
+
+        LogCollision logCollision = log.GetComponent<LogCollision>();
+        int level = GameManager.gameManager.GetCurrentWave();
+        logCollision.damage = GameManager.gameManager.logState[level].damage;
+        logCollision.knockback = GameManager.gameManager.logState[level].knockback;
 
         if (rigidBody != null)
         {

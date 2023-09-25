@@ -15,7 +15,6 @@ public class SkillCooldown : MonoBehaviour
     [SerializeField]
     private Image[] skillImage;
     private bool[] skillUse = { false, false };
-    private float[] cooldown = { 10, 7 };
     private float[] getSkillTime = { 0, 0 };
 
     private void Start()
@@ -35,7 +34,16 @@ public class SkillCooldown : MonoBehaviour
     public void HideSkillSetting(int num)
     {
         hideSkillButton[num].SetActive(true);
-        getSkillTime[num] = cooldown[num];
+
+        // 스테이지마다 쿨타임을 가져옴
+        int level = GameManager.gameManager.GetCurrentWave();
+
+        if (num == 0)
+            getSkillTime[num] = GameManager.gameManager.logState[level].cooldown;
+
+        else if (num == 1)
+            getSkillTime[num] = GameManager.gameManager.paperState[level].cooldown;
+
         skillUse[num] = true;
     }
 
@@ -69,7 +77,15 @@ public class SkillCooldown : MonoBehaviour
 
             skillCooldownText[num].text = getSkillTime[num].ToString("00");
 
-            float time = getSkillTime[num] / cooldown[num];
+            // 해당 스킬에 맞는 쿨타임을 가져옴
+            int level = GameManager.gameManager.GetCurrentWave();
+            float time = 0.0f;
+            if (num == 0)
+                time = getSkillTime[num] / GameManager.gameManager.logState[num].cooldown;
+
+            else if (num == 1)
+                time = getSkillTime[num] / GameManager.gameManager.paperState[level].cooldown;
+
             skillImage[num].fillAmount = time;
         }
     }
@@ -90,7 +106,13 @@ public class SkillCooldown : MonoBehaviour
 
                 skillCooldownText[i].text = getSkillTime[i].ToString("00");
 
-                float time = getSkillTime[i] / cooldown[i];
+                int level = GameManager.gameManager.GetCurrentWave();
+                float time = 0.0f;
+                if (i == 0)
+                    time = getSkillTime[i] / GameManager.gameManager.logState[i].cooldown;
+
+                else if (i == 1)
+                    time = getSkillTime[i] / GameManager.gameManager.paperState[level].cooldown;
                 skillImage[i].fillAmount = time;
             }
         }

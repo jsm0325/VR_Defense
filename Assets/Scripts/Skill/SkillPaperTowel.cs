@@ -18,8 +18,6 @@ public class SkillPaperTowel : MonoBehaviour
 
     private Transform playerTransform;      // 플레이어 위치
 
-    public SkillState[] state;              // 스킬의 스테이지 당 정보
-
     private void Awake()
     {
         playerTransform = gameObject.transform.root;            // 플레이어 위치 지정

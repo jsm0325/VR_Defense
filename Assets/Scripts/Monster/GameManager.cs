@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
     private bool spawnFinished = false;
     private int currentWave = 0;
 
+    public SkillState[] logState;           // 통나무 스킬의 스테이지 당 정보
+    public SkillState[] paperState;         // 휴지 스킬의 스테이지 당 정보
+
     public Score rankingObject;
     private void Awake()
     {
