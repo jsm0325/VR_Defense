@@ -1,14 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SkillLog : MonoBehaviour
 {
-    [SerializeField]
-    private float cooldown = 10;             // 쿨타임
-    [SerializeField]
-    private float force = 5f;               // 던지는 힘
-
     [SerializeField]
     private GameObject logPrefab;
     public bool isCooldown = false;         // 쿨타임 활성화 / 비활성화 체크
@@ -31,19 +25,19 @@ public class SkillLog : MonoBehaviour
         log = Instantiate(logPrefab, playerPosition + playerForward, rotation);
         Rigidbody rigidBody = log.GetComponent<Rigidbody>();
 
-        LogCollision logCollision = log.GetComponent<LogCollision>();
         int level = GameManager.gameManager.GetCurrentWave();
-        logCollision.damage = GameManager.gameManager.logState[level].damage;
-        logCollision.knockback = GameManager.gameManager.logState[level].knockback;
+        SkillState skillState = GameManager.gameManager.logState[level];
+
+        log.transform.localScale *= skillState.objSize;
 
         if (rigidBody != null)
         {
-            rigidBody.AddForce(playerForward * force, ForceMode.Impulse);           // 플레이어 앞쪽에서 날아감
+            rigidBody.AddForce(playerForward * skillState.force, ForceMode.Impulse);   // 플레이어 앞쪽에서 날아감
         }
 
         StartCoroutine(DestroyPrefab());
 
-        yield return new WaitForSeconds(cooldown);
+        yield return new WaitForSeconds(skillState.cooldown);
 
         isCooldown = false;
     }

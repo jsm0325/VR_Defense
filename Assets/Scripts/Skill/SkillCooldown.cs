@@ -81,7 +81,7 @@ public class SkillCooldown : MonoBehaviour
             int level = GameManager.gameManager.GetCurrentWave();
             float time = 0.0f;
             if (num == 0)
-                time = getSkillTime[num] / GameManager.gameManager.logState[num].cooldown;
+                time = getSkillTime[num] / GameManager.gameManager.logState[level].cooldown;
 
             else if (num == 1)
                 time = getSkillTime[num] / GameManager.gameManager.paperState[level].cooldown;
@@ -109,7 +109,7 @@ public class SkillCooldown : MonoBehaviour
                 int level = GameManager.gameManager.GetCurrentWave();
                 float time = 0.0f;
                 if (i == 0)
-                    time = getSkillTime[i] / GameManager.gameManager.logState[i].cooldown;
+                    time = getSkillTime[i] / GameManager.gameManager.logState[level].cooldown;
 
                 else if (i == 1)
                     time = getSkillTime[i] / GameManager.gameManager.paperState[level].cooldown;

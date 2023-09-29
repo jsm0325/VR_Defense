@@ -1,13 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SkillPaperTowel : MonoBehaviour
 {
     //[SerializeField]
     //private int damage = 1;
-    [SerializeField]
-    private float cooldown = 7;             // 쿨타임
     [SerializeField]
     private float force = 15f;              // 던지는 힘
 
@@ -31,14 +28,17 @@ public class SkillPaperTowel : MonoBehaviour
         paperTowel = Instantiate(paperToewlPrefab, playerPosition + playerForward + Vector3.up, playerTransform.rotation);
         Rigidbody rigidBody = paperTowel.GetComponent<Rigidbody>();
 
+        SkillState paparState = GameManager.gameManager.paperState[GameManager.gameManager.GetCurrentWave()];
+        paperTowel.transform.localScale *= paparState.objSize;
+
         if (rigidBody != null)
         {
-            rigidBody.AddForce(playerForward * force, ForceMode.Impulse);           // 플레이어 앞쪽에서 날아감
+            rigidBody.AddForce(playerForward * paparState.force, ForceMode.Impulse);           // 플레이어 앞쪽에서 날아감
         }
 
         StartCoroutine(DestroyPrefab());
 
-        yield return new WaitForSeconds(cooldown);
+        yield return new WaitForSeconds(paparState.cooldown);
 
         isCooldown = false;
     }

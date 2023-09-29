@@ -10537,7 +10537,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 570b4edcbdee0164abbfc065f5f1687b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 7
   force: 12
   paperToewlPrefab: {fileID: 5592770542231575705, guid: f7ca14770c312c242bfaf55ac4dfb001,
     type: 3}
@@ -10567,8 +10566,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 067470b2be2eaa249894c5cb2734c356, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 10
-  force: 5
   logPrefab: {fileID: 3718703353342044851, guid: ad77410901543694eb3bd61b2bca9c7c,
     type: 3}
   isCooldown: 0
