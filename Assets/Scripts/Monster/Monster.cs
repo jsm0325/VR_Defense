@@ -55,8 +55,8 @@ public class Monster : MonoBehaviour
     {
         if (isTrapped)
             return;
-
         moveComponent.InspectDestination();
+        
     }
 
     public void SetTrapped(float duration)
@@ -116,7 +116,7 @@ public class Monster : MonoBehaviour
     {
         //Lerp사용 밀려나는 느낌이 들게 만듬
         float flytime = 0.0f;
-        //monsterAnim.SetTrigger("knockBack");
+        monsterAnim.SetTrigger("knockBack");
         while (flytime < 0.125) //0.2초 동안 넉백
         {
             flytime += (Time.deltaTime);

@@ -57,6 +57,7 @@ MonoBehaviour:
   isLullaby: 0
   monsterData: {fileID: 11400000, guid: 7aa61c2a66f3da44080ad5700ae2fad7, type: 2}
   score: 100
+  monsterAnim: {fileID: -247305584786813827}
   hairOptions:
   - {fileID: 919132149155446097, guid: e7ab99fd2c5af4045a2288e0c2e1fccf, type: 3}
   - {fileID: 919132149155446097, guid: 1d1cf4b199647204a972da51f59d76a0, type: 3}
@@ -250,21 +251,27 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 600215471960673975}
   m_PrefabAsset: {fileID: 0}
---- !u!111 &2076800691047903908
-Animation:
+--- !u!95 &265724577449314144
+Animator:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330184558620570598}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 2619c98c50db57749b075db5386a0072, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6026a139513f95640936b5d27e5d5573, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &1143595137009822044 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 21c1856c107a1c64b90cb43e250616d1,
