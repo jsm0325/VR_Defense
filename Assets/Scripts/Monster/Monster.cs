@@ -13,6 +13,9 @@ public class Monster : MonoBehaviour
     public int currentHealth { get; private set; }      // 현재 체력 (외부에서 읽기 허용)
     public int score = 100;                             // 점수
 
+    public AnimationController animController;
+
+
     private Slider hpSlider;                            // 체력 슬라이더
     public Animator monsterAnim;
     // 외형 카테고리들을 저장할 배열의 배열
@@ -73,8 +76,10 @@ public class Monster : MonoBehaviour
             
             moveComponent.Stop();
             trapDuration = duration;
-
+            
             StartCoroutine(ReleaseFromTrap()); // 멈춤 상태를 표현하는 애니메이션 등을 추가하기 
+            
+
         }
     }
 
@@ -97,10 +102,10 @@ public class Monster : MonoBehaviour
 
     private IEnumerator ReleaseFromTrap()
     {
-        monsterAnim.SetBool("isTrapped", true);
+        animController.SetisTrapped(isTrapped);
         yield return new WaitForSeconds(trapDuration); //몬스터 정지
         isTrapped = false;
-        monsterAnim.SetBool("isTrapped", false);
+        animController.SetisTrapped(isTrapped);
         moveComponent.Move();
     }
 
@@ -116,7 +121,7 @@ public class Monster : MonoBehaviour
     {
         //Lerp사용 밀려나는 느낌이 들게 만듬
         float flytime = 0.0f;
-        monsterAnim.SetTrigger("knockBack");
+        animController.setKnockBack();
         while (flytime < 0.125) //0.2초 동안 넉백
         {
             flytime += (Time.deltaTime);
@@ -186,9 +191,14 @@ public class Monster : MonoBehaviour
                 if (appearanceAnim == null)
                 {
                     appearanceAnim = selectedAppearance.AddComponent<Animator>();
+                    animController.SetAnimator(i, appearanceAnim);
                 }
+                
                 appearanceAnim.runtimeAnimatorController = GetComponent<Animator>().runtimeAnimatorController;
+                
+
             }
+            
         }
     }
 

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2426080728847595928}
   - component: {fileID: 2327820970609182863}
   - component: {fileID: -6020690620320298825}
+  - component: {fileID: 865425604593432114}
   m_Layer: 0
   m_Name: TiredMonster
   m_TagString: Monster
@@ -56,6 +57,7 @@ MonoBehaviour:
   isLullaby: 0
   monsterData: {fileID: 11400000, guid: fdb03c5a48dc57d40844ab939d3ec1fe, type: 2}
   score: 100
+  animController: {fileID: 0}
   monsterAnim: {fileID: -6020690620320298825}
   hairOptions:
   - {fileID: 919132149155446097, guid: e7ab99fd2c5af4045a2288e0c2e1fccf, type: 3}
@@ -149,6 +151,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!136 &865425604593432114
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7184331994205427889}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &867660542186857567
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -254,7 +270,7 @@ Animator:
   m_GameObject: {fileID: 57391738438195470}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7f687e97241a80842af9685c86b44798, type: 2}
+  m_Controller: {fileID: 9100000, guid: a222f133ae58afe428e07de83c7ccc56, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -377,7 +393,7 @@ Animator:
   m_GameObject: {fileID: 6476299992699727564}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7f687e97241a80842af9685c86b44798, type: 2}
+  m_Controller: {fileID: 9100000, guid: a222f133ae58afe428e07de83c7ccc56, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

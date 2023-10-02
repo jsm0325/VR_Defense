@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8503660718195752976}
   - component: {fileID: -3109705898863930450}
   - component: {fileID: 8880526630151708903}
+  - component: {fileID: 3051225876267115390}
   m_Layer: 0
   m_Name: NormalMonster
   m_TagString: Monster
@@ -57,6 +58,7 @@ MonoBehaviour:
   isLullaby: 0
   monsterData: {fileID: 11400000, guid: 634d744af4433564a8be653f592a22ae, type: 2}
   score: 100
+  animController: {fileID: 3051225876267115390}
   monsterAnim: {fileID: 8880526630151708903}
   hairOptions:
   - {fileID: 919132149155446097, guid: e7ab99fd2c5af4045a2288e0c2e1fccf, type: 3}
@@ -65,6 +67,7 @@ MonoBehaviour:
   - {fileID: 919132149155446097, guid: 3c194acf3a65d7b4db0a65f74dde4ddd, type: 3}
   topOptions:
   - {fileID: 919132149155446097, guid: 449cc869715230a44abd41efcba6ac6c, type: 3}
+  - {fileID: 919132149155446097, guid: 449cc869715230a44abd41efcba6ac6c, type: 3}
   bottomOptions:
   - {fileID: 919132149155446097, guid: 3b085b8bfe890a544a4d001dbd260a4f, type: 3}
   - {fileID: 919132149155446097, guid: ed0e6c8142ae83e48ad353bc589b606c, type: 3}
@@ -72,6 +75,7 @@ MonoBehaviour:
   - {fileID: 919132149155446097, guid: 28247836cef171e4699aa0989ddc831e, type: 3}
   - {fileID: 919132149155446097, guid: 8025ed894d3ed32479c0c83af78d8010, type: 3}
   shoeOptions:
+  - {fileID: 919132149155446097, guid: f243815f8c99fbe47a291aa3cb0d1eab, type: 3}
   - {fileID: 919132149155446097, guid: f243815f8c99fbe47a291aa3cb0d1eab, type: 3}
   clothsScale: {x: 4, y: 4, z: 4}
 --- !u!114 &988157674754245896
@@ -122,7 +126,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1
+  m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
@@ -152,7 +156,7 @@ Animator:
   m_GameObject: {fileID: 7184331994205427889}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7f687e97241a80842af9685c86b44798, type: 2}
+  m_Controller: {fileID: 9100000, guid: a222f133ae58afe428e07de83c7ccc56, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -163,6 +167,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3051225876267115390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7184331994205427889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5d53046697b0d14ca97244683c8f592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  headAnimator: {fileID: 6620939447382781630}
+  bodyAnimator: {fileID: 907168632909983201}
 --- !u!1001 &197196444926773501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -394,7 +412,7 @@ Animator:
   m_GameObject: {fileID: 1044268653917877676}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7f687e97241a80842af9685c86b44798, type: 2}
+  m_Controller: {fileID: 9100000, guid: a222f133ae58afe428e07de83c7ccc56, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -640,7 +658,7 @@ Animator:
   m_GameObject: {fileID: 3713199690686726325}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7f687e97241a80842af9685c86b44798, type: 2}
+  m_Controller: {fileID: 9100000, guid: a222f133ae58afe428e07de83c7ccc56, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
