@@ -50,8 +50,9 @@ public class ItemManhole : MonoBehaviour
     private IEnumerator MoveCover()             // ¶Ñ²± ¿òÁ÷ÀÓ
     {
         float moveTime = 0.0f;
-        while (moveTime < 0.5f)
+        while (moveTime < 1.0f)
         {
+            Debug.Log(moveTime);
             cover.transform.Translate(new Vector3(0.1f, 0, 0) * 0.1f);
             moveTime += Time.deltaTime;
             yield return null;
