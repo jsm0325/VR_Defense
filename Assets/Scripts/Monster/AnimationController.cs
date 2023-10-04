@@ -12,15 +12,33 @@ public class AnimationController : MonoBehaviour
     private Animator shoeAnimator;
 
 
-    public void setKnockBack()
+    public void SetKnockBack()
     {
         headAnimator.SetTrigger("knockBack");
         bodyAnimator.SetTrigger("knockBack");
         hairAnimator.SetTrigger("knockBack");
-        topAnimator.SetTrigger("knockBack");
-        bottomAnimator.SetTrigger("knockBack");
-        shoeAnimator.SetTrigger("knockBack");
+        if( topAnimator != null)
+        {
+            topAnimator.SetTrigger("knockBack");
+            bottomAnimator.SetTrigger("knockBack");
+            shoeAnimator.SetTrigger("knockBack");
+        }
 
+
+
+    }
+
+    public void SetIsLogHit()
+    {
+        headAnimator.SetTrigger("isLogHit");
+        bodyAnimator.SetTrigger("isLogHit");
+        hairAnimator.SetTrigger("isLogHit");
+        if (topAnimator != null)
+        {
+            topAnimator.SetTrigger("isLogHit");
+            bottomAnimator.SetTrigger("isLogHit");
+            shoeAnimator.SetTrigger("isLogHit");
+        }
     }
 
     public void SetisTrapped(bool input)
@@ -28,9 +46,12 @@ public class AnimationController : MonoBehaviour
         headAnimator.SetBool("isTrapped", input);
         bodyAnimator.SetBool("isTrapped", input);
         hairAnimator.SetBool("isTrapped", input);
-        topAnimator.SetBool("isTrapped", input);
-        bottomAnimator.SetBool("isTrapped", input);
-        shoeAnimator.SetBool("isTrapped", input);
+        if (topAnimator != null)
+        {
+            topAnimator.SetBool("isTrapped", input);
+            bottomAnimator.SetBool("isTrapped", input);
+            shoeAnimator.SetBool("isTrapped", input);
+        }
 
     }
 
@@ -39,9 +60,12 @@ public class AnimationController : MonoBehaviour
         headAnimator.SetBool("isTrapped", input);
         bodyAnimator.SetBool("isTrapped", input);
         hairAnimator.SetBool("isTrapped", input);
-        topAnimator.SetBool("isTrapped", input);
-        bottomAnimator.SetBool("isTrapped", input);
-        shoeAnimator.SetBool("isTrapped", input);
+        if (topAnimator != null)
+        {
+            topAnimator.SetBool("isTrapped", input);
+            bottomAnimator.SetBool("isTrapped", input);
+            shoeAnimator.SetBool("isTrapped", input);
+        }
     }
 
     public void SetAnimator(int number, Animator inputAnimator)

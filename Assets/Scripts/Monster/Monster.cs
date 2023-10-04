@@ -117,11 +117,19 @@ public class Monster : MonoBehaviour
         moveComponent.Move();                           //Monster 다시 이동
     }
 
-    private IEnumerator KnockBack(Vector3 weaponpos, float knockback)
+    private IEnumerator KnockBack(Vector3 weaponpos, float knockback, bool isHitByLog)
     {
         //Lerp사용 밀려나는 느낌이 들게 만듬
         float flytime = 0.0f;
-        animController.setKnockBack();
+        if (isHitByLog == true)
+        {
+            animController.SetIsLogHit();
+        }
+        else
+        {
+            animController.SetKnockBack();
+        }
+        
         while (flytime < 0.125) //0.2초 동안 넉백
         {
             flytime += (Time.deltaTime);
@@ -133,15 +141,16 @@ public class Monster : MonoBehaviour
         yield return null;
     }
 
-    public void TakeDamage(int damage,Vector3 weaponpos,float knockback) // 데미지 받는 코드
+    public void TakeDamage(int damage,Vector3 weaponpos,float knockback,bool isHitByLog) // 데미지 받는 코드
     {
         currentHealth -= damage;    // 현재 체력에서 데미지 만큼 빼는 코드
-        StartCoroutine(KnockBack(weaponpos, knockback));    //넉백 코루틴
+        StartCoroutine(KnockBack(weaponpos, knockback, isHitByLog));    //넉백 코루틴
       
         // 체력 0 이하시 작동
         if (currentHealth <= 0)
         {
             hpSlider.value = 0;
+            ItemDrop();
             Die(); 
         }
 
@@ -156,7 +165,7 @@ public class Monster : MonoBehaviour
         {
             OnMonsterDeath(gameObject);
         }
-        ItemDrop();
+        
         GameManager.gameManager.AddCurrency(monsterData.coin); // 몬스터 coin 값 만큼 재화 증가
         GameManager.gameManager.score += score;
 

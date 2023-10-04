@@ -57,20 +57,14 @@ MonoBehaviour:
   isLullaby: 0
   monsterData: {fileID: 11400000, guid: 7aa61c2a66f3da44080ad5700ae2fad7, type: 2}
   score: 100
+  animController: {fileID: 0}
   monsterAnim: {fileID: -247305584786813827}
   hairOptions:
   - {fileID: 919132149155446097, guid: e7ab99fd2c5af4045a2288e0c2e1fccf, type: 3}
   - {fileID: 919132149155446097, guid: 1d1cf4b199647204a972da51f59d76a0, type: 3}
-  topOptions:
-  - {fileID: 919132149155446097, guid: 449cc869715230a44abd41efcba6ac6c, type: 3}
-  - {fileID: 919132149155446097, guid: 8c7b541b0bc22614d9469e218b5b15e4, type: 3}
-  - {fileID: 919132149155446097, guid: 2572778b190955a469527df8db93014c, type: 3}
-  bottomOptions:
-  - {fileID: 919132149155446097, guid: 9d2709a55b48c804894efc3ce2bf4342, type: 3}
-  - {fileID: 919132149155446097, guid: da9d39e7de80fdb429b51a1773161cdd, type: 3}
-  - {fileID: 919132149155446097, guid: 3b085b8bfe890a544a4d001dbd260a4f, type: 3}
-  shoeOptions:
-  - {fileID: 919132149155446097, guid: f243815f8c99fbe47a291aa3cb0d1eab, type: 3}
+  topOptions: []
+  bottomOptions: []
+  shoeOptions: []
   clothsScale: {x: 4, y: 4, z: 4}
 --- !u!54 &2426080728847595931
 Rigidbody:

@@ -10,7 +10,7 @@ public class Hit : MonoBehaviour
     {
         if (collision.gameObject.tag == "Monster")
         {
-            collision.gameObject.GetComponent<Monster>().TakeDamage(WeaponData.AttackDamage, transform.position, WeaponData.KnockBack);
+            collision.gameObject.GetComponent<Monster>().TakeDamage(WeaponData.AttackDamage, transform.position, WeaponData.KnockBack,false);
             
         }
     }
