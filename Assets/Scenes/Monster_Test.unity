@@ -154,6 +154,7 @@ Transform:
   - {fileID: 148050742}
   - {fileID: 810948146}
   - {fileID: 1736224178}
+  - {fileID: 208510262}
   m_Father: {fileID: 489373708}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -361,6 +362,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponData: {fileID: 11400000, guid: 641b2b5f134ec284ea89272246fed202, type: 2}
+  hitEffects: {fileID: 0}
+  EffectPos: {fileID: 0}
 --- !u!54 &8056642
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -752,6 +755,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponData: {fileID: 11400000, guid: 427acf74901f00a429e69d7c3261b02e, type: 2}
+  hitEffects: {fileID: 0}
+  EffectPos: {fileID: 0}
 --- !u!54 &43534616
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1891,6 +1896,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponData: {fileID: 11400000, guid: 427acf74901f00a429e69d7c3261b02e, type: 2}
+  hitEffects: {fileID: 7226583673155636401, guid: a2ab56839e1c9504ea9d141e95d0b16b,
+    type: 3}
+  EffectPos: {fileID: 208510262}
 --- !u!1 &166756267
 GameObject:
   m_ObjectHideFlags: 0
@@ -2029,6 +2037,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &208510261
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 208510262}
+  m_Layer: 0
+  m_Name: RacketEffectPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &208510262
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208510261}
+  m_LocalRotation: {x: -0.000000029802319, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.000029407307, y: 0.10189999, z: 0}
+  m_LocalScale: {x: 1.94595, y: 1.096253, z: 1.94595}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3265014}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &214306337
 GameObject:
   m_ObjectHideFlags: 0
@@ -2196,6 +2235,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponData: {fileID: 11400000, guid: 277f44b2d1df29c4db08731603392a71, type: 2}
+  hitEffects: {fileID: 5024009746357069194, guid: ec3f674830402cc45bce805cf6493db7,
+    type: 3}
+  EffectPos: {fileID: 1020704604}
 --- !u!1 &233939003
 GameObject:
   m_ObjectHideFlags: 0
@@ -2325,6 +2367,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponData: {fileID: 11400000, guid: a94115b783f673646928b988791353e4, type: 2}
+  hitEffects: {fileID: 5024009746357069194, guid: ec3f674830402cc45bce805cf6493db7,
+    type: 3}
+  EffectPos: {fileID: 1020704604}
 --- !u!1001 &251951180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2778,6 +2823,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponData: {fileID: 11400000, guid: 636332b22d1c74940804e7e09e6ce9fa, type: 2}
+  hitEffects: {fileID: 5024009746357069194, guid: ec3f674830402cc45bce805cf6493db7,
+    type: 3}
+  EffectPos: {fileID: 1020704604}
 --- !u!1 &266270312
 GameObject:
   m_ObjectHideFlags: 0
@@ -5072,6 +5120,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponData: {fileID: 11400000, guid: c8d4c6e2275c1ee4f9bcb912c5f94a9c, type: 2}
+  hitEffects: {fileID: 0}
+  EffectPos: {fileID: 0}
 --- !u!54 &564158400
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6164,6 +6214,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponData: {fileID: 11400000, guid: c8d4c6e2275c1ee4f9bcb912c5f94a9c, type: 2}
+  hitEffects: {fileID: 7226583673155636401, guid: a2ab56839e1c9504ea9d141e95d0b16b,
+    type: 3}
+  EffectPos: {fileID: 208510262}
 --- !u!1 &812446261
 GameObject:
   m_ObjectHideFlags: 0
@@ -6295,6 +6348,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponData: {fileID: 11400000, guid: 27ecd264058e113419be86481a79c92f, type: 2}
+  hitEffects: {fileID: 2955623459812423943, guid: f5507a8c6a22c404ab324980c4e8a11b,
+    type: 3}
+  EffectPos: {fileID: 1928666892}
 --- !u!1001 &823188031
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6869,6 +6925,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponData: {fileID: 11400000, guid: ae9c3618781d8af4588fe58771531e31, type: 2}
+  hitEffects: {fileID: 0}
+  EffectPos: {fileID: 0}
 --- !u!54 &982720793
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7147,6 +7205,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponData: {fileID: 11400000, guid: ae9c3618781d8af4588fe58771531e31, type: 2}
+  hitEffects: {fileID: 2955623459812423943, guid: f5507a8c6a22c404ab324980c4e8a11b,
+    type: 3}
+  EffectPos: {fileID: 1928666892}
 --- !u!1 &1014378546
 GameObject:
   m_ObjectHideFlags: 0
@@ -7196,6 +7257,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponData: {fileID: 11400000, guid: 27ecd264058e113419be86481a79c92f, type: 2}
+  hitEffects: {fileID: 0}
+  EffectPos: {fileID: 0}
 --- !u!54 &1014378549
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7278,6 +7341,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1014378546}
   m_Mesh: {fileID: 5415414558838120886, guid: 9f8c61211f2418d40ad8b29ed79b2b8a, type: 3}
+--- !u!1 &1020704603
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1020704604}
+  m_Layer: 0
+  m_Name: BatEffectPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1020704604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020704603}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.12295376, z: 0}
+  m_LocalScale: {x: 1.9459504, y: 1.096253, z: 1.9459502}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1995301019}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1024952179
 GameObject:
   m_ObjectHideFlags: 0
@@ -7877,6 +7971,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponData: {fileID: 11400000, guid: a94115b783f673646928b988791353e4, type: 2}
+  hitEffects: {fileID: 0}
+  EffectPos: {fileID: 0}
 --- !u!54 &1049946846
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9523,6 +9619,7 @@ Transform:
   - {fileID: 988264132}
   - {fileID: 2034777777}
   - {fileID: 812446262}
+  - {fileID: 1928666892}
   m_Father: {fileID: 489373708}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9902,7 +9999,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d488a99d2ac25f41b47ab5a67d49382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monster: {fileID: 1897917206}
 --- !u!114 &1350383953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10956,6 +11052,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponData: {fileID: 11400000, guid: 636332b22d1c74940804e7e09e6ce9fa, type: 2}
+  hitEffects: {fileID: 0}
+  EffectPos: {fileID: 0}
 --- !u!54 &1568290125
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11785,6 +11883,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponData: {fileID: 11400000, guid: 2ee3acfdd88b6994ca5412a451bfce8a, type: 2}
+  hitEffects: {fileID: 7226583673155636401, guid: a2ab56839e1c9504ea9d141e95d0b16b,
+    type: 3}
+  EffectPos: {fileID: 208510262}
 --- !u!1 &1751160031
 GameObject:
   m_ObjectHideFlags: 0
@@ -12340,12 +12441,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a31c63d83212e944b886a741fcf9073b, type: 3}
---- !u!1 &1897917206 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7184331994205427889, guid: a31c63d83212e944b886a741fcf9073b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1897917205}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1899786763 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9098775713776408292, guid: 6c274154b09376444982cea7729dae0c,
@@ -12747,6 +12842,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &1928666891
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1928666892}
+  m_Layer: 0
+  m_Name: WrenchEffectPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1928666892
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928666891}
+  m_LocalRotation: {x: -0.000000049597425, y: -0.7071068, z: -0.000000049597425, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.039000005, z: 0.00009999997}
+  m_LocalScale: {x: 1.9459488, y: 1.0962529, z: 1.9459494}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1280211637}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1929648997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13770,6 +13896,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponData: {fileID: 11400000, guid: 2ee3acfdd88b6994ca5412a451bfce8a, type: 2}
+  hitEffects: {fileID: 0}
+  EffectPos: {fileID: 0}
 --- !u!54 &1987335518
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14036,6 +14164,7 @@ Transform:
   - {fileID: 233939004}
   - {fileID: 227989543}
   - {fileID: 260435267}
+  - {fileID: 1020704604}
   m_Father: {fileID: 489373708}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14625,6 +14754,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponData: {fileID: 11400000, guid: 641b2b5f134ec284ea89272246fed202, type: 2}
+  hitEffects: {fileID: 2955623459812423943, guid: f5507a8c6a22c404ab324980c4e8a11b,
+    type: 3}
+  EffectPos: {fileID: 1928666892}
 --- !u!1 &2035319658
 GameObject:
   m_ObjectHideFlags: 0
@@ -15068,6 +15200,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponData: {fileID: 11400000, guid: 277f44b2d1df29c4db08731603392a71, type: 2}
+  hitEffects: {fileID: 0}
+  EffectPos: {fileID: 0}
 --- !u!54 &2114243817
 Rigidbody:
   m_ObjectHideFlags: 0
