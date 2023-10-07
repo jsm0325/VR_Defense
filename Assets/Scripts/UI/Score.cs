@@ -19,8 +19,10 @@ public class Score : MonoBehaviour
 
     public Transform rankPanel;
     public Transform rank;
+    public Transform myRank;
     private List<HighScoreEntry> highScoreList;
     private List<Transform> transformList;
+    public bool gameOver = false;
 
     private void Awake()
     {
@@ -46,10 +48,11 @@ public class Score : MonoBehaviour
         }
 
         transformList = new List<Transform>();
-        foreach (HighScoreEntry highScoreEntry in highScores.highScoreEntryList)
-        {
-            CreateHighScoreTransform(highScoreEntry, rank, transformList);
-        }
+        //foreach (HighScoreEntry highScoreEntry in highScores.highScoreEntryList)
+        //{
+        //    CreateHighScoreTransform(highScoreEntry, rank, transformList);
+        //    //MyRankingView(highScoreEntry, transformList);
+        //}
 
         //HighScores highScores = new HighScores { highScoreEntryList = highScoreList };
         //string json = JsonUtility.ToJson(highScores);
@@ -75,7 +78,7 @@ public class Score : MonoBehaviour
 
         Transform transform = Instantiate(rank, rankPanel);
         RectTransform rectTransform = transform.GetComponent<RectTransform>();
-        rectTransform.anchoredPosition = new Vector2(0, -templateHeight * transformList.Count);
+        rectTransform.anchoredPosition = new Vector2(0, (-templateHeight * transformList.Count)-30);        // 스크롤 뷰 사용 시 중심이 달라 -30을 해줌
         transform.gameObject.SetActive(true);
 
         transformList.Add(transform);
@@ -98,6 +101,8 @@ public class Score : MonoBehaviour
         PlayerPrefs.SetString("highScoreTable", json);
         PlayerPrefs.Save();
 
+        int rankSave = 0;
+
         for (int i = 0; i < highScores.highScoreEntryList.Count; i++)
         {
             for (int j = i + 1; j < highScores.highScoreEntryList.Count; j++)
@@ -109,12 +114,22 @@ public class Score : MonoBehaviour
                     highScores.highScoreEntryList[j] = temp;
                 }
             }
+
+            //if(i == highScores.highScoreEntryList.Count - 1)
+            //{
+            //    rankSave = highScores.highScoreEntryList[i].score;
+            //}
         }
 
         transformList = new List<Transform>();
-        foreach (HighScoreEntry ScoreEntry in highScores.highScoreEntryList)
+        if (!gameOver)
         {
-            CreateHighScoreTransform(ScoreEntry, rank, transformList);
+            foreach (HighScoreEntry ScoreEntry in highScores.highScoreEntryList)
+            {
+                CreateHighScoreTransform(ScoreEntry, rank, transformList);
+                MyRankingView(highScoreEntry, rankSave);
+            }
+            gameOver = true;
         }
     }
 
@@ -127,5 +142,21 @@ public class Score : MonoBehaviour
         PlayerPrefs.SetString("highScoreTable", json);
         PlayerPrefs.Save();
         Debug.Log(PlayerPrefs.GetString("highScoreTable"));
+    }
+
+
+    // 랭킹은 정상작동 하지 않음
+    private void MyRankingView(HighScoreEntry highScoreEntry, int highScore)
+    {
+        TextMeshProUGUI rankText = myRank.GetChild(0).GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI scoreText = myRank.GetChild(1).GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI nameText = myRank.GetChild(2).GetComponent<TextMeshProUGUI>();
+
+        int rankNum = highScore;
+        int score = highScoreEntry.score;
+        string name = highScoreEntry.name;
+        rankText.text = rankNum.ToString();
+        nameText.text = score.ToString();
+        scoreText.text = name;
     }
 }
