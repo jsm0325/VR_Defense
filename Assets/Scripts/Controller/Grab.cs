@@ -15,10 +15,13 @@ public class Grab : MonoBehaviour
     private GameObject Grabbable;
     private LineRenderer lineRenderer;
     private RaycastHit hit;
+    public AudioClip[] clip;
+    private AudioSource audioSource;
 
     private void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void FixedUpdate()
@@ -195,11 +198,15 @@ public class Grab : MonoBehaviour
             Item.ItemType item = hit.transform.GetComponent<ItemPickUp>().item.itemType;        //  itemType¿ª «“¥Á
             if (item == Item.ItemType.SportsDrink)
             {
+                audioSource.clip = clip[1];
+                audioSource.Play();
                 hit.transform.GetComponent<ItemSportsDrink>().SpeedIncrease();
                 Destroy(hit.transform.gameObject);                  // ªË¡¶
             }
             else
             {
+                audioSource.clip = clip[0];
+                audioSource.Play();
                 Debug.Log(hit.transform.GetComponent<ItemPickUp>().item.itemName + "»πµÊ");
                 itemSlot.AcquireItem(hit.transform.GetComponent<ItemPickUp>().item);
                 Destroy(hit.transform.gameObject, 1f);                  // ªË¡¶

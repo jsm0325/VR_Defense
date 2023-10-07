@@ -16,7 +16,8 @@ public class GameManager : MonoBehaviour
     private int currentMonsterCount = 0;
     private bool spawnFinished = false;
     private int currentWave = 0;
-
+    private AudioSource audioSource;
+    public AudioClip[] clip;
     public SkillState[] logState;           // 통나무 스킬의 스테이지 당 정보
     public SkillState[] paperState;         // 휴지 스킬의 스테이지 당 정보
 
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        audioSource = GetComponent<AudioSource>();
         DontDestroyOnLoad(gameObject);
     }
 
@@ -123,5 +125,11 @@ public class GameManager : MonoBehaviour
     public int GetCurrentWave()
     {
         return currentWave;
+    }
+
+    public void ClickButtonSound()
+    {
+        audioSource.clip = clip[0];
+        audioSource.Play();
     }
 }
