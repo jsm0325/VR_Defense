@@ -14,7 +14,8 @@ public class Monster : MonoBehaviour
     public int score = 100;                             // 점수
 
     public AnimationController animController;
-
+    public FacialAnimationController facialAnimationController;
+    private string monsterType;
 
     private Slider hpSlider;                            // 체력 슬라이더
     public Animator monsterAnim;
@@ -38,7 +39,7 @@ public class Monster : MonoBehaviour
     {
         hpSlider = GetComponentInChildren<Slider>();    // 몬스터에서 hp 슬라이더를 찾음
         moveComponent = GetComponent<MonsterMove>();
-
+        monsterType = RemoveCloneFromName(gameObject.name);
         // 몬스터에 몬스터 슬라이더가 존재하는지 확인
         if (hpSlider == null)
             Debug.Assert(false, "Error (Monster Slider) : 몬스터에 체력 바가 존재하지 않습니다.");
@@ -52,6 +53,8 @@ public class Monster : MonoBehaviour
         currentHealth = monsterData.maxHp; // 현재 체력 최대 체력으로 설정
         InitializeAppearanceOptions(); // 외형 카테고리 배열 초기화
         SetRandomAppearance(); // 랜덤하게 바디, 의상, 헤어 등을 선택하여 적용
+        int randomFacial = UnityEngine.Random.Range(0, 2);
+        facialAnimationController.SetFacial(monsterType, randomFacial);
     }
 
     void Update()
@@ -103,6 +106,7 @@ public class Monster : MonoBehaviour
     private IEnumerator ReleaseFromTrap()
     {
         animController.SetisTrapped(isTrapped);
+        facialAnimationController.SetFacial(monsterType, 3);
         yield return new WaitForSeconds(trapDuration); //몬스터 정지
         isTrapped = false;
         animController.SetisTrapped(isTrapped);
@@ -124,10 +128,12 @@ public class Monster : MonoBehaviour
         if (isHitByLog == true)
         {
             animController.SetIsLogHit();
+            facialAnimationController.SetFacial(monsterType, 3);
         }
         else
         {
             animController.SetKnockBack();
+            facialAnimationController.SetFacial(monsterType, 4);
         }
         
         while (flytime < 0.125) //0.2초 동안 넉백
@@ -168,7 +174,7 @@ public class Monster : MonoBehaviour
         
         GameManager.gameManager.AddCurrency(monsterData.coin); // 몬스터 coin 값 만큼 재화 증가
         GameManager.gameManager.score += score;
-
+        GameManager.gameManager.DieMonster();
         UiManager.uiManager.UpdateCurrencyText(GameManager.gameManager.currency);
         Destroy(gameObject); // 몬스터 게임 오브젝트 삭제
 
@@ -210,7 +216,19 @@ public class Monster : MonoBehaviour
             
         }
     }
-
+    string RemoveCloneFromName(string objectName)
+    {
+        if (objectName.EndsWith("(Clone)"))
+        {
+            // 이름이 "Clone"으로 끝나는 경우, "Clone"을 제외한 나머지 부분을 반환
+            return objectName.Substring(0, objectName.Length - 7); 
+        }
+        else
+        {
+            // "Clone"이 포함되어 있지 않으면 원래 이름 그대로 반환
+            return objectName;
+        }
+    }
     public void ItemDrop()
     {
         Choose(new float[2] { 10f, 90f });

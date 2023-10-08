@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7975602674953306618}
   - component: {fileID: 1181901725935255946}
   - component: {fileID: 6210722948974857451}
+  - component: {fileID: 3971588488791819456}
   m_Layer: 0
   m_Name: SpeedMonster
   m_TagString: Monster
@@ -57,7 +58,7 @@ MonoBehaviour:
   isLullaby: 0
   monsterData: {fileID: 11400000, guid: fd6667e6a694e6047b9fcb8fe8dbab0d, type: 2}
   score: 100
-  animController: {fileID: 0}
+  animController: {fileID: 3971588488791819456}
   monsterAnim: {fileID: 1181901725935255946}
   hairOptions:
   - {fileID: 919132149155446097, guid: e7ab99fd2c5af4045a2288e0c2e1fccf, type: 3}
@@ -165,6 +166,20 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &3971588488791819456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7184331994205427889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5d53046697b0d14ca97244683c8f592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  headAnimator: {fileID: 378233792181094625}
+  bodyAnimator: {fileID: 6455213487677275633}
 --- !u!1001 &2462157131134996369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -176,6 +191,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bc1c20754c1c2814aba2fe65650245aa,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bc1c20754c1c2814aba2fe65650245aa,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bc1c20754c1c2814aba2fe65650245aa,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bc1c20754c1c2814aba2fe65650245aa,
         type: 3}
@@ -225,6 +255,11 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: bc1c20754c1c2814aba2fe65650245aa,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -33681989531280161, guid: bc1c20754c1c2814aba2fe65650245aa,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bc1c20754c1c2814aba2fe65650245aa,
@@ -448,6 +483,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 906fc15875e545944a1c2bcf98dee90b,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 906fc15875e545944a1c2bcf98dee90b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 906fc15875e545944a1c2bcf98dee90b,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 906fc15875e545944a1c2bcf98dee90b,
         type: 3}

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2327820970609182863}
   - component: {fileID: -6020690620320298825}
   - component: {fileID: 865425604593432114}
+  - component: {fileID: 777001360406713394}
   m_Layer: 0
   m_Name: TiredMonster
   m_TagString: Monster
@@ -57,7 +58,7 @@ MonoBehaviour:
   isLullaby: 0
   monsterData: {fileID: 11400000, guid: fdb03c5a48dc57d40844ab939d3ec1fe, type: 2}
   score: 100
-  animController: {fileID: 0}
+  animController: {fileID: 777001360406713394}
   monsterAnim: {fileID: -6020690620320298825}
   hairOptions:
   - {fileID: 919132149155446097, guid: e7ab99fd2c5af4045a2288e0c2e1fccf, type: 3}
@@ -165,6 +166,20 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &777001360406713394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7184331994205427889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5d53046697b0d14ca97244683c8f592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  headAnimator: {fileID: 3596750817981112495}
+  bodyAnimator: {fileID: 6488732502042974661}
 --- !u!1001 &867660542186857567
 PrefabInstance:
   m_ObjectHideFlags: 0

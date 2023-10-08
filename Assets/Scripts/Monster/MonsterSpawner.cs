@@ -8,7 +8,6 @@ public class MonsterSpawner : MonoBehaviour
     private int spawnersLength;         // 스폰 장소 개수
     private Wave currentWave;           // 현재 웨이브 단계 정보
     private int spawnMonsterCount = 0; // 현재 웨이브 생성 몬스터 숫자
-    private int currentMonsterCount = 0;
 
     private void Start()
     {
@@ -16,8 +15,7 @@ public class MonsterSpawner : MonoBehaviour
     }
 
     public void StartWave(Wave wave)
-    {
-        currentWave = wave; // 웨이브 정보 저장
+    {currentWave = wave; // 웨이브 정보 저장
         StartCoroutine("SpawnMonster"); // 웨이브 시작
     }
 

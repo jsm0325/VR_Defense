@@ -20,6 +20,13 @@ public class GameManager : MonoBehaviour
     public AudioClip[] clip;
     public SkillState[] logState;           // 통나무 스킬의 스테이지 당 정보
     public SkillState[] paperState;         // 휴지 스킬의 스테이지 당 정보
+    private List<string> facialName = new List<string> { "Base1", "Base2", "Base3", "Pain1", "Pain2", "Smile", "Embarrassed" };
+    private List<string> monsterName = new List<string> { "Normal", "Tired", "Speed", "Tanker" };
+    private List<int> eyebrowTimeList = new List<int> { 1, 1, 1, 3, 3, 1, 2 };
+    public List<FacialExpressionData> normalFacialData = new List<FacialExpressionData>();
+    public List<FacialExpressionData> tiredFacialData = new List<FacialExpressionData>();
+    public List<FacialExpressionData> speedFacialData = new List<FacialExpressionData>();
+    public List<FacialExpressionData> tankerFacialData = new List<FacialExpressionData>();
 
     public Score rankingObject;
     private void Awake()
@@ -35,6 +42,45 @@ public class GameManager : MonoBehaviour
 
         audioSource = GetComponent<AudioSource>();
         DontDestroyOnLoad(gameObject);
+
+        //facialData 저장
+        normalFacialData = new List<FacialExpressionData>();
+        tiredFacialData = new List<FacialExpressionData>();
+        speedFacialData = new List<FacialExpressionData>();
+        tankerFacialData = new List<FacialExpressionData>();
+
+        for (int i = 0; i < monsterName.Count; i++)
+        {
+            float eyeNumber = 10.1f + i * 7;
+            // 표정 데이터를 각 몬스터 리스트에 추가합니다.
+            for (int k = 0; k < facialName.Count; k++)
+            {
+                FacialExpressionData expression = new FacialExpressionData
+                {
+                    expressionName = facialName[k],
+                    eyeAnimationTime = eyeNumber+k,
+                    eyebrowAnimationTime = eyebrowTimeList[k],
+                };
+
+                // 각 몬스터에 맞는 리스트에 추가합니다.
+                if (i == 0)
+                {
+                    normalFacialData.Add(expression);
+                }
+                else if (i == 1)
+                {
+                    tiredFacialData.Add(expression);
+                }
+                else if (i == 2)
+                {
+                    speedFacialData.Add(expression);
+                }
+                else
+                {
+                    tankerFacialData.Add(expression);
+                }
+            }
+        }
     }
 
     void Update()
@@ -131,5 +177,23 @@ public class GameManager : MonoBehaviour
     {
         audioSource.clip = clip[0];
         audioSource.Play();
+    }
+
+    public struct FacialExpressionData
+    {
+        public string expressionName;        // 표정 이름 (예: "Happy", "Sad", "Angry" 등)
+        public float eyeAnimationTime;       // 눈 애니메이션 시간 (초)
+        public float eyebrowAnimationTime;   // 눈썹 애니메이션 시간 (초)
+    }
+
+    void AddFacialExpression(string expressionName, float eyeTime, float eyebrowTime, List<FacialExpressionData> facialExpressions)
+    {
+        FacialExpressionData expression = new FacialExpressionData
+        {
+            expressionName = expressionName,
+            eyeAnimationTime = eyeTime,
+            eyebrowAnimationTime = eyebrowTime,
+        };
+        facialExpressions.Add(expression);
     }
 }
