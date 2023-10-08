@@ -11,11 +11,13 @@ public class ItemKitten : MonoBehaviour
     private float range = 0f;
     private SphereCollider kittenCollider;
     private HoverItem2 hoverItem;
+    private AudioSource audioSource;
 
     private void Awake()
     {
         kittenCollider = GetComponent<SphereCollider>();
         hoverItem = GetComponent<HoverItem2>();
+        audioSource = GetComponent<AudioSource>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -30,6 +32,10 @@ public class ItemKitten : MonoBehaviour
                     //itemFunction.StartCoroutine(itemFunction.SeeKitten(other, this.gameObject, duration));
                     StartCoroutine(SeeKitten(other));
                 }
+            }
+            else
+            {
+                audioSource.Play();
             }
         }
     }

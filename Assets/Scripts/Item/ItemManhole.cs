@@ -11,11 +11,13 @@ public class ItemManhole : MonoBehaviour
     private HoverItem2 hoverItem;
     private GameObject cover;
     private Vector3 vector;
+    private AudioSource audioSource;
+
     private void Awake()
     {
         hoverItem = GetComponent<HoverItem2>();
         cover = gameObject.transform.GetChild(1).gameObject;
-
+        audioSource = GetComponent<AudioSource>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -30,6 +32,9 @@ public class ItemManhole : MonoBehaviour
                 {
                     Trap(other);
                 }
+            }
+            else {
+                audioSource.Play();
             }
         }
     }

@@ -6,10 +6,12 @@ public class ItemCatPunch : MonoBehaviour
 {
     private Coroutine catPunchCoroutine;
     private HoverItem2 hoverItem;
+    private AudioSource audioSource;
 
     private void Awake()
     {
         hoverItem = GetComponent<HoverItem2>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -19,6 +21,10 @@ public class ItemCatPunch : MonoBehaviour
             if (other.CompareTag("Monster"))
             {
                 StartCoroutine(HitMonster(other));
+            }
+            else
+            {
+                audioSource.Play();
             }
         }
     }

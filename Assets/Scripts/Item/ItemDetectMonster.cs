@@ -7,7 +7,12 @@ public class ItemDetectMonster : MonoBehaviour
     //trigger Collider를 Item의 자식 개체에 생성해서 적용
     private float lullabyDuration;                      //Monster 이동제약시간, 부모 객체에서 받아오도록 함 
     private bool isActive = false;                      //아이템 활성화 여부, 부모 객체 스크립트에서 변수 상태 변경
+    private AudioSource audioSource;
 
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     private void OnTriggerEnter(Collider other) 
     {
         if (isActive)                               
@@ -15,6 +20,10 @@ public class ItemDetectMonster : MonoBehaviour
             if (other.CompareTag("Monster")) //충돌한 object가 Monster이면
             {
                 other.GetComponent<Monster>().SetLullaby(lullabyDuration); //Monster 스크립트 SetLullaby 호출
+            }
+            else
+            {
+                audioSource.Play();
             }
         }
     }
