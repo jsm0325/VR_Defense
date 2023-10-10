@@ -221,7 +221,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 58.24, y: 57.939, z: 64.707}
 --- !u!1 &557896857
 GameObject:
@@ -803,7 +803,7 @@ Transform:
   - {fileID: 849300933}
   - {fileID: 1308762410}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &1308762409
 PrefabInstance:
@@ -1135,7 +1135,7 @@ GameObject:
   - component: {fileID: 1902217412}
   - component: {fileID: 1902217411}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Cam_1
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1199,14 +1199,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1902217410}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.07153823, y: -0.9274491, z: 0.28105766, w: 0.23606575}
+  m_LocalPosition: {x: 2.528, y: 3.776, z: 6.771}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 33.718, y: -151.439, z: 0}
 --- !u!1001 &2059452724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1222,7 +1222,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 5d80e96a4a0fe424cab94ca24303b491,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5d80e96a4a0fe424cab94ca24303b491,
         type: 3}
