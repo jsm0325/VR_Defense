@@ -3,7 +3,117 @@ guid: bf4e27d63193c024f8bfe024df1d051b
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blue
+    second: {fileID: 2100000, guid: 120f2d8dc5cfc9d47b0885cb29a6ac8f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Letter_Green1
+    second: {fileID: 2100000, guid: 5ca12f1a3614f98469a8acd08424c5db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Screen_Door_Red_Line
+    second: {fileID: 2100000, guid: 44b2266307721724a8708d96dc0d48ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Screen_Door_Red_Line1
+    second: {fileID: 2100000, guid: 44b2266307721724a8708d96dc0d48ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Subway_floor
+    second: {fileID: 2100000, guid: 240061171685d78458776702c0f3864b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Subway_gate_Metal
+    second: {fileID: 2100000, guid: 8898a599d03e5e944afc02eb9d1956b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Subway_wall
+    second: {fileID: 2100000, guid: ae337f9a60885cd47a60e68096c8315a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Yellow
+    second: {fileID: 2100000, guid: bbf7754d806d35a4887ecd8fa8b4e263, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chair_wood
+    second: {fileID: 2100000, guid: 6153bd9b9705b41428d643a1b6b033bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chair_wood_2
+    second: {fileID: 2100000, guid: a88292dd85feb5747ba68a1c58a28aa5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: escalator_black
+    second: {fileID: 2100000, guid: 2ff4cefd903a1a64db8b8984481411d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: frame_black1
+    second: {fileID: 2100000, guid: 2ff4cefd903a1a64db8b8984481411d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 240061171685d78458776702c0f3864b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert10
+    second: {fileID: 2100000, guid: bbf7754d806d35a4887ecd8fa8b4e263, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert13
+    second: {fileID: 2100000, guid: 19afd2820b1593c4694e906585acccce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: letter_black1
+    second: {fileID: 2100000, guid: 2ff4cefd903a1a64db8b8984481411d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: letter_gray
+    second: {fileID: 2100000, guid: 240061171685d78458776702c0f3864b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: man_M
+    second: {fileID: 2100000, guid: 1bae133136900bd49aac08f10aa492b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: screen_white
+    second: {fileID: 2100000, guid: c5fa1b3dc991b734f8a5de774f408515, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: seat_color
+    second: {fileID: 2100000, guid: bbf7754d806d35a4887ecd8fa8b4e263, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: white1
+    second: {fileID: 2100000, guid: c5fa1b3dc991b734f8a5de774f408515, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: woman_M
+    second: {fileID: 2100000, guid: 19afd2820b1593c4694e906585acccce, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
