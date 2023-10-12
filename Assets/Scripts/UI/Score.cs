@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Linq;
 public class Score : MonoBehaviour
 {
     [Serializable]
@@ -20,6 +21,7 @@ public class Score : MonoBehaviour
     public Transform rankPanel;
     public Transform rank;
     public Transform myRank;
+    public Transform content;
     private List<HighScoreEntry> highScoreList;
     private List<Transform> transformList;
     public bool gameOver = false;
@@ -29,7 +31,7 @@ public class Score : MonoBehaviour
         rank.gameObject.SetActive(false);
 
         //DeleteScore();
-        //AddHighScoreEntry(1000, "AAA");
+        //AddHighScoreEntry(4000, "2022");
 
         string jsonString = PlayerPrefs.GetString("highScoreTable");
         HighScores highScores = JsonUtility.FromJson<HighScores>(jsonString);
@@ -48,11 +50,10 @@ public class Score : MonoBehaviour
         }
 
         transformList = new List<Transform>();
-        //foreach (HighScoreEntry highScoreEntry in highScores.highScoreEntryList)
-        //{
-        //    CreateHighScoreTransform(highScoreEntry, rank, transformList);
-        //    //MyRankingView(highScoreEntry, transformList);
-        //}
+        foreach (HighScoreEntry highScoreEntry in highScores.highScoreEntryList)
+        {
+            CreateHighScoreTransform(highScoreEntry, rank, transformList);
+        }
 
         //HighScores highScores = new HighScores { highScoreEntryList = highScoreList };
         //string json = JsonUtility.ToJson(highScores);
@@ -78,7 +79,7 @@ public class Score : MonoBehaviour
 
         Transform transform = Instantiate(rank, rankPanel);
         RectTransform rectTransform = transform.GetComponent<RectTransform>();
-        rectTransform.anchoredPosition = new Vector2(0, (-templateHeight * transformList.Count)-30);        // 스크롤 뷰 사용 시 중심이 달라 -30을 해줌
+        rectTransform.anchoredPosition = new Vector2(0, (-templateHeight * transformList.Count) - 30);        // 스크롤 뷰 사용 시 중심이 달라 -30을 해줌
         transform.gameObject.SetActive(true);
 
         transformList.Add(transform);
@@ -101,7 +102,7 @@ public class Score : MonoBehaviour
         PlayerPrefs.SetString("highScoreTable", json);
         PlayerPrefs.Save();
 
-        int rankSave = 0;
+        int playerRank = 0;
 
         for (int i = 0; i < highScores.highScoreEntryList.Count; i++)
         {
@@ -115,21 +116,22 @@ public class Score : MonoBehaviour
                 }
             }
 
-            //if(i == highScores.highScoreEntryList.Count - 1)
-            //{
-            //    rankSave = highScores.highScoreEntryList[i].score;
-            //}
+            if (highScores.highScoreEntryList[i].score == score && highScores.highScoreEntryList[i].name == name)
+            {
+                playerRank = i + 1; // 플레이어의 순위
+            }
+        }
+
+        foreach (Transform child in content)
+        {
+            Destroy(child.gameObject);
         }
 
         transformList = new List<Transform>();
-        if (!gameOver)
+        foreach (HighScoreEntry ScoreEntry in highScores.highScoreEntryList)
         {
-            foreach (HighScoreEntry ScoreEntry in highScores.highScoreEntryList)
-            {
-                CreateHighScoreTransform(ScoreEntry, rank, transformList);
-                MyRankingView(highScoreEntry, rankSave);
-            }
-            gameOver = true;
+            CreateHighScoreTransform(ScoreEntry, rank, transformList);
+            MyRankingView(highScoreEntry, playerRank);
         }
     }
 
@@ -144,8 +146,6 @@ public class Score : MonoBehaviour
         Debug.Log(PlayerPrefs.GetString("highScoreTable"));
     }
 
-
-    // 랭킹은 정상작동 하지 않음
     private void MyRankingView(HighScoreEntry highScoreEntry, int highScore)
     {
         TextMeshProUGUI rankText = myRank.GetChild(0).GetComponent<TextMeshProUGUI>();
@@ -158,5 +158,10 @@ public class Score : MonoBehaviour
         rankText.text = rankNum.ToString();
         nameText.text = score.ToString();
         scoreText.text = name;
+    }
+
+    public void AddScore()
+    {
+        AddHighScoreEntry(GameManager.gameManager.score, GameManager.gameManager.studentId);
     }
 }

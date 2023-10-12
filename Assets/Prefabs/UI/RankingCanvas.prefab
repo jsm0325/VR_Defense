@@ -900,6 +900,7 @@ MonoBehaviour:
   rankPanel: {fileID: 837006940}
   rank: {fileID: 708326601827669227, guid: 83b607a2dcc4b52478ea6a1b3a8825e2, type: 3}
   myRank: {fileID: 1974266075}
+  content: {fileID: 837006940}
   gameOver: 0
 --- !u!1 &1974266074
 GameObject:
