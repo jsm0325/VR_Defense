@@ -117,11 +117,11 @@ public class Grab : MonoBehaviour
             {
                 weaponName = other.name;
                 Debug.Log(weaponName);
-                if (rightGrabPosition.transform.Find("WP_Bundle").gameObject.activeSelf == false)
-                {
+                //if (rightGrabPosition.transform.Find("WP_Bundle").gameObject.activeSelf == false)  아무것도 안들었을 때 무기 바꾸기 -> 삭제 이유 : 다른 무기를 들면 이전 무기가 다시 생김
+               // {
                     GameManager.gameManager.weaponName = weaponName;
                     ChangeWeapon(weaponName);       //무기 활성화
-                }
+              //  }
                 
             }
         }
