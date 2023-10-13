@@ -1809,6 +1809,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponData: {fileID: 11400000, guid: c8d4c6e2275c1ee4f9bcb912c5f94a9c, type: 2}
+  hitEffects: {fileID: 0}
+  EffectPos: {fileID: 0}
+  HitSound: {fileID: 0}
 --- !u!54 &375971622
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2045,6 +2048,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponData: {fileID: 11400000, guid: a94115b783f673646928b988791353e4, type: 2}
+  hitEffects: {fileID: 0}
+  EffectPos: {fileID: 0}
+  HitSound: {fileID: 0}
 --- !u!54 &489781056
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3038,6 +3044,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponData: {fileID: 11400000, guid: 27ecd264058e113419be86481a79c92f, type: 2}
+  hitEffects: {fileID: 0}
+  EffectPos: {fileID: 0}
+  HitSound: {fileID: 0}
 --- !u!54 &634880596
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3270,6 +3279,7 @@ MonoBehaviour:
   rightGrabPosition: {fileID: 661899583}
   itemData: {fileID: 0}
   itemSlot: {fileID: 3159241}
+  clip: []
 --- !u!135 &661899586
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4256,6 +4266,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponData: {fileID: 11400000, guid: ae9c3618781d8af4588fe58771531e31, type: 2}
+  hitEffects: {fileID: 0}
+  EffectPos: {fileID: 0}
+  HitSound: {fileID: 0}
 --- !u!54 &988664042
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4373,6 +4386,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponData: {fileID: 11400000, guid: 641b2b5f134ec284ea89272246fed202, type: 2}
+  hitEffects: {fileID: 0}
+  EffectPos: {fileID: 0}
+  HitSound: {fileID: 0}
 --- !u!54 &1006263637
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4504,6 +4520,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponData: {fileID: 11400000, guid: 636332b22d1c74940804e7e09e6ce9fa, type: 2}
+  hitEffects: {fileID: 0}
+  EffectPos: {fileID: 0}
+  HitSound: {fileID: 0}
 --- !u!54 &1030313281
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4876,6 +4895,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponData: {fileID: 11400000, guid: 427acf74901f00a429e69d7c3261b02e, type: 2}
+  hitEffects: {fileID: 0}
+  EffectPos: {fileID: 0}
+  HitSound: {fileID: 0}
 --- !u!54 &1112950765
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5453,7 +5475,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1315565109}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a42821ac406e4734fa78161646469e5d, type: 3}
+  m_Script: {fileID: 11500000, guid: c7f2e27112995ea47882c05f6662471c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1341492757
@@ -5827,6 +5849,7 @@ MonoBehaviour:
   rightGrabPosition: {fileID: 661899583}
   itemData: {fileID: 0}
   itemSlot: {fileID: 3159241}
+  clip: []
 --- !u!120 &1536224651
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -6260,6 +6283,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1672369553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672369550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9f5b3261ded7b74a80c7336ad1394d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Map_Wave_01_Test
 --- !u!1 &1672874194
 GameObject:
   m_ObjectHideFlags: 0
@@ -6804,6 +6840,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponData: {fileID: 11400000, guid: 277f44b2d1df29c4db08731603392a71, type: 2}
+  hitEffects: {fileID: 0}
+  EffectPos: {fileID: 0}
+  HitSound: {fileID: 0}
 --- !u!54 &1831345281
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8195,6 +8234,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponData: {fileID: 11400000, guid: 2ee3acfdd88b6994ca5412a451bfce8a, type: 2}
+  hitEffects: {fileID: 0}
+  EffectPos: {fileID: 0}
+  HitSound: {fileID: 0}
 --- !u!54 &2131828067
 Rigidbody:
   m_ObjectHideFlags: 0

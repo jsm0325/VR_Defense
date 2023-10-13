@@ -260,6 +260,7 @@ MonoBehaviour:
   WeaponData: {fileID: 11400000, guid: 427acf74901f00a429e69d7c3261b02e, type: 2}
   hitEffects: {fileID: 0}
   EffectPos: {fileID: 0}
+  HitSound: {fileID: 0}
 --- !u!54 &41540668
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1390,6 +1391,7 @@ MonoBehaviour:
   WeaponData: {fileID: 11400000, guid: 277f44b2d1df29c4db08731603392a71, type: 2}
   hitEffects: {fileID: 0}
   EffectPos: {fileID: 0}
+  HitSound: {fileID: 0}
 --- !u!54 &480173773
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2462,6 +2464,7 @@ MonoBehaviour:
   WeaponData: {fileID: 11400000, guid: ae9c3618781d8af4588fe58771531e31, type: 2}
   hitEffects: {fileID: 0}
   EffectPos: {fileID: 0}
+  HitSound: {fileID: 0}
 --- !u!54 &735740110
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3299,6 +3302,7 @@ MonoBehaviour:
   WeaponData: {fileID: 11400000, guid: 636332b22d1c74940804e7e09e6ce9fa, type: 2}
   hitEffects: {fileID: 0}
   EffectPos: {fileID: 0}
+  HitSound: {fileID: 0}
 --- !u!54 &924019129
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3430,6 +3434,7 @@ MonoBehaviour:
   WeaponData: {fileID: 11400000, guid: 641b2b5f134ec284ea89272246fed202, type: 2}
   hitEffects: {fileID: 0}
   EffectPos: {fileID: 0}
+  HitSound: {fileID: 0}
 --- !u!54 &945002448
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3561,7 +3566,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &991670377
 Transform:
   m_ObjectHideFlags: 0
@@ -5079,6 +5084,7 @@ MonoBehaviour:
   WeaponData: {fileID: 11400000, guid: a94115b783f673646928b988791353e4, type: 2}
   hitEffects: {fileID: 0}
   EffectPos: {fileID: 0}
+  HitSound: {fileID: 0}
 --- !u!54 &1347045760
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5568,6 +5574,7 @@ MonoBehaviour:
   WeaponData: {fileID: 11400000, guid: 2ee3acfdd88b6994ca5412a451bfce8a, type: 2}
   hitEffects: {fileID: 0}
   EffectPos: {fileID: 0}
+  HitSound: {fileID: 0}
 --- !u!54 &1502860957
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6252,6 +6259,7 @@ MonoBehaviour:
   WeaponData: {fileID: 11400000, guid: 27ecd264058e113419be86481a79c92f, type: 2}
   hitEffects: {fileID: 0}
   EffectPos: {fileID: 0}
+  HitSound: {fileID: 0}
 --- !u!54 &1697954146
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7532,6 +7540,7 @@ MonoBehaviour:
   WeaponData: {fileID: 11400000, guid: c8d4c6e2275c1ee4f9bcb912c5f94a9c, type: 2}
   hitEffects: {fileID: 0}
   EffectPos: {fileID: 0}
+  HitSound: {fileID: 0}
 --- !u!54 &2111491997
 Rigidbody:
   m_ObjectHideFlags: 0
