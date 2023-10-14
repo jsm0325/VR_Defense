@@ -55,7 +55,6 @@ public class Monster : MonoBehaviour
         currentHealth = monsterData.maxHp; // 현재 체력 최대 체력으로 설정
         InitializeAppearanceOptions(); // 외형 카테고리 배열 초기화
         SetRandomAppearance(); // 랜덤하게 바디, 의상, 헤어 등을 선택하여 적용
-        
         facialAnimationController.SetFacial(monsterType, randomBaseFacial);
     }
 
@@ -138,8 +137,8 @@ public class Monster : MonoBehaviour
         else
         {
             animController.SetKnockBack();
-            int randomPainFacial = UnityEngine.Random.Range(3, 5);
-            facialAnimationController.SetFacial(monsterType, randomPainFacial);
+            facialAnimationController.SetFacial(monsterType, 3);
+
         }
         
         while (flytime < 0.125) //0.2초 동안 넉백
@@ -147,7 +146,7 @@ public class Monster : MonoBehaviour
             flytime += (Time.deltaTime);
             KnockBackPosition = transform.position + ((transform.position - weaponpos) * knockback);    //현재 위치 - 무기 위치에 밀려나는 정도를 곱하고 더해 밀려난 위치 얻음
             transform.position = Vector3.Lerp(transform.position, KnockBackPosition, flytime/ 0.125f);     //0.125초를 기준으로 날라감
-
+            
             yield return null;
         }
         yield return null;
@@ -157,7 +156,7 @@ public class Monster : MonoBehaviour
     {
         currentHealth -= damage;    // 현재 체력에서 데미지 만큼 빼는 코드
         StartCoroutine(KnockBack(weaponpos, knockback, isHitByLog));    //넉백 코루틴
-        facialAnimationController.SetFacial(monsterType, randomBaseFacial);
+        //facialAnimationController.SetFacial(monsterType, randomBaseFacial);
         // 체력 0 이하시 작동
         if (currentHealth <= 0)
         {

@@ -64,7 +64,7 @@ MonoBehaviour:
   monsterAnim: {fileID: -247305584786813827}
   hairOptions:
   - {fileID: 919132149155446097, guid: e7ab99fd2c5af4045a2288e0c2e1fccf, type: 3}
-  - {fileID: 919132149155446097, guid: 1d1cf4b199647204a972da51f59d76a0, type: 3}
+  - {fileID: 919132149155446097, guid: 3c194acf3a65d7b4db0a65f74dde4ddd, type: 3}
   topOptions: []
   bottomOptions: []
   shoeOptions: []
