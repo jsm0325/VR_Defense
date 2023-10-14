@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8695176167389792694}
   - component: {fileID: -247305584786813827}
   - component: {fileID: 8629068857799165098}
+  - component: {fileID: 5827068273237166103}
   m_Layer: 0
   m_Name: TankerMonster
   m_TagString: Monster
@@ -59,6 +60,7 @@ MonoBehaviour:
   monsterData: {fileID: 11400000, guid: 7aa61c2a66f3da44080ad5700ae2fad7, type: 2}
   score: 100
   animController: {fileID: 8629068857799165098}
+  facialAnimationController: {fileID: 5827068273237166103}
   monsterAnim: {fileID: -247305584786813827}
   hairOptions:
   - {fileID: 919132149155446097, guid: e7ab99fd2c5af4045a2288e0c2e1fccf, type: 3}
@@ -170,6 +172,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   headAnimator: {fileID: 4439788844245137848}
   bodyAnimator: {fileID: 265724577449314144}
+--- !u!114 &5827068273237166103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7184331994205427889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00045f2189ed73b459589bf7c702da73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eyeAnimator: {fileID: 4147482841413341046}
+  eyebrowAnimator: {fileID: 5072509421293072491}
+  mouthAnimator: {fileID: 4642232315742237317}
+  eyeAnimationStateName: Facial_Anim_eye
+  eyebrowAnimationStateName: Facial_Anim_eyebrow
+  mouthAnimationStateName: Facial_Anim_mouth
 --- !u!1001 &600215471960673975
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -546,6 +566,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc1c20754c1c2814aba2fe65650245aa, type: 3}
+--- !u!1 &1153176836267851672 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6162010567954494078, guid: bc1c20754c1c2814aba2fe65650245aa,
+    type: 3}
+  m_PrefabInstance: {fileID: 4214467859086750234}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4147482841413341046
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153176836267851672}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6e44ec973bd8d4f49b08ca3aced1f582, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &3403769649328902275 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7692057702818913639, guid: bc1c20754c1c2814aba2fe65650245aa,
+    type: 3}
+  m_PrefabInstance: {fileID: 4214467859086750234}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4642232315742237317
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3403769649328902275}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a35cb6796cbf448428d2990625cfc5b6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3944491237354475339 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: bc1c20754c1c2814aba2fe65650245aa,
@@ -579,3 +653,30 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4214467859086750234}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &9080224304486699613 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4935843852379938887, guid: bc1c20754c1c2814aba2fe65650245aa,
+    type: 3}
+  m_PrefabInstance: {fileID: 4214467859086750234}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5072509421293072491
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9080224304486699613}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0e94e18c79d949f499d91e3c7ea1bf2a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1181901725935255946}
   - component: {fileID: 6210722948974857451}
   - component: {fileID: 3971588488791819456}
+  - component: {fileID: 7715302515876972006}
   m_Layer: 0
   m_Name: SpeedMonster
   m_TagString: Monster
@@ -59,6 +60,7 @@ MonoBehaviour:
   monsterData: {fileID: 11400000, guid: fd6667e6a694e6047b9fcb8fe8dbab0d, type: 2}
   score: 100
   animController: {fileID: 3971588488791819456}
+  facialAnimationController: {fileID: 7715302515876972006}
   monsterAnim: {fileID: 1181901725935255946}
   hairOptions:
   - {fileID: 919132149155446097, guid: e7ab99fd2c5af4045a2288e0c2e1fccf, type: 3}
@@ -180,6 +182,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   headAnimator: {fileID: 378233792181094625}
   bodyAnimator: {fileID: 6455213487677275633}
+--- !u!114 &7715302515876972006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7184331994205427889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00045f2189ed73b459589bf7c702da73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eyeAnimator: {fileID: 3624867920281451400}
+  eyebrowAnimator: {fileID: 3677511002232399721}
+  mouthAnimator: {fileID: 6334259725540542809}
+  eyeAnimationStateName: Facial_Anim_eye
+  eyebrowAnimationStateName: Facial_Anim_eyebrow
+  mouthAnimationStateName: Facial_Anim_mouth
 --- !u!1001 &2462157131134996369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -269,6 +289,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc1c20754c1c2814aba2fe65650245aa, type: 3}
+--- !u!1 &601075333837455891 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6162010567954494078, guid: bc1c20754c1c2814aba2fe65650245aa,
+    type: 3}
+  m_PrefabInstance: {fileID: 2462157131134996369}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &3624867920281451400
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601075333837455891}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6e44ec973bd8d4f49b08ca3aced1f582, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &2711711924898392186 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: bc1c20754c1c2814aba2fe65650245aa,
@@ -292,6 +339,60 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: a222f133ae58afe428e07de83c7ccc56, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &3993290560941387016 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7692057702818913639, guid: bc1c20754c1c2814aba2fe65650245aa,
+    type: 3}
+  m_PrefabInstance: {fileID: 2462157131134996369}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6334259725540542809
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3993290560941387016}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a35cb6796cbf448428d2990625cfc5b6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &7373787906795237334 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4935843852379938887, guid: bc1c20754c1c2814aba2fe65650245aa,
+    type: 3}
+  m_PrefabInstance: {fileID: 2462157131134996369}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &3677511002232399721
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7373787906795237334}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0e94e18c79d949f499d91e3c7ea1bf2a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

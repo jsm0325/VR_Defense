@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -6020690620320298825}
   - component: {fileID: 865425604593432114}
   - component: {fileID: 777001360406713394}
+  - component: {fileID: 8467029765166276929}
   m_Layer: 0
   m_Name: TiredMonster
   m_TagString: Monster
@@ -59,6 +60,7 @@ MonoBehaviour:
   monsterData: {fileID: 11400000, guid: fdb03c5a48dc57d40844ab939d3ec1fe, type: 2}
   score: 100
   animController: {fileID: 777001360406713394}
+  facialAnimationController: {fileID: 8467029765166276929}
   monsterAnim: {fileID: -6020690620320298825}
   hairOptions:
   - {fileID: 919132149155446097, guid: e7ab99fd2c5af4045a2288e0c2e1fccf, type: 3}
@@ -180,6 +182,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   headAnimator: {fileID: 3596750817981112495}
   bodyAnimator: {fileID: 6488732502042974661}
+--- !u!114 &8467029765166276929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7184331994205427889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00045f2189ed73b459589bf7c702da73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eyeAnimator: {fileID: 6154076248252062940}
+  eyebrowAnimator: {fileID: 2738744299406640034}
+  mouthAnimator: {fileID: 8084828695588151699}
+  eyeAnimationStateName: Facial_Anim_eye
+  eyebrowAnimationStateName: Facial_Anim_eyebrow
+  mouthAnimationStateName: Facial_Anim_mouth
 --- !u!1001 &867660542186857567
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -302,6 +322,87 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 867660542186857567}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1822514106649822918 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7692057702818913639, guid: 746ed0932a198d141a0e300f46006b8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 867660542186857567}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8084828695588151699
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822514106649822918}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a35cb6796cbf448428d2990625cfc5b6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &2771588041955158493 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6162010567954494078, guid: 746ed0932a198d141a0e300f46006b8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 867660542186857567}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6154076248252062940
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2771588041955158493}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6e44ec973bd8d4f49b08ca3aced1f582, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &5221131568152396824 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4935843852379938887, guid: 746ed0932a198d141a0e300f46006b8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 867660542186857567}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2738744299406640034
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5221131568152396824}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0e94e18c79d949f499d91e3c7ea1bf2a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &6134212025413686173
 PrefabInstance:
   m_ObjectHideFlags: 0

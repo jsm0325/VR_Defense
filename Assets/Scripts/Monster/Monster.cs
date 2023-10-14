@@ -19,6 +19,7 @@ public class Monster : MonoBehaviour
 
     private Slider hpSlider;                            // 체력 슬라이더
     public Animator monsterAnim;
+    private int randomBaseFacial;
     // 외형 카테고리들을 저장할 배열의 배열
     public GameObject[][] appearanceOptions;
     // 외형 카테고리들
@@ -37,6 +38,7 @@ public class Monster : MonoBehaviour
 
     private void Awake()
     {
+        randomBaseFacial = UnityEngine.Random.Range(0, 2);
         hpSlider = GetComponentInChildren<Slider>();    // 몬스터에서 hp 슬라이더를 찾음
         moveComponent = GetComponent<MonsterMove>();
         monsterType = RemoveCloneFromName(gameObject.name);
@@ -53,8 +55,8 @@ public class Monster : MonoBehaviour
         currentHealth = monsterData.maxHp; // 현재 체력 최대 체력으로 설정
         InitializeAppearanceOptions(); // 외형 카테고리 배열 초기화
         SetRandomAppearance(); // 랜덤하게 바디, 의상, 헤어 등을 선택하여 적용
-        int randomFacial = UnityEngine.Random.Range(0, 2);
-        facialAnimationController.SetFacial(monsterType, randomFacial);
+        
+        facialAnimationController.SetFacial(monsterType, randomBaseFacial);
     }
 
     void Update()
@@ -106,18 +108,21 @@ public class Monster : MonoBehaviour
     private IEnumerator ReleaseFromTrap()
     {
         animController.SetisTrapped(isTrapped);
-        facialAnimationController.SetFacial(monsterType, 3);
+        facialAnimationController.SetFacial(monsterType, 6);
         yield return new WaitForSeconds(trapDuration); //몬스터 정지
         isTrapped = false;
         animController.SetisTrapped(isTrapped);
+        facialAnimationController.SetFacial(monsterType, randomBaseFacial);
         moveComponent.Move();
     }
 
     private IEnumerator ReleaseFromLullaby(float duration)
     {
         Debug.Log("Start Timer Release Lullaby");
+        facialAnimationController.SetFacial(monsterType, 2);
         yield return new WaitForSeconds(duration);
         isLullaby = false;
+        facialAnimationController.SetFacial(monsterType, randomBaseFacial);
         moveComponent.Move();                           //Monster 다시 이동
     }
 
@@ -128,12 +133,13 @@ public class Monster : MonoBehaviour
         if (isHitByLog == true)
         {
             animController.SetIsLogHit();
-            facialAnimationController.SetFacial(monsterType, 3);
+            facialAnimationController.SetFacial(monsterType, 6);
         }
         else
         {
             animController.SetKnockBack();
-            facialAnimationController.SetFacial(monsterType, 4);
+            int randomPainFacial = UnityEngine.Random.Range(3, 5);
+            facialAnimationController.SetFacial(monsterType, randomPainFacial);
         }
         
         while (flytime < 0.125) //0.2초 동안 넉백
@@ -151,7 +157,7 @@ public class Monster : MonoBehaviour
     {
         currentHealth -= damage;    // 현재 체력에서 데미지 만큼 빼는 코드
         StartCoroutine(KnockBack(weaponpos, knockback, isHitByLog));    //넉백 코루틴
-      
+        facialAnimationController.SetFacial(monsterType, randomBaseFacial);
         // 체력 0 이하시 작동
         if (currentHealth <= 0)
         {

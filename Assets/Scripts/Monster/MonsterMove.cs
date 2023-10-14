@@ -86,6 +86,7 @@ public class MonsterMove : MonoBehaviour
         {
             SlowingDown();
         }
+        transform.rotation = Quaternion.LookRotation(agent.transform.forward);
     }
 
     // 현재 몬스터가 목적지 향해 이동하는지 검사하는 메소드
