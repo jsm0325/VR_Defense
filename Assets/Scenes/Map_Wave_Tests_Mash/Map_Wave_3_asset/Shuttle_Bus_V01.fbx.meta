@@ -59,6 +59,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: tire._frame
     second: {fileID: 2100000, guid: 9b0d6519eb442184ebffba45c106fec9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: window
+    second: {fileID: 2100000, guid: a81d22f4b88a9cc42a11c4b169cca7bb, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

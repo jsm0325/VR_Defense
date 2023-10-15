@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Head_Band_center_M
+    second: {fileID: 2100000, guid: 1b99ebb219f51fb47876d7e855e541c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Metal
     second: {fileID: 2100000, guid: 9b0d6519eb442184ebffba45c106fec9, type: 2}
   - first:
@@ -37,6 +42,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: lambert9
+    second: {fileID: 2100000, guid: 1bae133136900bd49aac08f10aa492b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: lawn_M
     second: {fileID: 2100000, guid: 4e11a6ea1f1d36b4d93292a4367669af, type: 2}
   - first:
@@ -44,6 +54,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: pasted__Win_M
     second: {fileID: 2100000, guid: a81d22f4b88a9cc42a11c4b169cca7bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__lambert4
+    second: {fileID: 2100000, guid: 50e5c6f601b53134db10f955e40682d2, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
