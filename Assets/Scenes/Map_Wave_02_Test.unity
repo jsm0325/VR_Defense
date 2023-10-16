@@ -596,7 +596,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2f43d40a28a9ae447a8e18fb6cd4ab1d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -857,6 +857,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 133140215}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &133140217 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4556566526988847645, guid: bf4e27d63193c024f8bfe024df1d051b,
+    type: 3}
+  m_PrefabInstance: {fileID: 133140215}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &133140218
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133140217}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7057771573569279310, guid: bf4e27d63193c024f8bfe024df1d051b, type: 3}
 --- !u!1001 &160020379
 PrefabInstance:
   m_ObjectHideFlags: 0
