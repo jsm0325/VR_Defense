@@ -7,13 +7,12 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SpatializedObject1
+  m_Name: sauce
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ValidKeywords:
-  - _ALPHABLEND_ON
-  - _EMISSION
+  - _ALPHAPREMULTIPLY_ON
   m_InvalidKeywords: []
-  m_LightmapFlags: 1
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 3000
@@ -69,15 +68,15 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Metallic: 0
-    - _Mode: 2
+    - _Mode: 3
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SrcBlend: 5
+    - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 0, g: 0.75735295, b: 0.13057812, a: 0.78431374}
-    - _EmissionColor: {r: 0.07079922, g: 0.3490566, b: 0.07359466, a: 1}
+    - _Color: {r: 0.31132078, g: 0.12971698, b: 0, a: 0.85882354}
+    - _EmissionColor: {r: 0.0754717, g: 0.047780097, b: 0.032395873, a: 1}
   m_BuildTextureStacks: []

@@ -3,7 +3,17 @@ guid: 772ccad4eebdb5246b83a7258923b2bf
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cat_Punch_Jelly_M
+    second: {fileID: 2100000, guid: e1dacac36427b084a9241816a0fba3c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cat_Punch_base_M
+    second: {fileID: 2100000, guid: f1ab4eb74f9cac74da0cfd3117ea2a82, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -7,13 +7,28 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: brown
+    second: {fileID: 2100000, guid: 827346d5ec885ea44a236c5c21c22ccf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: dish
     second: {fileID: 2100000, guid: c976038266725e74986f3cbe6ff6f410, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: ivory
+    second: {fileID: 2100000, guid: b671e18becf645146a9a527839c3c152, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: rice
     second: {fileID: 2100000, guid: f8d6fe0cb3304c343aede4540c4b65e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sauce
+    second: {fileID: 2100000, guid: f19008969d475134abf23a052daffe5a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
