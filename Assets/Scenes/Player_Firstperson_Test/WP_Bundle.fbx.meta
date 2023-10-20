@@ -22,6 +22,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: BedMinton_Net_M
+    second: {fileID: 2100000, guid: 977a71f629e373746b82d162f0344eb2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Bedminton_1_M
     second: {fileID: 2100000, guid: 3c3755aa2ba43e24a8ed48f72d8b1335, type: 2}
   - first:
