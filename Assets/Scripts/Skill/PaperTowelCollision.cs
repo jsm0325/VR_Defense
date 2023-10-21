@@ -11,7 +11,8 @@ public class PaperTowelCollision : MonoBehaviour
         if (monster != null)
         {
             // 몬스터에 데미지를 입힘
-            monster.Die();
+            monster.HitByPaperTowel();
+            monster.Invoke("Die", 3.0f);
             Destroy(gameObject);
         }
     }

@@ -69,6 +69,8 @@ MonoBehaviour:
   bottomOptions: []
   shoeOptions: []
   clothsScale: {x: 4, y: 4, z: 4}
+  head: {fileID: 4401829684717076623}
+  toiletHead: {fileID: 5040823589851524805}
 --- !u!54 &2426080728847595931
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -170,6 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5d53046697b0d14ca97244683c8f592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monsterAnimator: {fileID: 0}
   headAnimator: {fileID: 4439788844245137848}
   bodyAnimator: {fileID: 265724577449314144}
 --- !u!114 &5827068273237166103
@@ -647,9 +650,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &4401829684717076623 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 534447274663506581, guid: bc1c20754c1c2814aba2fe65650245aa,
+    type: 3}
+  m_PrefabInstance: {fileID: 4214467859086750234}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4464885055039722993 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: bc1c20754c1c2814aba2fe65650245aa,
+    type: 3}
+  m_PrefabInstance: {fileID: 4214467859086750234}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5040823589851524805 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -33681989531280161, guid: bc1c20754c1c2814aba2fe65650245aa,
     type: 3}
   m_PrefabInstance: {fileID: 4214467859086750234}
   m_PrefabAsset: {fileID: 0}

@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     private int currentMonsterCount = 0;
     private bool spawnFinished = false;
     private int currentWave = 0;
+    private bool weaponSwapEnabled = false;
     private AudioSource audioSource;
     public AudioClip[] clip;
     public SkillState[] logState;           // 통나무 스킬의 스테이지 당 정보
@@ -176,6 +177,7 @@ public class GameManager : MonoBehaviour
     {
         // 스테이지 클리어 했을 때 작동할 것들 넣기 스킬 강화, 이동 포탈 생성, 그 외 이펙트 등
         Debug.Log("StageClear");
+        GameManager.gameManager.ChangeWeaponSwapEnabled();
         currentWave++;
         spawnFinished = false;
     }
@@ -197,5 +199,14 @@ public class GameManager : MonoBehaviour
         public float eyeAnimationTime;       // 눈 애니메이션 시간 (초)
         public float eyebrowAnimationTime;   // 눈썹 애니메이션 시간 (초)
         public float mouthAnimationTime;     // 입 애니메이션 시간
+    }
+
+    public void ChangeWeaponSwapEnabled()
+    {
+        weaponSwapEnabled = !weaponSwapEnabled;
+    }
+    public bool GetWeaponSwapEnabled()
+    {
+        return weaponSwapEnabled;
     }
 }

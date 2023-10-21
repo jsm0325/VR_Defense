@@ -16,7 +16,6 @@ public class Monster : MonoBehaviour
     public AnimationController animController;
     public FacialAnimationController facialAnimationController;
     private string monsterType;
-
     private Slider hpSlider;                            // 체력 슬라이더
     public Animator monsterAnim;
     private int randomBaseFacial;
@@ -27,7 +26,17 @@ public class Monster : MonoBehaviour
     public GameObject[] topOptions;
     public GameObject[] bottomOptions;
     public GameObject[] shoeOptions;
+
+    //메테리얼
+    public Material[][] appearanceMaterials;
+    public Material[] hairMaterials;
+    public Material[] topMaterials;
+    public Material[] bottomMaterials;
+    public Material[] shoeMaterials;
     public Vector3 clothsScale = new Vector3(11.0f, 11.0f, 9.0f);
+
+    public GameObject head;
+    public GameObject toiletHead;
 
     // 움직임 관련 변수
     private MonsterMove moveComponent;
@@ -56,6 +65,7 @@ public class Monster : MonoBehaviour
         InitializeAppearanceOptions(); // 외형 카테고리 배열 초기화
         SetRandomAppearance(); // 랜덤하게 바디, 의상, 헤어 등을 선택하여 적용
         facialAnimationController.SetFacial(monsterType, randomBaseFacial);
+        animController.SetWalkSpeed(monsterData.moveSpeed);
     }
 
     void Update()
@@ -170,6 +180,15 @@ public class Monster : MonoBehaviour
             hpSlider.value = ((float)currentHealth / monsterData.maxHp) * 100;  // 현재 체력을 슬라이더에 반영
     }
 
+    public void HitByPaperTowel()
+    {
+        // 이동 멈추기 및 표정 변화 애니메이션 걷기 가속
+        moveComponent.Stop();
+        head.SetActive(false);
+        toiletHead.SetActive(true);
+        animController.SetWalkSpeed(3.0f);
+    }
+
     public void Die()// 몬스터가 죽었을 때 호출
     {
         if (OnMonsterDeath != null)
@@ -194,6 +213,11 @@ public class Monster : MonoBehaviour
         appearanceOptions[1] = topOptions;
         appearanceOptions[2] = bottomOptions;
         appearanceOptions[3] = shoeOptions;
+        appearanceMaterials = new Material[4][];
+        appearanceMaterials[0] = hairMaterials;
+        appearanceMaterials[1] = topMaterials;
+        appearanceMaterials[2] = bottomMaterials;
+        appearanceMaterials[3] = shoeMaterials;
     }
 
     private void SetRandomAppearance() // 랜덤 의상 생성 코드
@@ -207,6 +231,27 @@ public class Monster : MonoBehaviour
                 GameObject selectedAppearancePrefab = appearanceOptions[i][randomIndex];
                 GameObject selectedAppearance = Instantiate(selectedAppearancePrefab, transform.position, transform.rotation, transform);
                 selectedAppearance.transform.localScale = clothsScale;
+                
+                for(int k = 0; k< selectedAppearance.transform.childCount;k ++) // 랜덤 메테리얼 적용 코드
+                {
+                    if (selectedAppearance.transform.GetChild(k).GetComponent<SkinnedMeshRenderer>() != null)
+                    {
+                        Renderer[] renderers = selectedAppearance.GetComponentsInChildren<Renderer>(); // 모든 하위 렌더러 컴포넌트를 가져옵니다.
+                        int randomMaterialIndex = UnityEngine.Random.Range(0, appearanceMaterials[i].Length);
+                        foreach (Renderer rend in renderers)
+                        {
+                            Material[] materials = new Material[rend.sharedMaterials.Length];
+                            
+                            for (int l = 0; l < materials.Length; l++)
+                            {
+                                materials[l] = appearanceMaterials[i][randomMaterialIndex]; // 새로운 메테리얼로 모든 메테리얼을 교체합니다.
+                            }
+
+                            rend.sharedMaterials = materials;
+                        }
+                    }
+                }
+
                 Animator appearanceAnim = selectedAppearance.GetComponent<Animator>();
                 if (appearanceAnim == null)
                 {

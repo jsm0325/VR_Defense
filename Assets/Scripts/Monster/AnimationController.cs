@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AnimationController : MonoBehaviour
 {
+    public Animator monsterAnimator;
     public Animator headAnimator;
     public Animator bodyAnimator;
     private Animator hairAnimator;
@@ -11,7 +12,18 @@ public class AnimationController : MonoBehaviour
     private Animator bottomAnimator;
     private Animator shoeAnimator;
 
-
+    public void SetWalkSpeed(float speed)
+    {
+        headAnimator.SetFloat("moveSpeed", speed);
+        bodyAnimator.SetFloat("moveSpeed", speed);
+        hairAnimator.SetFloat("moveSpeed", speed);
+        if (topAnimator != null)
+        {
+            topAnimator.SetFloat("moveSpeed", speed);
+            bottomAnimator.SetFloat("moveSpeed", speed);
+            shoeAnimator.SetFloat("moveSpeed", speed);
+        }
+    }
     public void SetKnockBack()
     {
         headAnimator.SetTrigger("knockBack");
@@ -30,6 +42,7 @@ public class AnimationController : MonoBehaviour
 
     public void SetIsLogHit()
     {
+        headAnimator.StopPlayback();
         headAnimator.SetTrigger("isLogHit");
         bodyAnimator.SetTrigger("isLogHit");
         hairAnimator.SetTrigger("isLogHit");
@@ -67,6 +80,8 @@ public class AnimationController : MonoBehaviour
             shoeAnimator.SetBool("isTrapped", input);
         }
     }
+
+
 
     public void SetAnimator(int number, Animator inputAnimator)
     {

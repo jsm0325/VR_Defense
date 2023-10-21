@@ -25,19 +25,19 @@ public class FacialAnimationController : MonoBehaviour
                 eyebrowAnimator.Play(eyebrowAnimationStateName, 0, GameManager.gameManager.normalFacialData[facialNumber].eyebrowAnimationTime / eyebrowAnimator.GetCurrentAnimatorStateInfo(0).length);
                 mouthAnimator.Play(mouthAnimationStateName, 0, GameManager.gameManager.normalFacialData[facialNumber].mouthAnimationTime / mouthAnimator.GetCurrentAnimatorStateInfo(0).length);
             }
-            else if (monsterName == "TiredMonster")
+            if (monsterName == "TiredMonster")
             {
                 eyeAnimator.Play(eyeAnimationStateName, 0, GameManager.gameManager.tiredFacialData[facialNumber].eyeAnimationTime / eyeAnimator.GetCurrentAnimatorStateInfo(0).length);
                 eyebrowAnimator.Play(eyebrowAnimationStateName, 0, GameManager.gameManager.tiredFacialData[facialNumber].eyebrowAnimationTime / eyebrowAnimator.GetCurrentAnimatorStateInfo(0).length);
                 mouthAnimator.Play(mouthAnimationStateName, 0, GameManager.gameManager.tiredFacialData[facialNumber].mouthAnimationTime / mouthAnimator.GetCurrentAnimatorStateInfo(0).length);
             }
-            else if (monsterName == "SpeedMonster")
+            if (monsterName == "SpeedMonster")
             {
                 eyeAnimator.Play(eyeAnimationStateName, 0, GameManager.gameManager.speedFacialData[facialNumber].eyeAnimationTime / eyeAnimator.GetCurrentAnimatorStateInfo(0).length);
                 eyebrowAnimator.Play(eyebrowAnimationStateName, 0, GameManager.gameManager.speedFacialData[facialNumber].eyebrowAnimationTime / eyebrowAnimator.GetCurrentAnimatorStateInfo(0).length);
                 mouthAnimator.Play(mouthAnimationStateName, 0, GameManager.gameManager.speedFacialData[facialNumber].mouthAnimationTime / mouthAnimator.GetCurrentAnimatorStateInfo(0).length);
             }
-            else if (monsterName == "TankerMonster")
+            if (monsterName == "TankerMonster")
             {
                 eyeAnimator.Play(eyeAnimationStateName, 0, GameManager.gameManager.tankerFacialData[facialNumber].eyeAnimationTime / eyeAnimator.GetCurrentAnimatorStateInfo(0).length);
                 eyebrowAnimator.Play(eyebrowAnimationStateName, 0, GameManager.gameManager.tankerFacialData[facialNumber].eyebrowAnimationTime / eyebrowAnimator.GetCurrentAnimatorStateInfo(0).length);

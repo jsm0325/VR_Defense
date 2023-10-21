@@ -20,6 +20,7 @@ TagManager:
   - Weapon
   - QuitBed
   - StartGame
+  - WeaponChangeZone
   layers:
   - Default
   - TransparentFX

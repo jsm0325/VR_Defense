@@ -17,23 +17,23 @@ public class Grab : MonoBehaviour
     private RaycastHit hit;
     public AudioClip[] clip;
     private AudioSource audioSource;
-
     private void Awake()
     {
+        
         lineRenderer = GetComponent<LineRenderer>();
         audioSource = GetComponent<AudioSource>();
     }
 
     void FixedUpdate()
     {
-        if(OVRInput.GetDown(OVRInput.RawButton.RHandTrigger))       //버튼을 눌렀을 때
+        if (OVRInput.GetDown(OVRInput.RawButton.RHandTrigger))       //버튼을 눌렀을 때
         {
             isGrabbing = true;
         }
-        else if(OVRInput.GetUp(OVRInput.RawButton.A))        //A 버튼을 누르면 놓는다
+        else if (OVRInput.GetUp(OVRInput.RawButton.A) )        //A 버튼을 누르면 놓는다
         {
             isGrabbing = false;
-            if (!isGrabbing && rightGrabPosition.transform.Find("WP_Bundle").gameObject.activeSelf == true)        //만약 놓는다면 모든 무기를 비활성 한다.
+            if (!isGrabbing && rightGrabPosition.transform.Find("WP_Bundle").gameObject.activeSelf == true && GameManager.gameManager.GetWeaponSwapEnabled() == true)        //만약 놓는다면 모든 무기를 비활성 한다.
             {
                 rightGrabPosition.transform.Find("WP_Bundle").transform.Find(weaponName).transform.Find(weaponName + weaponLevel).gameObject.SetActive(false);
                 rightGrabPosition.transform.Find("WP_Bundle").gameObject.SetActive(false);
@@ -76,6 +76,7 @@ public class Grab : MonoBehaviour
     {
         Grabbable = other.gameObject;
 
+
         if (other.CompareTag("Grabbable"))
         {
             if (isGrabbing)      //만약 잡는다면
@@ -96,7 +97,9 @@ public class Grab : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         Grabbable = other.gameObject;
-        
+
+
+
         if (other.CompareTag("Grabbable"))
         {
             if(!isGrabbing)        //놓는다면
@@ -118,6 +121,7 @@ public class Grab : MonoBehaviour
             }
         }
     }
+
 
     public void ChangeWeapon(string weaponName)
     {

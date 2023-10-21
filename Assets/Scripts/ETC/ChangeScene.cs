@@ -12,6 +12,7 @@ public class ChangeScene : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            GameManager.gameManager.ChangeWeaponSwapEnabled();
             SceneManager.LoadScene(sceneName);
         }
     }

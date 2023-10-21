@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private OVRPlayerController playerController;
-
     private void Start()
     {
         playerController = GetComponent<OVRPlayerController>();
