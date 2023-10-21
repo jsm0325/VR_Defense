@@ -12,7 +12,7 @@ public class WeaponShopUi : MonoBehaviour
     public GameObject grab;
     public Transform itemSelect;
     private int weaponLevel;
-    public Grab rightGrab;
+    private Grab rightGrab;
     [SerializeField] private int[] upgradeCosts = new int[] { 0, 100, 200 }; // 각 무기 레벨별 업그레이드 비용 배열
 
     public void Start()

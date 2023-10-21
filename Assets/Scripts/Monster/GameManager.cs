@@ -96,18 +96,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            RaycastHit hitInfo = new RaycastHit();
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Button")
-            {
-                print("It's working");
-            }
-        }
 
-    }
 
     private void Start()
     {
@@ -163,9 +152,13 @@ public class GameManager : MonoBehaviour
     public void DieMonster()
     {
         currentMonsterCount--;
-        if (spawnFinished == true && currentMonsterCount == 0)
+        if (spawnFinished == true && currentMonsterCount == 0 && currentWave < 2)
         {
             StageClear();
+        }
+        else if (currentWave == 3)
+        {
+            
         }
     }
     public void FinishSpawn()
@@ -178,8 +171,16 @@ public class GameManager : MonoBehaviour
         // 스테이지 클리어 했을 때 작동할 것들 넣기 스킬 강화, 이동 포탈 생성, 그 외 이펙트 등
         Debug.Log("StageClear");
         GameManager.gameManager.ChangeWeaponSwapEnabled();
+        GameObject clearingHub = GameObject.Find("ClearingHub");
+        clearingHub.transform.GetChild(0).gameObject.SetActive(true);
         currentWave++;
         spawnFinished = false;
+    }
+
+    private void GameClear(int health)
+    {
+        // 엔딩 시네마틱 재생 체력이나 점수에 따라
+
     }
 
     public int GetCurrentWave()
