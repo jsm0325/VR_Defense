@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AnimationController : MonoBehaviour
 {
-    public Animator monsterAnimator;
+
     public Animator headAnimator;
     public Animator bodyAnimator;
     private Animator hairAnimator;

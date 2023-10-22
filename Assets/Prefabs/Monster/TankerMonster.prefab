@@ -64,10 +64,29 @@ MonoBehaviour:
   monsterAnim: {fileID: -247305584786813827}
   hairOptions:
   - {fileID: 919132149155446097, guid: e7ab99fd2c5af4045a2288e0c2e1fccf, type: 3}
+  - {fileID: 919132149155446097, guid: 1d1cf4b199647204a972da51f59d76a0, type: 3}
+  - {fileID: 919132149155446097, guid: 68a35f2854d467f4b952ce19143746c8, type: 3}
   - {fileID: 919132149155446097, guid: 3c194acf3a65d7b4db0a65f74dde4ddd, type: 3}
+  - {fileID: 919132149155446097, guid: 3e1e7257cd0860b459d1790b5aa8aab2, type: 3}
   topOptions: []
   bottomOptions: []
   shoeOptions: []
+  hairMaterials:
+  - {fileID: 2100000, guid: aed0c8dccf74889478f7182c76f26a6c, type: 2}
+  - {fileID: 2100000, guid: 1131d75e3a4657845ac5dad43f1b0b10, type: 2}
+  - {fileID: 2100000, guid: ffb5d9718b129d047848035d1f9a2448, type: 2}
+  - {fileID: 2100000, guid: dcf80cae018532c4380f39a849e4fea5, type: 2}
+  - {fileID: 2100000, guid: ace725fefcb490b4fa5beabf6d8feaba, type: 2}
+  - {fileID: 2100000, guid: 6ec0783a3fd051e4897fd051c2b32fa3, type: 2}
+  - {fileID: 2100000, guid: 2c8a699e997848a4f8f3953ab8859d39, type: 2}
+  - {fileID: 2100000, guid: ffe73bf0447b8df40945f2891ae4c0dd, type: 2}
+  - {fileID: 2100000, guid: 5ea3095aa2d343b45b804e2e88bd0ea8, type: 2}
+  - {fileID: 2100000, guid: f0d4f8a94149c9740a27ef4939ebf852, type: 2}
+  - {fileID: 2100000, guid: aa6054144c76ff94aa38241bacc60fe6, type: 2}
+  - {fileID: 2100000, guid: 90191085ecb259844811fd724ed229f1, type: 2}
+  topMaterials: []
+  bottomMaterials: []
+  shoeMaterials: []
   clothsScale: {x: 4, y: 4, z: 4}
   head: {fileID: 4401829684717076623}
   toiletHead: {fileID: 5040823589851524805}

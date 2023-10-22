@@ -67,17 +67,18 @@ MonoBehaviour:
   - {fileID: 919132149155446097, guid: 1d1cf4b199647204a972da51f59d76a0, type: 3}
   - {fileID: 919132149155446097, guid: 68a35f2854d467f4b952ce19143746c8, type: 3}
   - {fileID: 919132149155446097, guid: 3c194acf3a65d7b4db0a65f74dde4ddd, type: 3}
+  - {fileID: 919132149155446097, guid: 3e1e7257cd0860b459d1790b5aa8aab2, type: 3}
   topOptions:
   - {fileID: 919132149155446097, guid: 449cc869715230a44abd41efcba6ac6c, type: 3}
-  - {fileID: 919132149155446097, guid: 449cc869715230a44abd41efcba6ac6c, type: 3}
+  - {fileID: 919132149155446097, guid: 2572778b190955a469527df8db93014c, type: 3}
   bottomOptions:
   - {fileID: 919132149155446097, guid: 3b085b8bfe890a544a4d001dbd260a4f, type: 3}
   - {fileID: 919132149155446097, guid: ed0e6c8142ae83e48ad353bc589b606c, type: 3}
   - {fileID: 919132149155446097, guid: da9d39e7de80fdb429b51a1773161cdd, type: 3}
   - {fileID: 919132149155446097, guid: 28247836cef171e4699aa0989ddc831e, type: 3}
   - {fileID: 919132149155446097, guid: 8025ed894d3ed32479c0c83af78d8010, type: 3}
+  - {fileID: 919132149155446097, guid: bc8a6a02d472fa143a3913909ad1003e, type: 3}
   shoeOptions:
-  - {fileID: 919132149155446097, guid: f243815f8c99fbe47a291aa3cb0d1eab, type: 3}
   - {fileID: 919132149155446097, guid: f243815f8c99fbe47a291aa3cb0d1eab, type: 3}
   hairMaterials:
   - {fileID: 2100000, guid: aed0c8dccf74889478f7182c76f26a6c, type: 2}
