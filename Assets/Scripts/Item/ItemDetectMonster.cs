@@ -8,14 +8,24 @@ public class ItemDetectMonster : MonoBehaviour
     private float lullabyDuration;                      //Monster 이동제약시간, 부모 객체에서 받아오도록 함 
     private bool isActive = false;                      //아이템 활성화 여부, 부모 객체 스크립트에서 변수 상태 변경
     private AudioSource audioSource;
+    private SphereCollider sphereCollider;
 
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        sphereCollider = GetComponent<SphereCollider>();
+    }
+
+    private void Update()
+    {
+        if(isActive)
+        {
+            sphereCollider.radius = 7f;
+        }
     }
     private void OnTriggerEnter(Collider other) 
     {
-        if (isActive)                               
+        if (isActive)
         {
             if (other.CompareTag("Monster")) //충돌한 object가 Monster이면
             {
