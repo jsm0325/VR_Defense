@@ -25,9 +25,9 @@ public class GameManager : MonoBehaviour
     private List<string> playerFacialName = new List<string> { "Base1", "Base2", "Base3", "Pain1", "Pain2", "Smile", "Embarrassed","Angry", "Wink1", "Wink2" };
     private List<string> monsterName = new List<string> { "Normal", "Tired", "Speed", "Tanker" };
     private List<int> playerEyebrowTimeList = new List<int> { 0, 0, 0, 2, 2, 0, 1, 1, 1, 1 };
-    private List<int> eyebrowTimeList = new List<int> { 0, 0, 0, 2, 2, 0, 1 };
-    private List<int> playerMouthTimeList = new List<int> { 0, 0, 3, 7, 8, 4, 5, 6, 5, 5 };
-    private List<int> mouthTimeList = new List<int> { 0, 1, 3, 7, 8, 4, 5 };
+    private List<float> eyebrowTimeList = new List<float> { 0.0f, 0.0f, 0.0f, 2.0f, 2.0f, 0.0f, 1.0f };
+    private List<float> playerMouthTimeList = new List<float> { 0.0f, 0.0f, 3.0f, 7.0f, 8.0f, 4.0f, 5.0f, 6.0f, 5.0f, 5.0f };
+    private List<float> mouthTimeList = new List<float> { 0.0f, 1.0f, 3.0f, 7.0f, 8.0f, 4.0f, 5.0f };
     public List<FacialExpressionData> PlayerFacialData = new List<FacialExpressionData>();
     public List<FacialExpressionData> normalFacialData = new List<FacialExpressionData>();
     public List<FacialExpressionData> tiredFacialData = new List<FacialExpressionData>();

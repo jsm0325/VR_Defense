@@ -73,7 +73,6 @@ public class Monster : MonoBehaviour
         if (isTrapped)
             return;
         moveComponent.InspectDestination();
-        
     }
 
     public void SetTrapped(float duration)
@@ -166,6 +165,7 @@ public class Monster : MonoBehaviour
     {
         currentHealth -= damage;    // 현재 체력에서 데미지 만큼 빼는 코드
         StartCoroutine(KnockBack(weaponpos, knockback, isHitByLog));    //넉백 코루틴
+        facialAnimationController.SetFacial(monsterType, randomBaseFacial);
         //facialAnimationController.SetFacial(monsterType, randomBaseFacial);
         // 체력 0 이하시 작동
         if (currentHealth <= 0)
