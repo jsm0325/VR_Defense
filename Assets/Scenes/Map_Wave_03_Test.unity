@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 527131e35be53fc42957cc9490f1f1a5, type: 2}
 --- !u!1 &16201552
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,6 +533,7 @@ MonoBehaviour:
   WeaponData: {fileID: 11400000, guid: a94115b783f673646928b988791353e4, type: 2}
   hitEffects: {fileID: 0}
   EffectPos: {fileID: 0}
+  HitSound: {fileID: 0}
 --- !u!54 &138640760
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1384,6 +1385,7 @@ MonoBehaviour:
   WeaponData: {fileID: 11400000, guid: 27ecd264058e113419be86481a79c92f, type: 2}
   hitEffects: {fileID: 0}
   EffectPos: {fileID: 0}
+  HitSound: {fileID: 0}
 --- !u!54 &271216219
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2405,6 +2407,7 @@ MonoBehaviour:
   WeaponData: {fileID: 11400000, guid: ae9c3618781d8af4588fe58771531e31, type: 2}
   hitEffects: {fileID: 0}
   EffectPos: {fileID: 0}
+  HitSound: {fileID: 0}
 --- !u!54 &386756295
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4426,6 +4429,7 @@ MonoBehaviour:
   WeaponData: {fileID: 11400000, guid: 277f44b2d1df29c4db08731603392a71, type: 2}
   hitEffects: {fileID: 0}
   EffectPos: {fileID: 0}
+  HitSound: {fileID: 0}
 --- !u!54 &704052496
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4667,6 +4671,7 @@ MonoBehaviour:
   WeaponData: {fileID: 11400000, guid: c8d4c6e2275c1ee4f9bcb912c5f94a9c, type: 2}
   hitEffects: {fileID: 0}
   EffectPos: {fileID: 0}
+  HitSound: {fileID: 0}
 --- !u!54 &752431469
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6878,6 +6883,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: MonsterRount
       objectReference: {fileID: 0}
+    - target: {fileID: 7798365482228194483, guid: 592441a6594acf24d8079990fae3500c,
+        type: 3}
+      propertyPath: waves.Array.data[0].monsterPrefabs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7798365482228194483, guid: 592441a6594acf24d8079990fae3500c,
+        type: 3}
+      propertyPath: waves.Array.data[1].monsterPrefabs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7798365482228194483, guid: 592441a6594acf24d8079990fae3500c,
+        type: 3}
+      propertyPath: waves.Array.data[0].monsterPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 7184331994205427889, guid: 546bc5901a316a54f8a2a5d1f60ef70b,
+        type: 3}
+    - target: {fileID: 7798365482228194483, guid: 592441a6594acf24d8079990fae3500c,
+        type: 3}
+      propertyPath: waves.Array.data[1].monsterPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 7184331994205427889, guid: 546bc5901a316a54f8a2a5d1f60ef70b,
+        type: 3}
     - target: {fileID: 8370028498776603185, guid: 592441a6594acf24d8079990fae3500c,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -7112,6 +7139,7 @@ MonoBehaviour:
   WeaponData: {fileID: 11400000, guid: 636332b22d1c74940804e7e09e6ce9fa, type: 2}
   hitEffects: {fileID: 0}
   EffectPos: {fileID: 0}
+  HitSound: {fileID: 0}
 --- !u!54 &1279385496
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7454,6 +7482,7 @@ MonoBehaviour:
   WeaponData: {fileID: 11400000, guid: 427acf74901f00a429e69d7c3261b02e, type: 2}
   hitEffects: {fileID: 0}
   EffectPos: {fileID: 0}
+  HitSound: {fileID: 0}
 --- !u!54 &1348352331
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9605,6 +9634,7 @@ MonoBehaviour:
   WeaponData: {fileID: 11400000, guid: 2ee3acfdd88b6994ca5412a451bfce8a, type: 2}
   hitEffects: {fileID: 0}
   EffectPos: {fileID: 0}
+  HitSound: {fileID: 0}
 --- !u!54 &1815130720
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9724,6 +9754,7 @@ MonoBehaviour:
   WeaponData: {fileID: 11400000, guid: 641b2b5f134ec284ea89272246fed202, type: 2}
   hitEffects: {fileID: 0}
   EffectPos: {fileID: 0}
+  HitSound: {fileID: 0}
 --- !u!54 &1821738903
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10714,6 +10745,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 67ca7fb90b1d2154e929bb5aa9412611, type: 2}
+    - target: {fileID: -1828466618012143436, guid: 4846a1e4d2155fb46bb97bf4997aa186,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1828466618012143436, guid: 4846a1e4d2155fb46bb97bf4997aa186,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 106283801175604178, guid: 4846a1e4d2155fb46bb97bf4997aa186,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
