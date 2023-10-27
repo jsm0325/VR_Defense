@@ -40,6 +40,7 @@ public class WatchUI : MonoBehaviour
         // 손목을 원래 위치로 되돌렸을 때 UI 비활성화
         if ((leftHandRotation.eulerAngles.z <= 200f || leftHandRotation.eulerAngles.z >= 300f) && uiActive)
         {
+            Debug.Log("watch off");
             watchUi.SetActive(false);
             uiActive = false;
         }
