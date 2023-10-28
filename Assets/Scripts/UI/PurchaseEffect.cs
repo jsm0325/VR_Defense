@@ -66,7 +66,8 @@ public class PurchaseEffect : MonoBehaviour
         if (getCurrency < getCost)
         {
             // 备概 角菩 家府 犁积
-            audio.Play();
+            AudioClip clip = audio.clip;
+            audio.PlayOneShot(clip);
 
             return;
         }
