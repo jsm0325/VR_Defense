@@ -547,6 +547,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6175477862714237122, guid: 5039730be957cf545ab680a1e1beb50e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6175477862985105650, guid: 5039730be957cf545ab680a1e1beb50e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6175477863387843756, guid: 5039730be957cf545ab680a1e1beb50e,
         type: 3}
       propertyPath: m_TargetGraphic
@@ -556,6 +566,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6175477863614213416, guid: 5039730be957cf545ab680a1e1beb50e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 6175477863614213416, guid: 5039730be957cf545ab680a1e1beb50e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 6175477863614213416, guid: 5039730be957cf545ab680a1e1beb50e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.4999999
       objectReference: {fileID: 0}
     - target: {fileID: 6175477863614213416, guid: 5039730be957cf545ab680a1e1beb50e,
         type: 3}
@@ -1859,9 +1884,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ecc5d4584a81ae142b19b3267c1c7e3f, type: 3}
   logState:
   - {fileID: 11400000, guid: 3384bd79fc8cef943a44bf70acad0496, type: 2}
+  - {fileID: 11400000, guid: 3384bd79fc8cef943a44bf70acad0496, type: 2}
   - {fileID: 11400000, guid: f3bbec71f6dd1ad4996ee32e98318840, type: 2}
   - {fileID: 11400000, guid: 83afec458f00f2348ac82111f66e49ee, type: 2}
   paperState:
+  - {fileID: 11400000, guid: 15db3a9592bca954bb824be48e191e03, type: 2}
   - {fileID: 11400000, guid: 15db3a9592bca954bb824be48e191e03, type: 2}
   - {fileID: 11400000, guid: 60de9f892635c6646b9079157a0232b2, type: 2}
   - {fileID: 11400000, guid: 957c7a339f83c96448e2477f51450720, type: 2}
