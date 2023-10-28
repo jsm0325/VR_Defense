@@ -12,9 +12,14 @@ public class ChangeScene : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            GameManager.gameManager.ChangeWeaponSwapEnabled();
-            GameManager.gameManager.PlusCurrentWave();
-            SceneManager.LoadScene(sceneName);
+            if (GameManager.gameManager.weaponName == "Bat" || GameManager.gameManager.weaponName == "Racket" || GameManager.gameManager.weaponName == "Wrench")
+            {
+                GameManager.gameManager.ChangeWeaponSwapEnabled();
+                GameManager.gameManager.PlusCurrentWave();
+                SceneManager.LoadScene(sceneName);
+            }
+            else
+                Debug.Log("무기 없음");
         }
     }
 }
