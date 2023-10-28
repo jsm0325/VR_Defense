@@ -20,6 +20,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Map_Wave_03_Test.unity
     guid: 4cc05c32295951f43aafc6484f1655b4
+  - enabled: 1
+    path: Assets/Scenes/Cine_E1_Hospital.unity
+    guid: 4cf2177ea28edc74a9652621a76f1473
+  - enabled: 1
+    path: Assets/Scenes/Cine_E2_Graduation.unity
+    guid: 99064756baf4167469e27cdf37176df7
+  - enabled: 1
+    path: Assets/Scenes/Cine_E3_Take_a_Bus.unity
+    guid: 83ba5bc44941e5c4b9087aec2b600b06
+  - enabled: 1
+    path: Assets/Scenes/Cine_E4_Refusal.unity
+    guid: 6019ea6992d6adb42ae9c34ffb8f154d
+  - enabled: 1
+    path: Assets/Scenes/Cine_OP1_Fail.unity
+    guid: 0dd1b61fdf17bbb4e98e929abfc72653
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}

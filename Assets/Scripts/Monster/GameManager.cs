@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -122,6 +123,7 @@ public class GameManager : MonoBehaviour
         if (currentHealth <= 0) // 체력 0 되면 게임 오버
         {
             Debug.Log("Game Over");
+            SceneManager.LoadScene("Cine_E1_Hospital");
             rankingObject.AddHighScoreEntry(score, studentId);
         }
         
