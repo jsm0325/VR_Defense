@@ -19,7 +19,7 @@ public class Hit : MonoBehaviour
             collision.gameObject.GetComponent<Monster>().TakeDamage(WeaponData.AttackDamage, transform.position, WeaponData.KnockBack,false);
             GameObject spawnedHit = Instantiate(hitEffects, EffectPos);
             HitSound.Play();
-            Debug.Log(spawnedHit.transform.position);
+          
             
         }
     }

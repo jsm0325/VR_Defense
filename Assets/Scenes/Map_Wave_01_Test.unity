@@ -962,6 +962,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16dc34cf75202104cba685da98fd2da7, type: 3}
+--- !u!1 &1560148510 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5804230119754439118, guid: 16dc34cf75202104cba685da98fd2da7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1560148509}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1610646071
 GameObject:
   m_ObjectHideFlags: 0
@@ -1263,6 +1269,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: StartWave
       objectReference: {fileID: 0}
+    - target: {fileID: 6175477863865145880, guid: 5039730be957cf545ab680a1e1beb50e,
+        type: 3}
+      propertyPath: itemData
+      value: 
+      objectReference: {fileID: 1560148510}
     - target: {fileID: 7547434724856197882, guid: 5039730be957cf545ab680a1e1beb50e,
         type: 3}
       propertyPath: m_audioClip

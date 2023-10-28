@@ -570,7 +570,7 @@ PrefabInstance:
     - target: {fileID: 6175477863614213416, guid: 5039730be957cf545ab680a1e1beb50e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.242
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6175477863614213416, guid: 5039730be957cf545ab680a1e1beb50e,
         type: 3}
@@ -700,19 +700,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 549755437}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 1.042}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.001, y: 0.001, z: 0.001}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1364210613}
   - {fileID: 2105161571}
-  m_Father: {fileID: 1672369549}
+  m_Father: {fileID: 1599071919}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -1.38, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1469, y: 733}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &549755439
@@ -2193,10 +2193,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1599071918}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.1589823, y: 2.1614926, z: -7.2571173}
+  m_LocalPosition: {x: 2.806, y: 2.1614926, z: -6.456}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 549755438}
   m_Father: {fileID: 266468671}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2637,12 +2638,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2df53c634c2794b4e8b2117e7dd63daa, type: 3}
---- !u!4 &1672369549 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3266087116571566392, guid: 2df53c634c2794b4e8b2117e7dd63daa,
-    type: 3}
-  m_PrefabInstance: {fileID: 1672369548}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1672369550 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6292635785690334407, guid: 2df53c634c2794b4e8b2117e7dd63daa,
