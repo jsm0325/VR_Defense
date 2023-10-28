@@ -10,13 +10,13 @@ public class GameManager : MonoBehaviour
     public int currentHealth; // 현재 체력
     public int currency; // 재화
     public int weaponLevel = 1;
-    public string weaponName;
+    public string weaponName = "None";
     public int score;
     public string studentId;
     private int currentMonsterCount = 0;
     private bool spawnFinished = false;
     private int currentWave = 0;
-    private bool weaponSwapEnabled = false;
+    private bool weaponSwapEnabled = true;
     private AudioSource audioSource;
     public AudioClip[] clip;
     public SkillState[] logState;           // 통나무 스킬의 스테이지 당 정보
@@ -40,14 +40,15 @@ public class GameManager : MonoBehaviour
         if(gameManager == null)
         {
             gameManager = this;
+            DontDestroyOnLoad(this.gameObject);
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
 
         audioSource = GetComponent<AudioSource>();
-        DontDestroyOnLoad(gameObject);
+        
 
         for(int i = 0; i < playerFacialName.Count; i++)
         {
@@ -152,13 +153,13 @@ public class GameManager : MonoBehaviour
     public void DieMonster()
     {
         currentMonsterCount--;
-        if (spawnFinished == true && currentMonsterCount == 0 && currentWave < 2)
+        if (spawnFinished == true && currentMonsterCount == 0 && currentWave <= 2)
         {
             StageClear();
         }
         else if (currentWave == 3)
         {
-            
+            GameClear(currentHealth);
         }
     }
     public void FinishSpawn()
@@ -173,7 +174,6 @@ public class GameManager : MonoBehaviour
         GameManager.gameManager.ChangeWeaponSwapEnabled();
         GameObject clearingHub = GameObject.Find("ClearingHub");
         clearingHub.transform.GetChild(0).gameObject.SetActive(true);
-        currentWave++;
         spawnFinished = false;
     }
 
@@ -186,6 +186,10 @@ public class GameManager : MonoBehaviour
     public int GetCurrentWave()
     {
         return currentWave;
+    }
+    public void PlusCurrentWave()
+    {
+        currentWave++;
     }
 
     public void ClickButtonSound()
@@ -202,7 +206,7 @@ public class GameManager : MonoBehaviour
         public float mouthAnimationTime;     // 입 애니메이션 시간
     }
 
-    public void ChangeWeaponSwapEnabled()
+    public void ChangeWeaponSwapEnabled() // 무기 버려서 교체 가능 여부 변경
     {
         weaponSwapEnabled = !weaponSwapEnabled;
     }

@@ -7,9 +7,10 @@ public class EndPoint : MonoBehaviour
     public int damageAmount; // °ñ¿¡ ´ê¾ÒÀ» ¶§ ÀÔÈú µ¥¹ÌÁö·®
     private void OnTriggerEnter(Collider other)
     {
-        Monster monster = other.GetComponent<Monster>();
+        
         if (other.CompareTag("Monster"))
         {
+            Monster monster = other.GetComponent<Monster>();
             ApplyDamageToGoal(monster);
             monster.Die();
         }

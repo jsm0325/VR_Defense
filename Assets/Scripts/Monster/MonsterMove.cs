@@ -17,18 +17,20 @@ public class MonsterMove : MonoBehaviour
     private Rigidbody rigid;
     private Collider collid;
 
+    private Vector3 currentTarget;
     private float originalSpeed;
     private float currentSpeed;
     private bool isSlowingDown = false;
     private bool isStopByLullaby = false;
     private float lullabyDuration;
     private float distance;
-    private float thresholdDistance = 80;
+    private float thresholdDistance;
     private bool enteredZone = false;
     private Vector3 randomTarget; // 랜덤 이동 목적지
     private void Awake()
     {
         finalTarget = GameObject.FindWithTag("Finish");
+        thresholdDistance = Vector3.Distance(gameObject.transform.position, finalTarget.transform.position);
         agent = GetComponent<NavMeshAgent>();   // 게임이 시작되면 게임 오브젝트에 부착된 NavMeshAgent 컴포넌트를 가져와서 저장
         rigid = GetComponent<Rigidbody>();
         collid = GetComponent<Collider>();
@@ -54,7 +56,8 @@ public class MonsterMove : MonoBehaviour
 
     void Start()
     {
-        agent.SetDestination(finalTarget.transform.position);   // 목적지 설정
+        currentTarget = finalTarget.transform.position;
+        agent.SetDestination(currentTarget);   // 목적지 설정
         agent.speed = monsterData.moveSpeed;        // 몬스터 이동 속도 데이터에서 받아와서 설정
         originalSpeed = monsterData.moveSpeed;      //초기 이동속도 저장
         currentSpeed = monsterData.moveSpeed;
@@ -62,7 +65,7 @@ public class MonsterMove : MonoBehaviour
 
     void Update()
     {
-        distance = Vector3.Distance(gameObject.transform.position, finalTarget.transform.position);
+        distance = Vector3.Distance(gameObject.transform.position, currentTarget);
 
         if(distance <= thresholdDistance && enteredZone == false)
         {
@@ -73,12 +76,12 @@ public class MonsterMove : MonoBehaviour
 
         }  else if (distance <=20)
         {
-            agent.SetDestination(finalTarget.transform.position);
+            currentTarget = finalTarget.transform.position;
         }
         // 목적지와의 거리 
         if (agent.remainingDistance < 1f && agent.destination == randomTarget) // 목적지에 도착하면 동작함
         {
-            agent.SetDestination(finalTarget.transform.position);
+            currentTarget = finalTarget.transform.position;
             enteredZone = false;
         }
 
@@ -86,6 +89,7 @@ public class MonsterMove : MonoBehaviour
         {
             SlowingDown();
         }
+        agent.SetDestination(currentTarget);
         transform.rotation = Quaternion.LookRotation(agent.transform.forward);
     }
 
@@ -174,7 +178,7 @@ public class MonsterMove : MonoBehaviour
         if (NavMesh.SamplePosition(randomPosition, out hit, distanceAhead, 1)) // 위치가 이동할 수 있는 위치인지 확인하는 코드 유호하진 않은 위치면 30f 범위내에서 다시 찾음
         {
             randomTarget = hit.position;
-            agent.SetDestination(randomTarget); 
+            currentTarget = randomTarget;
             
         }
         else

@@ -17,6 +17,7 @@ public class WeaponShopUi : MonoBehaviour
 
     public void Start()
     {
+        grab = GameObject.FindWithTag("Grab");
         rightGrab = grab.GetComponent<Grab>();
         weaponLevel = GameManager.gameManager.weaponLevel + 1;
         price.GetComponent<Text>().text = upgradeCosts[weaponLevel - 1].ToString() + " ¿ø";
@@ -25,7 +26,6 @@ public class WeaponShopUi : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-
             objectToActivate.SetActive(true);
             weapon = itemSelect.transform.Find("WP_Bundle").transform.Find(GameManager.gameManager.weaponName).transform.Find(GameManager.gameManager.weaponName + weaponLevel).gameObject;
             GameObject currentWeapon = itemSelect.transform.Find("WP_Bundle").transform.Find(GameManager.gameManager.weaponName).transform.Find(GameManager.gameManager.weaponName + (weaponLevel - 1)).gameObject;

@@ -13,6 +13,7 @@ public class ChangeScene : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             GameManager.gameManager.ChangeWeaponSwapEnabled();
+            GameManager.gameManager.PlusCurrentWave();
             SceneManager.LoadScene(sceneName);
         }
     }

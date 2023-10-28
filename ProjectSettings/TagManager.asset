@@ -21,6 +21,7 @@ TagManager:
   - QuitBed
   - StartGame
   - WeaponChangeZone
+  - Grab
   layers:
   - Default
   - TransparentFX

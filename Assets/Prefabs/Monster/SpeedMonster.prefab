@@ -130,7 +130,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: e54154e46e37cde428ccb2691c99e0c4, type: 2}
   - {fileID: 2100000, guid: d5d8845b3ec8d0e46b758ef4e40976bf, type: 2}
   - {fileID: 2100000, guid: 0989273da6ec4bd4083ef02025aaea12, type: 2}
-  clothsScale: {x: 4, y: 4, z: 4}
+  clothsScale: {x: 5, y: 5, z: 5}
   head: {fileID: 2684684325089279236}
   toiletHead: {fileID: 6747237444872557390}
 --- !u!54 &2426080728847595931
@@ -268,17 +268,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: bc1c20754c1c2814aba2fe65650245aa,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bc1c20754c1c2814aba2fe65650245aa,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bc1c20754c1c2814aba2fe65650245aa,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bc1c20754c1c2814aba2fe65650245aa,
         type: 3}
@@ -653,17 +653,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 906fc15875e545944a1c2bcf98dee90b,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 906fc15875e545944a1c2bcf98dee90b,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 906fc15875e545944a1c2bcf98dee90b,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 906fc15875e545944a1c2bcf98dee90b,
         type: 3}

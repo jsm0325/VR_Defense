@@ -24,6 +24,15 @@ public class Grab : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
+    private void Start()
+    {
+        if(GameManager.gameManager.GetCurrentWave() > 0)
+        {
+            ChangeWeapon(GameManager.gameManager.weaponName);
+        }
+        
+    }
+
     void FixedUpdate()
     {
         if (OVRInput.GetDown(OVRInput.RawButton.RHandTrigger))       //버튼을 눌렀을 때

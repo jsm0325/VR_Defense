@@ -147,7 +147,6 @@ public class Monster : MonoBehaviour
         {
             animController.SetKnockBack();
             facialAnimationController.SetFacial(monsterType, 3);
-
         }
         
         while (flytime < 0.125) //0.2초 동안 넉백
@@ -165,8 +164,7 @@ public class Monster : MonoBehaviour
     {
         currentHealth -= damage;    // 현재 체력에서 데미지 만큼 빼는 코드
         StartCoroutine(KnockBack(weaponpos, knockback, isHitByLog));    //넉백 코루틴
-        facialAnimationController.SetFacial(monsterType, randomBaseFacial);
-        //facialAnimationController.SetFacial(monsterType, randomBaseFacial);
+        Invoke("CallBaseFacial", 2);
         // 체력 0 이하시 작동
         if (currentHealth <= 0)
         {
@@ -188,7 +186,10 @@ public class Monster : MonoBehaviour
         toiletHead.SetActive(true);
         animController.SetWalkSpeed(3.0f);
     }
-
+    public void CallBaseFacial()
+    {
+        facialAnimationController.SetFacial(monsterType, randomBaseFacial);
+    }
     public void Die()// 몬스터가 죽었을 때 호출
     {
         if (OnMonsterDeath != null)
@@ -196,13 +197,13 @@ public class Monster : MonoBehaviour
             OnMonsterDeath(gameObject);
         }
         
-        GameManager.gameManager.AddCurrency(monsterData.coin); // 몬스터 coin 값 만큼 재화 증가
-        GameManager.gameManager.score += score;
-        GameManager.gameManager.DieMonster();
+        
+        if(currentHealth <= 0)
+        {
+            GameManager.gameManager.AddCurrency(monsterData.coin); // 몬스터 coin 값 만큼 재화 증가
+            GameManager.gameManager.score += score;
+        }
         UiManager.uiManager.UpdateCurrencyText(GameManager.gameManager.currency);
-        Destroy(gameObject); // 몬스터 게임 오브젝트 삭제
-
-
     }
 
     private void InitializeAppearanceOptions()

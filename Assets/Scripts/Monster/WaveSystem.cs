@@ -15,7 +15,7 @@ public class WaveSystem : MonoBehaviour
     {
         if (isStarted == false)
         {
-            int currentWaveIndex = GameManager.gameManager.GetCurrentWave(); // 웨이브 단계
+            int currentWaveIndex = GameManager.gameManager.GetCurrentWave() - 1; // 웨이브 단계
             monsterSpawner.StartWave(waves[currentWaveIndex]);
             isStarted = true;
         }
