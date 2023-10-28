@@ -3344,6 +3344,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7798365482228194483, guid: 592441a6594acf24d8079990fae3500c,
         type: 3}
+      propertyPath: waves.Array.data[2].spawnTime
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7798365482228194483, guid: 592441a6594acf24d8079990fae3500c,
+        type: 3}
+      propertyPath: waves.Array.data[2].maxMonsterCount
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7798365482228194483, guid: 592441a6594acf24d8079990fae3500c,
+        type: 3}
       propertyPath: waves.Array.data[0].monsterPrefabs.Array.size
       value: 2
       objectReference: {fileID: 0}

@@ -15,8 +15,8 @@ MonoBehaviour:
   dropItem:
   - {fileID: 4733498476798299403, guid: cdc8bdf960cd84841b5d8488a637c67a, type: 3}
   - {fileID: 1710523552500194753, guid: 6454e951a5cf9fc4caf197e9a83dde96, type: 3}
-  - {fileID: 5888553567705465786, guid: 87d06890b990d0b40a6098574148f7c3, type: 3}
-  - {fileID: 6611199674221603527, guid: d3c5218c35bf3744fb66ce3ceea3f90e, type: 3}
+  - {fileID: 7508852850677368866, guid: 4a64d697466766949909b4794daf3ecd, type: 3}
+  - {fileID: 7057920684266965420, guid: 4c20c2cd3fb43534a99092af0be3a8f3, type: 3}
   coin: 20
   maxHp: 200
   moveSpeed: 1

@@ -66,8 +66,8 @@ public class WeaponShopUi : MonoBehaviour
                 }
                 else
                 {
-                    price.GetComponent<Text>().text = "만렙입니다.";
-                    weaponInformation.GetComponent<Text>().text = "만렙입니다.";
+                    price.GetComponent<Text>().text = "최고 레벨입니다.";
+                    weaponInformation.GetComponent<Text>().text = "최고 레벨입니다.";
                     rightGrab.ChangeWeapon(GameManager.gameManager.weaponName);
                     weapon.SetActive(false);
                 }

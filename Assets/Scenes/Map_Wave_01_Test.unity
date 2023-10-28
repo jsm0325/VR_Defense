@@ -217,6 +217,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &583930883 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1114866411583582925, guid: e7a3f4e6793ae6e48b2ed57831f75400,
+    type: 3}
+  m_PrefabInstance: {fileID: 1858470648}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42284bfc670a5ea49bd24ddb94e6b329, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &693846868
 GameObject:
   m_ObjectHideFlags: 0
@@ -1715,6 +1727,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a34c97725d079fa4887422c22bfdc549, type: 3}
+--- !u!1 &1811509836 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5360371509833647328, guid: a34c97725d079fa4887422c22bfdc549,
+    type: 3}
+  m_PrefabInstance: {fileID: 1811509835}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1811509837
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1811509836}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7740933394952622423, guid: a34c97725d079fa4887422c22bfdc549, type: 3}
 --- !u!1001 &1858470648
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1722,6 +1754,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1114866411455603480, guid: e7a3f4e6793ae6e48b2ed57831f75400,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 583930883}
+    - target: {fileID: 1114866411455603480, guid: e7a3f4e6793ae6e48b2ed57831f75400,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeWeapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1114866412240096498, guid: e7a3f4e6793ae6e48b2ed57831f75400,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1114866412292256230, guid: e7a3f4e6793ae6e48b2ed57831f75400,
         type: 3}
       propertyPath: m_Name
@@ -1785,7 +1832,7 @@ PrefabInstance:
     - target: {fileID: 1114866412460858083, guid: e7a3f4e6793ae6e48b2ed57831f75400,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7a3f4e6793ae6e48b2ed57831f75400, type: 3}
@@ -1918,8 +1965,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7798365482228194483, guid: 592441a6594acf24d8079990fae3500c,
         type: 3}
+      propertyPath: waves.Array.data[0].maxMonsterCount
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7798365482228194483, guid: 592441a6594acf24d8079990fae3500c,
+        type: 3}
+      propertyPath: waves.Array.data[1].maxMonsterCount
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7798365482228194483, guid: 592441a6594acf24d8079990fae3500c,
+        type: 3}
+      propertyPath: waves.Array.data[2].maxMonsterCount
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7798365482228194483, guid: 592441a6594acf24d8079990fae3500c,
+        type: 3}
       propertyPath: waves.Array.data[0].monsterPrefabs.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7798365482228194483, guid: 592441a6594acf24d8079990fae3500c,
         type: 3}
@@ -1931,6 +1993,18 @@ PrefabInstance:
       propertyPath: waves.Array.data[0].monsterPrefabs.Array.data[1]
       value: 
       objectReference: {fileID: 7184331994205427889, guid: 546bc5901a316a54f8a2a5d1f60ef70b,
+        type: 3}
+    - target: {fileID: 7798365482228194483, guid: 592441a6594acf24d8079990fae3500c,
+        type: 3}
+      propertyPath: waves.Array.data[0].monsterPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 7184331994205427889, guid: fb4c454bdd5085449a343faa3142af2e,
+        type: 3}
+    - target: {fileID: 7798365482228194483, guid: 592441a6594acf24d8079990fae3500c,
+        type: 3}
+      propertyPath: waves.Array.data[0].monsterPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 7184331994205427889, guid: e6fc878cb07110147b16d0de032ff391,
         type: 3}
     - target: {fileID: 7798365482228194483, guid: 592441a6594acf24d8079990fae3500c,
         type: 3}

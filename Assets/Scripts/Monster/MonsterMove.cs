@@ -138,7 +138,7 @@ public class MonsterMove : MonoBehaviour
         {
             currentSpeed -= originalSpeed / lullabyDuration * Time.deltaTime;   //duration동안 속도가 점점 0으로 줄어듦
             agent.speed = currentSpeed;
-            Debug.Log("SlowingDown" + agent.speed);
+
         }
         else                                                                    //속도가 0에 가까워지면 
         {
