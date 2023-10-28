@@ -360,6 +360,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1672369548}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &320206737 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6175477863531025225, guid: 5039730be957cf545ab680a1e1beb50e,
+    type: 3}
+  m_PrefabInstance: {fileID: 510743043}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &320206744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320206737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac95717892e7e154b9513244d0dab5a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectID: 
 --- !u!1 &365003930
 GameObject:
   m_ObjectHideFlags: 0
@@ -3184,6 +3203,7 @@ GameObject:
   - component: {fileID: 2065202299}
   - component: {fileID: 2065202298}
   - component: {fileID: 2065202297}
+  - component: {fileID: 2065202300}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3332,6 +3352,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2065202300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065202296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac95717892e7e154b9513244d0dab5a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectID: 
 --- !u!1 &2105161570
 GameObject:
   m_ObjectHideFlags: 0
@@ -3545,6 +3578,11 @@ PrefabInstance:
       propertyPath: currencyText
       value: 
       objectReference: {fileID: 510743047}
+    - target: {fileID: 8385055438153701175, guid: 166a138122a1178448703752547af617,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 166a138122a1178448703752547af617, type: 3}
 --- !u!1001 &5195395807935403755

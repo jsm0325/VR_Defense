@@ -115,6 +115,7 @@ public class GameManager : MonoBehaviour
         UiManager.uiManager.UpdateCurrencyText(currency);
     }
 
+
     public void DecreaseHealth(int amount) // 체력 감소 메서드
     {
         currentHealth -= amount;
