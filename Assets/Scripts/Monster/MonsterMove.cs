@@ -71,17 +71,20 @@ public class MonsterMove : MonoBehaviour
         {
             // 일정 거리값이 되면 랜덤한 목적지를 설정 및 거리값 줄이기
             SetRandomDestination();
+            agent.SetDestination(currentTarget);
             thresholdDistance -= 10;
             enteredZone = true;
 
         }  else if (distance <=20)
         {
             currentTarget = finalTarget.transform.position;
+            agent.SetDestination(currentTarget);
         }
         // 목적지와의 거리 
         if (agent.remainingDistance < 1f && agent.destination == randomTarget) // 목적지에 도착하면 동작함
         {
             currentTarget = finalTarget.transform.position;
+            agent.SetDestination(currentTarget);
             enteredZone = false;
         }
 
@@ -89,7 +92,7 @@ public class MonsterMove : MonoBehaviour
         {
             SlowingDown();
         }
-        agent.SetDestination(currentTarget);
+        
         transform.rotation = Quaternion.LookRotation(agent.transform.forward);
     }
 

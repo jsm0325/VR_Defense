@@ -63,9 +63,11 @@ public class ItemKitten : MonoBehaviour
     {
         float moveTime = 0.0f;
         MonsterMove monsterMove = monster.GetComponent<MonsterMove>();
-
+        Monster monsterScript = monster.GetComponent<Monster>();
         NavMeshAgent agent = monster.GetComponent<NavMeshAgent>();
         agent.SetDestination(gameObject.transform.position);
+        monsterScript.facialAnimationController.SetFacial(monsterScript.monsterType, 4);
+        monsterScript.Invoke("CallBaseFacial", duration);
         while (moveTime < duration)
         {
             moveTime += Time.deltaTime;

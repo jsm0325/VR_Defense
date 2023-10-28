@@ -15,7 +15,7 @@ public class Monster : MonoBehaviour
 
     public AnimationController animController;
     public FacialAnimationController facialAnimationController;
-    private string monsterType;
+    public string monsterType;
     private Slider hpSlider;                            // 체력 슬라이더
     public Animator monsterAnim;
     private int randomBaseFacial;
