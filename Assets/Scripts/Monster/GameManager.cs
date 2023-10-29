@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;  // 시작 시 전체 체력으로 초기화
-        currency = 1000;               // 시작 시 재화를 0으로 초기화
+        currency = 100;               // 시작 시 재화를 초기화
 
         // UiManager가 존재하는지 확인 함
         if (UiManager.uiManager == null)
@@ -160,7 +160,7 @@ public class GameManager : MonoBehaviour
         {
             StageClear();
         }
-        else if (currentWave == 3)
+        else if (spawnFinished == true && currentMonsterCount == 0 && currentWave == 3)
         {
             GameClear(currentHealth);
         }
@@ -185,7 +185,7 @@ public class GameManager : MonoBehaviour
         // 엔딩 시네마틱 재생 체력이나 점수에 따라
         if(currentHealth>=40)
             SceneManager.LoadScene("Cine_E2_Graduation");
-        else if(currentHealth>=5)
+        else if(currentHealth < 40 && currentHealth >=15)
             SceneManager.LoadScene("Cine_E3_Take_a_Bus");
         else
             SceneManager.LoadScene("Cine_E4_Refusal");
