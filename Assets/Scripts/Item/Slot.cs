@@ -19,12 +19,16 @@ public class Slot : MonoBehaviour
     {
         if (item.name == "CatPunch")
             itemCount = GameManager.gameManager.itemNum[0];
+            textCount.text = itemCount.ToString();
         if (item.name == "Lullaby")
             itemCount = GameManager.gameManager.itemNum[1];
+            textCount.text = itemCount.ToString();
         if (item.name == "Kitten")
             itemCount = GameManager.gameManager.itemNum[2];
+            textCount.text = itemCount.ToString();
         if (item.name == "Manhole")
             itemCount = GameManager.gameManager.itemNum[3];
+            textCount.text = itemCount.ToString();
     }
 
     // æ∆¿Ã≈€ »πµÊ

@@ -41,8 +41,8 @@ public class PurchaseEffect : MonoBehaviour
             GameObject slot = itemSlotPanel.transform.GetChild(i).gameObject;
             string name = slot.GetComponent<Slot>().item.itemName;
 
-            if (name == "CatPunch")
-                name = "CatPaw";
+            if (name == "CatPaw")
+                name = "CatPunch";
 
             itemSlot.Add(name, slot);
         }
