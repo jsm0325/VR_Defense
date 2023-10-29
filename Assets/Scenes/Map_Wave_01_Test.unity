@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1835,7 +1835,7 @@ PrefabInstance:
     - target: {fileID: 1114866412460858083, guid: e7a3f4e6793ae6e48b2ed57831f75400,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4254348647768822496, guid: e7a3f4e6793ae6e48b2ed57831f75400,
         type: 3}
@@ -2099,8 +2099,13 @@ PrefabInstance:
       objectReference: {fileID: 2129792423}
     - target: {fileID: 7798365482228194483, guid: 592441a6594acf24d8079990fae3500c,
         type: 3}
+      propertyPath: waves.Array.data[1].spawnTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7798365482228194483, guid: 592441a6594acf24d8079990fae3500c,
+        type: 3}
       propertyPath: waves.Array.data[2].spawnTime
-      value: 2.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7798365482228194483, guid: 592441a6594acf24d8079990fae3500c,
         type: 3}

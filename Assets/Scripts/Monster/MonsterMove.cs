@@ -64,7 +64,7 @@ public class MonsterMove : MonoBehaviour
 
     void Update()
     {
-        distance = Vector3.Distance(gameObject.transform.position, currentTarget);
+        distance = Vector3.Distance(gameObject.transform.position, finalTarget.transform.position);
 
         if(distance <= thresholdDistance && enteredZone == false)
         {
@@ -80,7 +80,7 @@ public class MonsterMove : MonoBehaviour
             agent.SetDestination(currentTarget);
         }
         // 목적지와의 거리 
-        if (agent.remainingDistance < 1f && agent.destination == randomTarget) // 목적지에 도착하면 동작함
+        if (agent.remainingDistance < 1f && agent.destination != finalTarget.transform.position) // 목적지에 도착하면 동작함
         {
             currentTarget = finalTarget.transform.position;
             agent.SetDestination(currentTarget);
