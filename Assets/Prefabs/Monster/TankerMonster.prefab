@@ -495,6 +495,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1241356230364225681, guid: ff08fce980d83b148bc29de7670f9715,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.302
+      objectReference: {fileID: 0}
+    - target: {fileID: 1241356230364225681, guid: ff08fce980d83b148bc29de7670f9715,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1747220052427965226, guid: ff08fce980d83b148bc29de7670f9715,
         type: 3}
       propertyPath: m_Value
@@ -618,7 +628,7 @@ PrefabInstance:
     - target: {fileID: 8884394004921427442, guid: ff08fce980d83b148bc29de7670f9715,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 0.723
       objectReference: {fileID: 0}
     - target: {fileID: 8884394004921427442, guid: ff08fce980d83b148bc29de7670f9715,
         type: 3}
