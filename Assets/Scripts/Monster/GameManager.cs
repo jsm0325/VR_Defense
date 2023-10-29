@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public int currency; // ¿Á»≠
     public int weaponLevel = 1;
     public string weaponName = "None";
+    public int[] itemNum = new int[] { 0, 0, 0, 0 }; 
     public int score;
     public string studentId;
     private int currentMonsterCount = 0;
