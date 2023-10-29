@@ -15,9 +15,33 @@ public class Slot : MonoBehaviour
     [SerializeField]
     private GameObject watchUi;
 
+    public void Start()
+    {
+        if (item.name == "CatPunch")
+            itemCount = GameManager.gameManager.itemNum[0];
+            textCount.text = itemCount.ToString();
+        if (item.name == "Lullaby")
+            itemCount = GameManager.gameManager.itemNum[1];
+            textCount.text = itemCount.ToString();
+        if (item.name == "Kitten")
+            itemCount = GameManager.gameManager.itemNum[2];
+            textCount.text = itemCount.ToString();
+        if (item.name == "Manhole")
+            itemCount = GameManager.gameManager.itemNum[3];
+            textCount.text = itemCount.ToString();
+    }
+
     // ¾ÆÀÌÅÛ È¹µæ
     public void AddItem(int count = 1)
     {
+        if (item.name == "CatPunch")
+            GameManager.gameManager.itemNum[0]++;
+        if (item.name == "Lullaby")
+            GameManager.gameManager.itemNum[1]++;
+        if (item.name == "Kitten")
+            GameManager.gameManager.itemNum[2]++;
+        if (item.name == "Manhole")
+            GameManager.gameManager.itemNum[3]++;
         itemCount += count;
         textCount.text = itemCount.ToString();
     }
@@ -33,6 +57,14 @@ public class Slot : MonoBehaviour
     {
         if(itemCount > 0)
         {
+            if (item.name == "CatPunch")
+                GameManager.gameManager.itemNum[0]--;
+            if (item.name == "Lullaby")
+                GameManager.gameManager.itemNum[1]--;
+            if (item.name == "Kitten")
+                GameManager.gameManager.itemNum[2]--;
+            if (item.name == "Manhole")
+                GameManager.gameManager.itemNum[3]--;
             itemCount--;
             textCount.text = itemCount.ToString();
             SummonItem();
@@ -54,4 +86,17 @@ public class Slot : MonoBehaviour
         //Instantiate(summonitemObject, summonPosition.transform.position, summonPosition.transform.rotation).transform.SetParent(summonPosition);
         summonitemObject.transform.GetComponent<Rigidbody>().isKinematic = true;
     }
+
+    private void Update()
+    {
+        if (item.name == "CatPunch")
+            GameManager.gameManager.itemNum[0] = itemCount;
+        if (item.name == "Lullaby")
+            GameManager.gameManager.itemNum[1] = itemCount;
+        if (item.name == "Kitten")
+            GameManager.gameManager.itemNum[2] = itemCount;
+        if (item.name == "Manhole")
+            GameManager.gameManager.itemNum[3] = itemCount;
+    }
+ 
 }

@@ -21,11 +21,6 @@ public class WaveSystem : MonoBehaviour
         }
         
     }
-    // 다음 스테이지 도착하면 작동하도록 해야함
-    public void ClearWave()
-    {
-        isStarted = false;
-    }
 }
 
 

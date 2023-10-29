@@ -2382,6 +2382,7 @@ MonoBehaviour:
   currency: 0
   weaponLevel: 1
   weaponName: 
+  itemNum: 00000000000000000000000000000000
   score: 0
   studentId: 
   clip:
