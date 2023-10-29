@@ -1775,5 +1775,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -8.6
       objectReference: {fileID: 0}
+    - target: {fileID: 4545345533568386304, guid: e7a3f4e6793ae6e48b2ed57831f75400,
+        type: 3}
+      propertyPath: sceneName
+      value: Map_Wave_03_Test
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7a3f4e6793ae6e48b2ed57831f75400, type: 3}
