@@ -183,7 +183,12 @@ public class GameManager : MonoBehaviour
     private void GameClear(int health)
     {
         // 엔딩 시네마틱 재생 체력이나 점수에 따라
-
+        if(currentHealth>=40)
+            SceneManager.LoadScene("Cine_E2_Graduation");
+        else if(currentHealth>=5)
+            SceneManager.LoadScene("Cine_E3_Take_a_Bus");
+        else
+            SceneManager.LoadScene("Cine_E4_Refusal");
     }
 
     public int GetCurrentWave()

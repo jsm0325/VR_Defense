@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class hospital : MonoBehaviour
+public class SceneTORoom : MonoBehaviour
 {
     private void Start()
     {
-        Invoke("moveScenne", 10);
+        Invoke("moveScenne", 20);
     }
 
    private void moveScenne()
