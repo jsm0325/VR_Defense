@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -721,15 +721,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7798365482228194483, guid: 592441a6594acf24d8079990fae3500c,
         type: 3}
+      propertyPath: waves.Array.data[0].monsterPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 7184331994205427889, guid: d1739c2a6fc8d2745b4b8072d67fb712,
+        type: 3}
+    - target: {fileID: 7798365482228194483, guid: 592441a6594acf24d8079990fae3500c,
+        type: 3}
       propertyPath: waves.Array.data[0].monsterPrefabs.Array.data[1]
       value: 
       objectReference: {fileID: 7184331994205427889, guid: 546bc5901a316a54f8a2a5d1f60ef70b,
         type: 3}
     - target: {fileID: 7798365482228194483, guid: 592441a6594acf24d8079990fae3500c,
         type: 3}
+      propertyPath: waves.Array.data[1].monsterPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 7184331994205427889, guid: d1739c2a6fc8d2745b4b8072d67fb712,
+        type: 3}
+    - target: {fileID: 7798365482228194483, guid: 592441a6594acf24d8079990fae3500c,
+        type: 3}
       propertyPath: waves.Array.data[1].monsterPrefabs.Array.data[2]
       value: 
       objectReference: {fileID: 7184331994205427889, guid: 546bc5901a316a54f8a2a5d1f60ef70b,
+        type: 3}
+    - target: {fileID: 7798365482228194483, guid: 592441a6594acf24d8079990fae3500c,
+        type: 3}
+      propertyPath: waves.Array.data[2].monsterPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 7184331994205427889, guid: d1739c2a6fc8d2745b4b8072d67fb712,
         type: 3}
     - target: {fileID: 7798365482905675704, guid: 592441a6594acf24d8079990fae3500c,
         type: 3}

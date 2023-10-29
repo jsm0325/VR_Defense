@@ -1392,6 +1392,11 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 5b8b345abf12a4546aa1ce4ff7b70286, type: 3}
+    - target: {fileID: 7547434724856197882, guid: 5039730be957cf545ab680a1e1beb50e,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5039730be957cf545ab680a1e1beb50e, type: 3}
 --- !u!114 &1802007545 stripped
@@ -2138,9 +2143,21 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 7798365482228194483, guid: 592441a6594acf24d8079990fae3500c,
         type: 3}
+      propertyPath: waves.Array.data[1].monsterPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 7184331994205427889, guid: d1739c2a6fc8d2745b4b8072d67fb712,
+        type: 3}
+    - target: {fileID: 7798365482228194483, guid: 592441a6594acf24d8079990fae3500c,
+        type: 3}
       propertyPath: waves.Array.data[1].monsterPrefabs.Array.data[2]
       value: 
       objectReference: {fileID: 7184331994205427889, guid: 546bc5901a316a54f8a2a5d1f60ef70b,
+        type: 3}
+    - target: {fileID: 7798365482228194483, guid: 592441a6594acf24d8079990fae3500c,
+        type: 3}
+      propertyPath: waves.Array.data[2].monsterPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 7184331994205427889, guid: d1739c2a6fc8d2745b4b8072d67fb712,
         type: 3}
     - target: {fileID: 8370028498776603185, guid: 592441a6594acf24d8079990fae3500c,
         type: 3}
