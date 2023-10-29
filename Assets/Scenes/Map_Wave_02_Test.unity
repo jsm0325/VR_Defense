@@ -1298,6 +1298,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: OVRPlayerController
       objectReference: {fileID: 0}
+    - target: {fileID: 6175477863625032932, guid: 5039730be957cf545ab680a1e1beb50e,
+        type: 3}
+      propertyPath: Acceleration
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6175477863628621006, guid: 5039730be957cf545ab680a1e1beb50e,
+        type: 3}
+      propertyPath: m_SlopeLimit
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 6175477863727108241, guid: 5039730be957cf545ab680a1e1beb50e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
