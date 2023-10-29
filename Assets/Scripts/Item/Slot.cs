@@ -30,6 +30,14 @@ public class Slot : MonoBehaviour
     // ¾ÆÀÌÅÛ È¹µæ
     public void AddItem(int count = 1)
     {
+        if (item.name == "CatPunch")
+            GameManager.gameManager.itemNum[0]++;
+        if (item.name == "Lullaby")
+            GameManager.gameManager.itemNum[1]++;
+        if (item.name == "Kitten")
+            GameManager.gameManager.itemNum[2]++;
+        if (item.name == "Manhole")
+            GameManager.gameManager.itemNum[3]++;
         itemCount += count;
         textCount.text = itemCount.ToString();
     }
@@ -45,6 +53,14 @@ public class Slot : MonoBehaviour
     {
         if(itemCount > 0)
         {
+            if (item.name == "CatPunch")
+                GameManager.gameManager.itemNum[0]--;
+            if (item.name == "Lullaby")
+                GameManager.gameManager.itemNum[1]--;
+            if (item.name == "Kitten")
+                GameManager.gameManager.itemNum[2]--;
+            if (item.name == "Manhole")
+                GameManager.gameManager.itemNum[3]--;
             itemCount--;
             textCount.text = itemCount.ToString();
             SummonItem();
