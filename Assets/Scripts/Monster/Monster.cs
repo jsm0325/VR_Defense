@@ -73,6 +73,10 @@ public class Monster : MonoBehaviour
         if (isTrapped)
             return;
         moveComponent.InspectDestination();
+
+        if (this.GetComponent<CapsuleCollider>().enabled == false) {
+            this.GetComponent<CapsuleCollider>().enabled = true;
+        }
     }
 
     public void SetTrapped(float duration)
