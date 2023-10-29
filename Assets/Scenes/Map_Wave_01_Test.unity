@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1279,7 +1279,7 @@ PrefabInstance:
     - target: {fileID: 6175477863295272119, guid: 5039730be957cf545ab680a1e1beb50e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6175477863387843756, guid: 5039730be957cf545ab680a1e1beb50e,
         type: 3}
@@ -1346,6 +1346,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: OVRPlayerController
       objectReference: {fileID: 0}
+    - target: {fileID: 6175477863615805374, guid: 5039730be957cf545ab680a1e1beb50e,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 1527
+      objectReference: {fileID: 0}
     - target: {fileID: 6175477863625032932, guid: 5039730be957cf545ab680a1e1beb50e,
         type: 3}
       propertyPath: Acceleration
@@ -1366,6 +1371,16 @@ PrefabInstance:
       propertyPath: itemData
       value: 
       objectReference: {fileID: 1560148510}
+    - target: {fileID: 6193629393629909072, guid: 5039730be957cf545ab680a1e1beb50e,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 1527
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195665040128294078, guid: 5039730be957cf545ab680a1e1beb50e,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 1527
+      objectReference: {fileID: 0}
     - target: {fileID: 7547434724856197882, guid: 5039730be957cf545ab680a1e1beb50e,
         type: 3}
       propertyPath: m_audioClip
@@ -1533,6 +1548,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -5360371509833647328, guid: a34c97725d079fa4887422c22bfdc549,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -5360371509833647328, guid: a34c97725d079fa4887422c22bfdc549,
         type: 3}
@@ -1858,13 +1878,13 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 100
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 727
+    m_Bits: 1536
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 42c6cc3998ac0d245a92f3d6aafc2af5, type: 2}
   m_TargetDisplay: 0
@@ -1884,7 +1904,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1888388596}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 10, z: 0}
+  m_LocalPosition: {x: 0, y: 16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
