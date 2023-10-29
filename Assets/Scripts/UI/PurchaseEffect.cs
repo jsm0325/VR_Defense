@@ -12,9 +12,10 @@ public class PurchaseEffect : MonoBehaviour
     public float moveSpeed;                         // 코인의 이동 속도
     public float fadeSpeed;                         // 사라질 때 투명해지는 속도
     public static bool isPlayCoin = false;          // 코인 이펙트 재생 여부
-    
+#pragma warning disable CS0108 // 멤버가 상속된 멤버를 숨깁니다. new 키워드가 없습니다.
     private Renderer renderer;                      // 코인의 랜더러
     private AudioSource audio;                      // 재생할 플레이어
+
 
     private float currentAlpha = 1.0f;              // 현재 코인의 투명도
 

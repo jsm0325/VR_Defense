@@ -5,8 +5,6 @@ public class SkillPaperTowel : MonoBehaviour
 {
     //[SerializeField]
     //private int damage = 1;
-    [SerializeField]
-    private float force = 15f;              // ด๘ม๖ดย ศ๛
 
     [SerializeField]
     private GameObject paperToewlPrefab;

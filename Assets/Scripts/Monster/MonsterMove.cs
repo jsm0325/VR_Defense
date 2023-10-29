@@ -21,7 +21,6 @@ public class MonsterMove : MonoBehaviour
     private float originalSpeed;
     private float currentSpeed;
     private bool isSlowingDown = false;
-    private bool isStopByLullaby = false;
     private float lullabyDuration;
     private float distance;
     private float thresholdDistance;

@@ -24,10 +24,12 @@ namespace TravisGameAssets
 		public Image rotationIcon;
 		public Image floorIcon;
 		public Image slowMotionIcon;
-		
-		public GameObject light;
-		
-		private GameObject[] hitEffects;
+
+#pragma warning disable CS0108 // 멤버가 상속된 멤버를 숨깁니다. new 키워드가 없습니다.
+        public GameObject light;
+#pragma warning restore CS0108 // 멤버가 상속된 멤버를 숨깁니다. new 키워드가 없습니다.
+
+        private GameObject[] hitEffects;
 
 		private int hitIndex;
 
