@@ -44,6 +44,8 @@ public class Grab : MonoBehaviour
             isGrabbing = false;
             if (!isGrabbing && rightGrabPosition.transform.Find("WP_Bundle").gameObject.activeSelf == true && GameManager.gameManager.GetWeaponSwapEnabled() == true)        //만약 놓는다면 모든 무기를 비활성 한다.
             {
+                weaponLevel = GameManager.gameManager.weaponLevel;
+                weaponName = GameManager.gameManager.weaponName;
                 rightGrabPosition.transform.Find("WP_Bundle").transform.Find(weaponName).transform.Find(weaponName + weaponLevel).gameObject.SetActive(false);
                 rightGrabPosition.transform.Find("WP_Bundle").gameObject.SetActive(false);
             }

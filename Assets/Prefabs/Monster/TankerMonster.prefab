@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: -247305584786813827}
   - component: {fileID: 8629068857799165098}
   - component: {fileID: 5827068273237166103}
+  - component: {fileID: 6361746326964553833}
   m_Layer: 0
   m_Name: TankerMonster
   m_TagString: Monster
@@ -61,6 +62,7 @@ MonoBehaviour:
   score: 100
   animController: {fileID: 8629068857799165098}
   facialAnimationController: {fileID: 5827068273237166103}
+  monsterType: 
   monsterAnim: {fileID: -247305584786813827}
   hairOptions:
   - {fileID: 919132149155446097, guid: e7ab99fd2c5af4045a2288e0c2e1fccf, type: 3}
@@ -211,6 +213,29 @@ MonoBehaviour:
   eyeAnimationStateName: Facial_Anim_eye
   eyebrowAnimationStateName: Facial_Anim_eyebrow
   mouthAnimationStateName: Facial_Anim_mouth
+--- !u!114 &6361746326964553833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7184331994205427889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 060c1972511fd9649a1010688698d035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  body: {fileID: 8997777677107412322}
+  shirtMaterials:
+  - {fileID: 2100000, guid: 4ae008f08b0e3f842b7fcae32fdad273, type: 2}
+  - {fileID: 2100000, guid: cd0ef76e5ebbebe4e95cb092a0723fb1, type: 2}
+  - {fileID: 2100000, guid: 6799ab547f1fd06419470bdb93df3a77, type: 2}
+  - {fileID: 2100000, guid: 8eec9467bdcd9e74fa99c8b7b701547f, type: 2}
+  pantMaterials:
+  - {fileID: 2100000, guid: 9cebe2bd2babcda429aab43e07f02f76, type: 2}
+  - {fileID: 2100000, guid: 5e556284827b7824baaea282ec775663, type: 2}
+  - {fileID: 2100000, guid: 2a6f426dfb9811b4c834a2610c415924, type: 2}
+  - {fileID: 2100000, guid: 3adeb165d1220ce4d89ebd7063501ba7, type: 2}
 --- !u!1001 &600215471960673975
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -293,6 +318,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CH12_M_Big_body
       objectReference: {fileID: 0}
+    - target: {fileID: 6915015546735973192, guid: 21c1856c107a1c64b90cb43e250616d1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3adeb165d1220ce4d89ebd7063501ba7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21c1856c107a1c64b90cb43e250616d1, type: 3}
 --- !u!1 &330184558620570598 stripped
@@ -328,6 +358,35 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 600215471960673975}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8997777677107412322 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8397775052183303125, guid: 21c1856c107a1c64b90cb43e250616d1,
+    type: 3}
+  m_PrefabInstance: {fileID: 600215471960673975}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5784297161788858991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8997777677107412322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 060c1972511fd9649a1010688698d035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  body: {fileID: 8997777677107412322}
+  shirtMaterials:
+  - {fileID: 2100000, guid: 4ae008f08b0e3f842b7fcae32fdad273, type: 2}
+  - {fileID: 2100000, guid: cd0ef76e5ebbebe4e95cb092a0723fb1, type: 2}
+  - {fileID: 2100000, guid: 6799ab547f1fd06419470bdb93df3a77, type: 2}
+  - {fileID: 2100000, guid: 8eec9467bdcd9e74fa99c8b7b701547f, type: 2}
+  pantMaterials:
+  - {fileID: 2100000, guid: 9cebe2bd2babcda429aab43e07f02f76, type: 2}
+  - {fileID: 2100000, guid: 5e556284827b7824baaea282ec775663, type: 2}
+  - {fileID: 2100000, guid: 2a6f426dfb9811b4c834a2610c415924, type: 2}
+  - {fileID: 2100000, guid: 3adeb165d1220ce4d89ebd7063501ba7, type: 2}
 --- !u!1001 &1859288326760259405
 PrefabInstance:
   m_ObjectHideFlags: 0

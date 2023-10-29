@@ -173,7 +173,7 @@ public class GameManager : MonoBehaviour
     public void StageClear()
     {
         // 스테이지 클리어 했을 때 작동할 것들 넣기 스킬 강화, 이동 포탈 생성, 그 외 이펙트 등
-        Debug.Log("StageClear");
+        
         GameManager.gameManager.ChangeWeaponSwapEnabled();
         GameObject clearingHub = GameObject.Find("ClearingHub");
         clearingHub.transform.GetChild(0).gameObject.SetActive(true);
