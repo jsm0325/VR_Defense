@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1646,6 +1646,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1114866411961512490, guid: e7a3f4e6793ae6e48b2ed57831f75400,
+        type: 3}
+      propertyPath: m_Name
+      value: CatPunch
+      objectReference: {fileID: 0}
     - target: {fileID: 1114866411961512494, guid: e7a3f4e6793ae6e48b2ed57831f75400,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1735,6 +1740,11 @@ PrefabInstance:
         type: 3}
       propertyPath: sceneName
       value: Map_Wave_03_Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 6108990005976052627, guid: e7a3f4e6793ae6e48b2ed57831f75400,
+        type: 3}
+      propertyPath: m_Name
+      value: CatPunch
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7a3f4e6793ae6e48b2ed57831f75400, type: 3}
