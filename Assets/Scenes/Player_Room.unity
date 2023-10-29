@@ -8,8 +8,9 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: fbab00bde55ce1844a731a140702b66d
+  m_OcclusionCullingData: {fileID: 36300000, guid: 9c1983af74b7db74386d9dc7197d379d,
+    type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -3248,7 +3249,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!64 &1612243768
 MeshCollider:
@@ -3533,6 +3534,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MAP_Wave_Player_Room
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779895897495887135, guid: 2df53c634c2794b4e8b2117e7dd63daa,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 3266087116571566392, guid: 2df53c634c2794b4e8b2117e7dd63daa,
         type: 3}

@@ -8,8 +8,9 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: 3c271aa712593494db076d7aa5a9a5fa
+  m_OcclusionCullingData: {fileID: 36300000, guid: 3a3ff39c1dadcf545b0ccd863572b8fc,
+    type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -280,12 +281,22 @@ PrefabInstance:
     - target: {fileID: 801971851241078584, guid: bf4e27d63193c024f8bfe024df1d051b,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 8
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bf4e27d63193c024f8bfe024df1d051b,
         type: 3}
       propertyPath: m_Name
       value: MAP_Wave_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bf4e27d63193c024f8bfe024df1d051b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556566526988847645, guid: bf4e27d63193c024f8bfe024df1d051b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf4e27d63193c024f8bfe024df1d051b, type: 3}
@@ -570,6 +581,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 133140216}
     m_Modifications:
+    - target: {fileID: 7776103619758185228, guid: 592441a6594acf24d8079990fae3500c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 7776103619758185229, guid: 592441a6594acf24d8079990fae3500c,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -620,6 +636,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 7776103620047249289, guid: 592441a6594acf24d8079990fae3500c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 7798365481794083204, guid: 592441a6594acf24d8079990fae3500c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -634,6 +655,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7798365481794083205, guid: 592441a6594acf24d8079990fae3500c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 7798365481938724254, guid: 592441a6594acf24d8079990fae3500c,
         type: 3}
@@ -710,6 +736,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: MonsterRount
       objectReference: {fileID: 0}
+    - target: {fileID: 7798365481938724255, guid: 592441a6594acf24d8079990fae3500c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7798365482228194480, guid: 592441a6594acf24d8079990fae3500c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 7798365482228194483, guid: 592441a6594acf24d8079990fae3500c,
         type: 3}
       propertyPath: waves.Array.data[2].spawnTime
@@ -747,6 +783,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7184331994205427889, guid: 546bc5901a316a54f8a2a5d1f60ef70b,
         type: 3}
+    - target: {fileID: 7798365482905675704, guid: 592441a6594acf24d8079990fae3500c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 8370028498776603185, guid: 592441a6594acf24d8079990fae3500c,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -766,6 +807,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -4.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8370028498776603191, guid: 592441a6594acf24d8079990fae3500c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 592441a6594acf24d8079990fae3500c, type: 3}
@@ -992,7 +1038,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &914374440
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1469,7 +1515,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &1313252910
 Transform:
