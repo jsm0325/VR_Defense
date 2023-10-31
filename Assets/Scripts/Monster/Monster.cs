@@ -286,7 +286,7 @@ public class Monster : MonoBehaviour
     }
     public void ItemDrop()
     {
-        Choose(new float[2] { 20f, 80f });
+        Choose(new float[2] { 25f, 75f });
         
         float Choose(float[] probs)
         {

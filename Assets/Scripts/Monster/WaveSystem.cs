@@ -10,7 +10,7 @@ public class WaveSystem : MonoBehaviour
     private MonsterSpawner monsterSpawner;
     [SerializeField]
 
-    private bool isStarted = false;
+    public bool isStarted = false;
     public void StartWave()
     {
         if (isStarted == false)
@@ -19,7 +19,6 @@ public class WaveSystem : MonoBehaviour
             monsterSpawner.StartWave(waves[currentWaveIndex]);
             isStarted = true;
         }
-        
     }
 }
 

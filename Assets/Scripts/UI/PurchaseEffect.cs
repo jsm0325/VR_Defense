@@ -8,7 +8,6 @@ public class PurchaseEffect : MonoBehaviour
     public GameObject coin;                         // 코인 이펙트를 실행할 오브젝트
     public Text displayCost;                        // 구매 비용을 표시할 Text
     public Text displayMoney;                       // 남은 금액을 표시할 Text
-
     public float moveSpeed;                         // 코인의 이동 속도
     public float fadeSpeed;                         // 사라질 때 투명해지는 속도
     public static bool isPlayCoin = false;          // 코인 이펙트 재생 여부
@@ -19,14 +18,13 @@ public class PurchaseEffect : MonoBehaviour
 
     private float currentAlpha = 1.0f;              // 현재 코인의 투명도
 
-    private GameObject itemSlotPanel;
+    public GameObject itemSlotPanel;
     private Dictionary<string, GameObject> itemSlot;// 아이템 이름에 해당하는 슬롯을 저장할 배열
 
 
     public void Start()
     {
         audio = GetComponent<AudioSource>();
-        itemSlotPanel = GameObject.Find("ItemSlotPanel");
 
         Debug.Assert(coin != null, "Error (GameObject is Null) : 코인 오브젝트가 존재하지 않습니다.");
         Debug.Assert(audio != null, "Error (AudioSource is Null) : 오디오가 존재하지 않습니다.");
