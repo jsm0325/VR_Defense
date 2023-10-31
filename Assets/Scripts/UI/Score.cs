@@ -64,7 +64,7 @@ public class Score : MonoBehaviour
         {
             CreateHighScoreTransform(highScoreEntry, rank, transformList);
         }
-        if(!PlayerPrefs.HasKey("highScoreTable"))
+        if(PlayerPrefs.GetString("highScoreTable") == "" || !PlayerPrefs.HasKey("highScoreTable"))
         {
             HighScores ahighScores = new HighScores { highScoreEntryList = highScoreList };
             string json = JsonUtility.ToJson(ahighScores);
