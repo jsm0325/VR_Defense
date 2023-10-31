@@ -53,10 +53,10 @@ public class WeaponShopUi : MonoBehaviour
             }
             else
             {
-                GameManager.gameManager.weaponLevel += 1;
                 weaponLevel = GameManager.gameManager.weaponLevel + 1;
                 if (GameManager.gameManager.weaponLevel < 3)
                 {
+                    GameManager.gameManager.weaponLevel += 1;
                     GameObject currentWeapon = itemSelect.transform.Find("WP_Bundle").transform.Find(GameManager.gameManager.weaponName).transform.Find(GameManager.gameManager.weaponName + (weaponLevel - 1)).gameObject;
                     weapon = itemSelect.transform.Find("WP_Bundle").transform.Find(GameManager.gameManager.weaponName).transform.Find(GameManager.gameManager.weaponName + weaponLevel).gameObject;
                     price.GetComponent<Text>().text = upgradeCosts[weaponLevel - 1].ToString() + " ¿ø";
