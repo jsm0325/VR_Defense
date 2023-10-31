@@ -41,7 +41,7 @@ public class Score : MonoBehaviour
         rank.gameObject.SetActive(false);
 
         //DeleteScore();
-
+        AddHighScoreEntry(1, "10");
 
         string jsonString = PlayerPrefs.GetString("highScoreTable");
         HighScores highScores = JsonUtility.FromJson<HighScores>(jsonString);
@@ -64,7 +64,7 @@ public class Score : MonoBehaviour
         {
             CreateHighScoreTransform(highScoreEntry, rank, transformList);
         }
-        if(PlayerPrefs.GetString("highScoreTable") == "")
+        if(!PlayerPrefs.HasKey("highScoreTable"))
         {
             HighScores ahighScores = new HighScores { highScoreEntryList = highScoreList };
             string json = JsonUtility.ToJson(ahighScores);
