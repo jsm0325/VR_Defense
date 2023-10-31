@@ -35,10 +35,9 @@ public class GameManager : MonoBehaviour
     public List<FacialExpressionData> tiredFacialData = new List<FacialExpressionData>();
     public List<FacialExpressionData> speedFacialData = new List<FacialExpressionData>();
     public List<FacialExpressionData> tankerFacialData = new List<FacialExpressionData>();
-
-    public Score rankingObject;
     private void Awake()
     {
+
         if(gameManager == null)
         {
             gameManager = this;
@@ -50,9 +49,9 @@ public class GameManager : MonoBehaviour
         }
 
         audioSource = GetComponent<AudioSource>();
-        
 
-        for(int i = 0; i < playerFacialName.Count; i++)
+
+        for (int i = 0; i < playerFacialName.Count; i++)
         {
             float eyeNumber = 0.1f + i;
             FacialExpressionData expression = new FacialExpressionData
@@ -117,7 +116,6 @@ public class GameManager : MonoBehaviour
         UiManager.uiManager.UpdateCurrencyText(currency);
     }
 
-
     public void DecreaseHealth(int amount) // 체력 감소 메서드
     {
         currentHealth -= amount;
@@ -125,7 +123,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Game Over");
             SceneManager.LoadScene("Cine_E1_Hospital");
-            rankingObject.AddHighScoreEntry(score, studentId);
+            Score.score.AddHighScoreEntry(score, studentId);
         }
         
     }
@@ -156,6 +154,8 @@ public class GameManager : MonoBehaviour
     }
     public void DieMonster()
     {
+        
+
         currentMonsterCount--;
         if (spawnFinished == true && currentMonsterCount == 0 && currentWave <= 2)
         {
@@ -184,12 +184,14 @@ public class GameManager : MonoBehaviour
     private void GameClear(int health)
     {
         // 엔딩 시네마틱 재생 체력이나 점수에 따라
-        if(currentHealth>=40)
+
+        if (currentHealth>=40)
             SceneManager.LoadScene("Cine_E2_Graduation");
         else if(currentHealth < 40 && currentHealth >=15)
             SceneManager.LoadScene("Cine_E3_Take_a_Bus");
         else
             SceneManager.LoadScene("Cine_E4_Refusal");
+        Score.score.AddHighScoreEntry(score, studentId);
     }
 
     public int GetCurrentWave()

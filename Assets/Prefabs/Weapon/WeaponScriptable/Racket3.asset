@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a29f699a949c14c4f978bedf3023f8ee, type: 3}
   m_Name: Racket3
   m_EditorClassIdentifier: 
-  AttackDamage: 30
+  AttackDamage: 40
   KnockBack: 0.3
   AttackSpeed: 0.5

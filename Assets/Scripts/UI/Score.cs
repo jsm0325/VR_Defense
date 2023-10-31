@@ -6,6 +6,7 @@ using TMPro;
 using System.Linq;
 public class Score : MonoBehaviour
 {
+    public static Score score;
     [Serializable]
     private class HighScoreEntry
     {
@@ -28,10 +29,19 @@ public class Score : MonoBehaviour
 
     private void Awake()
     {
+        if (score == null)
+        {
+            score = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
         rank.gameObject.SetActive(false);
 
         //DeleteScore();
-        //AddHighScoreEntry(4000, "2022");
+        AddHighScoreEntry(4000, "2022");
 
         string jsonString = PlayerPrefs.GetString("highScoreTable");
         HighScores highScores = JsonUtility.FromJson<HighScores>(jsonString);

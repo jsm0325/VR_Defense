@@ -69,7 +69,7 @@ public class ItemCatPunch : MonoBehaviour
 
         while (moveTime < 2.0f)
         {
-            monster.enabled = false;
+            //monster.enabled = false;
             monster.transform.Translate(gameObject.transform.forward * 0.1f);
             moveTime += Time.deltaTime;
             yield return null;
