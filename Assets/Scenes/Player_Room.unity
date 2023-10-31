@@ -1380,6 +1380,10 @@ PrefabInstance:
       propertyPath: pointer
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 891665920, guid: a69260cd8dbfbe24084512a8a8027332, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 971211139, guid: a69260cd8dbfbe24084512a8a8027332, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1403,6 +1407,18 @@ PrefabInstance:
     - target: {fileID: 977684941, guid: a69260cd8dbfbe24084512a8a8027332, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548556333, guid: a69260cd8dbfbe24084512a8a8027332, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1655989194, guid: a69260cd8dbfbe24084512a8a8027332, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974266074, guid: a69260cd8dbfbe24084512a8a8027332, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6653300301276019944, guid: a69260cd8dbfbe24084512a8a8027332,
         type: 3}
@@ -1516,18 +1532,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a69260cd8dbfbe24084512a8a8027332, type: 3}
---- !u!114 &812187224 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1911721327, guid: a69260cd8dbfbe24084512a8a8027332,
-    type: 3}
-  m_PrefabInstance: {fileID: 812187223}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29ea9a1f1d0ef3b4088144e5ab101194, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &856997018
 GameObject:
   m_ObjectHideFlags: 0
@@ -2571,7 +2575,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 15db3a9592bca954bb824be48e191e03, type: 2}
   - {fileID: 11400000, guid: 60de9f892635c6646b9079157a0232b2, type: 2}
   - {fileID: 11400000, guid: 957c7a339f83c96448e2477f51450720, type: 2}
-  rankingObject: {fileID: 812187224}
 --- !u!4 &1296131381
 Transform:
   m_ObjectHideFlags: 0
