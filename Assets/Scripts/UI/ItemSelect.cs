@@ -38,6 +38,9 @@ public class ItemSelect : MonoBehaviour
         // 현재 금액을 가져옴
         int currency = GameManager.gameManager.currency;
 
+        if (displayContent.text.CompareTo("기적의 발바닥이다.") != 0)
+            return;
+
         // 전시할 가격과 현재 가격을 출력함
         displayContent.text = content;
         displayCost.text = cost.ToString() + "$";
