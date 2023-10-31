@@ -6057,7 +6057,7 @@ PrefabInstance:
     - target: {fileID: 7798365482228194483, guid: 592441a6594acf24d8079990fae3500c,
         type: 3}
       propertyPath: waves.Array.data[0].maxMonsterCount
-      value: 1
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7798365482228194483, guid: 592441a6594acf24d8079990fae3500c,
         type: 3}
