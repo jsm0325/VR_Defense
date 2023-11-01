@@ -63,6 +63,7 @@ public class ItemKitten : MonoBehaviour
     {
         float moveTime = 0.0f;
         MonsterMove monsterMove = monster.GetComponent<MonsterMove>();
+        monsterMove.isCatSee = true;
         Monster monsterScript = monster.GetComponent<Monster>();
         NavMeshAgent agent = monster.GetComponent<NavMeshAgent>();
         agent.SetDestination(gameObject.transform.position);
@@ -74,6 +75,7 @@ public class ItemKitten : MonoBehaviour
             yield return null;
         }
         agent.SetDestination(monsterMove.finalTarget.transform.position);
+        monsterMove.isCatSee = false;
         gameObject.transform.position = new Vector3(1000, 100, 1000);
 
         moveTime = 0.0f;

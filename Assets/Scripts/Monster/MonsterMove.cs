@@ -21,6 +21,7 @@ public class MonsterMove : MonoBehaviour
     private float originalSpeed;
     private float currentSpeed;
     private bool isSlowingDown = false;
+    public bool isCatSee = false;
     private float lullabyDuration;
     private float distance;
     private float thresholdDistance;
@@ -80,7 +81,7 @@ public class MonsterMove : MonoBehaviour
             agent.SetDestination(currentTarget);
         }
         // 목적지와의 거리 
-        if (agent.remainingDistance < 1f && agent.destination != finalTarget.transform.position) // 목적지에 도착하면 동작함
+        if (agent.remainingDistance < 1f && agent.destination != finalTarget.transform.position && isCatSee == false) // 목적지에 도착하면 동작함
         {
             currentTarget = finalTarget.transform.position;
             agent.SetDestination(currentTarget);
