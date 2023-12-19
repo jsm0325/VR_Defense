@@ -34,3 +34,23 @@
         <img src="https://img.shields.io/badge/Oculus-1C1E20?style=flat&logo=oculus&logoColor=white"/>
     </li>
 </ul>
+
+<h2>조작법</h2>
+<h3>ㅤ컨트롤러 이동 조작법</h3>
+<hr>
+<img src="https://github.com/Red-Opera/VRDefense/assets/121187608/e0965172-336e-4eea-9926-b6dc6c4fc925" width="100%" height="100%"/>
+<img src="https://github.com/Red-Opera/VRDefense/assets/121187608/205c55c9-c47b-446a-9c2a-fbddd68531d8" width="100%" height="100%"/>
+<br>
+<h3>ㅤ컨트롤러 무기 조작법</h3>
+<hr>
+<img src="https://github.com/Red-Opera/VRDefense/assets/121187608/a9c25bd5-6aca-4463-994d-9685a186f711" width="100%" height="100%"/>
+<img src="https://github.com/Red-Opera/VRDefense/assets/121187608/fe2b7c9a-24ed-4e52-9b64-fde9a8ad0b7b" width="100%" height="100%"/>
+<br>
+<h3>ㅤ컨트롤러 아이템 조작법</h3>
+<hr>
+<img src="https://github.com/Red-Opera/VRDefense/assets/121187608/d2a4fa1e-7cf4-4862-b3e2-c226ff85127c" width="100%" height="100%"/>
+<img src="https://github.com/Red-Opera/VRDefense/assets/121187608/ce4c0bc4-f1af-435d-8df0-5f21e504b4b9" width="100%" height="100%"/>
+<br>
+<h3>ㅤ컨트롤러 스킬 조작법</h3>
+<hr>
+<img src="https://github.com/Red-Opera/VRDefense/assets/121187608/073d84d8-1964-45f0-9d77-1b01ecc45a80" width="100%" height="100%"/>
